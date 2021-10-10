@@ -1,4 +1,4 @@
-baseurl = "https://domain.tld/"
+baseurl = "https://matrix-python.github.io/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
