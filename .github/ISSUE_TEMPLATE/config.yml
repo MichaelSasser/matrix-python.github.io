@@ -1,4 +1,9 @@
+---
+blank_issues_enabled: true
 contact_links:
-  - name: Question 🙋
-    url: https://github.com/h-enk/doks/discussions/categories/q-a
-    about: Ask your question in Doks Discussions
+  - name: "⁉️ Need help with the website? Ask on Matrix!"
+    url: https://matrix.to/#/#python-meta:matrix.org
+    about: Please ask and answer website specific questions in our Meta room on Matrix.
+  - name: "⁉️ Need help with the website? Ask in the Discussions on GitHub!"
+    url: https://github.com/matrix-python/matrix-python.github.io/discussions
+    about: or in the the repos GitHub Discussions.

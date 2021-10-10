@@ -62,7 +62,7 @@ alertDismissable = true
 alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
 
 # Edit Page
-docsRepo = "https://github.com/matrix-python/"
+docsRepo = "https://github.com/matrix-python/matrix-python.github.io"
 editPage = true
 
 [options]

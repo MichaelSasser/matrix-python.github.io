@@ -1,0 +1,74 @@
+name: "\U0001F41B Bug report"
+description: File a bug report
+title: "[Bug]: "
+labels: [bug]
+# assignees:
+#   - MichaelSasser
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a possible bug in the community website.
+        Please fill in as much of the template below as you can.
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem description
+      description: Also tell us, what did you expect to happen?
+      placeholder: |
+        Steps to reproduce the behavior:
+        1. Goto '...'
+        2. Click on '...' 
+        2. See error '...'
+    validations:
+      required: true
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser
+      placeholder: |
+        e.g. Firefox 93.0 x64
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: Operating System version
+      placeholder: |
+        e.g. the output of `uname -a`
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output.
+      placeholder: |
+        If you are running the website locally, please paste the log output.
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: I have
+      options:
+        - label: read the README.md,
+          required: true
+        - label: searched for similar issues.
+          required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: To submit this issue, you need to agree to follow our [Code of Conduct](https://matrix-python.github.io/docs/contributing/code_of_conduct/)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

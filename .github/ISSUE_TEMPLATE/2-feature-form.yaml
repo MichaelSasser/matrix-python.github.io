@@ -1,0 +1,44 @@
+name: "\U0001F680 Feature request"
+description: Suggest an idea for improving the community website.
+title: "[Feature]: "
+labels: [enhancement]
+# assignees:
+#   - MichaelSasser
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a possible bug in the community website.
+        Please fill in as much of the template below as you can.
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Feature motivation
+      description: A clear and concise description of the problem or missing capability.
+      placeholder: |
+        I am always frustrated when ...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe a solution you'd like
+      description: A description of what you want to happen.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe the alternatives you've considered
+      description: Let us know about other (alternative) solutions you've tried or researched.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other context or screenshots about the feature request here.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: To submit this issue, you need to agree to follow our [Code of Conduct](https://matrix-python.github.io/docs/contributing/code_of_conduct/)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

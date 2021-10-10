@@ -15,22 +15,22 @@ toc: true
 
 {{< alert icon="⚠" text="Make sure to read the <a href=\"/docs/contributing/coc/\">Code of Conduct</a> first." />}}
 
-### Create an issue
+## Create an issue
 
-- [Bug report](https://github.com/matrix-python/site/issues/new?template=bug-report---.md)
-- [Feature request](https://github.com/matrix-python/site/issues/new?template=feature-request---.md)
+- [Bug report](https://github.com/matrix-python/matrix-python.github.io/issues/new?template=bug-report---.md)
+- [Feature request](https://github.com/matrix-python/matrix-python.github.io/issues/new?template=feature-request---.md)
 
 ## Contribute to the website
 
 You will find the code of this website on GitHub:
 
-{{< alert icon="GitHub" text="<a href=\"https://github.com/matrix-python/site\">https://github.com/matrix-python/site</a>" />}}
+{{< alert icon="GitHub" text="<a href=\"https://github.com/matrix-python/matrix-python.github.io\">https://github.com/matrix-python/matrix-python.github.io</a>" />}}
 
 The repository has two branches with infinite lifetime:
 
-- The [master](https://github.com/matrix-python/site/tree/master) branch is
+- The [master](https://github.com/matrix-python/matrix-python.github.io/tree/master) branch is
   protected and it gets updated on every release.
-- The [develop](https://github.com/matrix-python/site/tree/develop) branch is
+- The [develop](https://github.com/matrix-python/matrix-python.github.io/tree/develop) branch is
   the default/merging branch.
 
 When you are working with the repo make sure to follow the
@@ -51,7 +51,7 @@ template.
 ## Improve our documentation
 
 You will find our documentation in
-[`./content/docs/`](https://github.com/matrix-python/site/tree/master/content/docs)
+[`./content/docs/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs)
 of our repository.
 
 <!--vim: set ft=pandoc :-->
