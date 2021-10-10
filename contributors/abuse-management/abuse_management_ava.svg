@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EE9E0F;}
+	.st1{fill:#FFFFFF;}
+</style>
+	<path class="st0" d="M207,513c0-81-3-239-3-239s104.5,41.5,186,0c-0.5,0.5,117-73,117-73s0,549,0,632C349,833,207,726,207,513z
+                       M807,513c0-81,3-239,3-239s-104.5,41.5-186,0c0.5,0.5-117-73-117-73s0,549,0,632C665,833,807,726,807,513z"/>
+	<polyline class="st1" points="507,646 384.4,709.4 405.4,566.4 302.4,470.4 445.4,455.4 507,327,507,646 629.6,709.4 608.6,566.4 711.6,470.4 568.6,455.4 507,327"/>
+</svg>
