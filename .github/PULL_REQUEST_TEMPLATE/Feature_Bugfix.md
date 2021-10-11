@@ -32,5 +32,5 @@ fixes #
 
 I have read and accept the:
 
-- [ ] (*) [Code of Conduct](https://matrix-python.github.io/docs/contributing/code_of_conduct/).
-- [ ] (*) [Contribution Guidelines](https://matrix-python.github.io/docs/contributing/contribute_to_the_website/)
+- [ ] [Code of Conduct](https://matrix-python.github.io/docs/contributing/code_of_conduct/)
+- [ ] [Contribution Guidelines](https://matrix-python.github.io/docs/contributing/contribute_to_the_website/)
