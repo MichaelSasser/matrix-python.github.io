@@ -1,8 +1,8 @@
 ---
 title: "Michael Sasser"
 description: "Member of the moderation team"
-date: 2020-02-16T01:33:00+00:00
-lastmod: 2021-02-16T01:33:00+00:00
+date: 2021-10-10T00:00:00+00:00
+lastmod: 2021-10-10T00:00:00+00:00
 draft: false
 images: ["michael_sasser_ava.svg"]
 ---
