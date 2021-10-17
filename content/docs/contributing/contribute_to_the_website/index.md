@@ -17,7 +17,7 @@ toc: true
 
 ## I found a bug or there is room for improvements
 
-Please let us know, if you found an issue with our website. You can do this
+Please let us know if you found an issue with our website. You can do this
 by handing in a _Bug report_. <br />
 If you have any suggestions, we would appreciate a _Feature Request_.
 
@@ -134,8 +134,6 @@ of the `Doks` template.
 </b>
 {{< /alert >}}
 
-<!-- TODO -->
-
 It is possible to use the formats `jpeg`, `png`, `tiff`, `bmp`, `gif` and
 `svg`. Images are lazyloaded, blurred up, and responsive. They need to be 
 place in a [page bundle](https://gohugo.io/content-management/page-bundles/), 
@@ -178,9 +176,50 @@ If this is not possible you use a `png` image, if your image contains
 an alpha channel. If not use an `jpeg` image or an `gif`, if your image
 only references a low number of colors.
 
-### Links and references
+### Links and Cross References
 
-<!-- TODO -->
+The `ref` and `relref` shortcodes can be used to create permalinks, to a 
+document using a relative or absolute path.
+
+<!-- The "/*" and "*/" are only used to prevent them to be rendered.  -->
+<!-- They are not actually part of the shortcode!!!  -->
+
+```html
+{{</* ref "/blog/my-post.md" */>}}
+{{</* relref "contribute_to_the_website" */>}}
+```
+
+You can use the shortcode in Markdown:
+
+```markdown
+[Contribute to this website]({{</* ref "contribute_to_the_website" */>}})
+[Image Conventions]({{</* ref "contribute_to_the_website" */>}}#image-conventions)
+```
+
+or HTML:
+
+```text
+<a href="{{</* ref "contribute_to_the_website" */>}}"Contribute to This Website</a>
+<a href="{{</* ref "contribute_to_the_website" */>}}#image-conventions">Image Conventions</a>
+```
+
+HTML links are normally only used in in HTML documents or nested shortcodes, 
+like the following `alert` code, where you can't use Markdown.
+
+```text
+{{</* alert icon="⚠" */>}}
+A link inside an alert: <a href="{{</* ref "contribute_to_the_website" */>}}">Contribute to This Website</a>.
+{{</* /alert */>}}
+```
+
+Which will looks in the rendered form like the following `alert`.
+
+{{< alert icon="⚠" >}}
+A link inside an alert: <a href="{{< ref "contribute_to_the_website" >}}">Contribute to This Website</a>.
+{{< /alert >}}
+
+For more information check 
+[Hugo -- Links and Cross References →](https://gohugo.io/content-management/cross-references/)
 
 ### Markdown header Section
 
