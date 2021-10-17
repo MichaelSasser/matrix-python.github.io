@@ -106,7 +106,11 @@ We do not want:
 - Off-Topic conversations in any matrix room other than the "Offtopic" room 
   `#python-off-topic:matrix.org`
 - Advertising of any kind, except for the presentation of own Python projects. 
-  However, each project may be presented only once.
+  However, the presentation offer is only for those, who have already 
+  contributed to the community. In addition, each project may be presented 
+  only once, and only in the "Offtopic" room `#python-off-topic:matrix.org`. 
+  The moderation team reserves the right to reject or delete project 
+  presentations without giving any reason. 
 - Job search or job offers
 - Illegal content
 - Sexual content
