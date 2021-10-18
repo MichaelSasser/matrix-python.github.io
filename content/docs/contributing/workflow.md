@@ -44,6 +44,8 @@ You will find the code of this website on GitHub:
    ``upstream`` (this repository) to your local repository and start
     over again from step 5. **Don't forget to create an issue first.**
 
+We recommend to use the [GitHub CLI](https://github.com/cli/cli).
+
 ### About the Website
 
 The repository has two branches with infinite lifetime:
