@@ -18,8 +18,6 @@ toc: true
 {{< read_coc_alert >}}
 {{< contributing_alert >}}
 
-
-
 ## Variables and Params
 
 The variables in this header section differ, depending on the type of page you

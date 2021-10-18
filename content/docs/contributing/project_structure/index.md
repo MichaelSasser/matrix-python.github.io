@@ -54,16 +54,16 @@ who wrote the blog entry.
 {{< img src="blog_card.jpeg" alt="blog card example" caption="<center><em>Example: Blog Card from the \"Home\" page</em></center>" class="border-0"  >}}
 
 The above example shows an entry, which featured multiple contributors.
-To add the contributors to the blog entry the `contributors` variable us used.
-In this case it was:
+To add the contributors to the blog entry the `contributors` variable is used.
+In this case, it was:
 `contributors: ["Michael Sasser", "BrenBarn", "ilex", "James Belchamber"]`
 
 If you click on one of the contributors, marked with a red underline, you will
-see the contributor page of this user. For example 
+see the contributor page of this user. For example,
 [Michael's](https://matrix-python.github.io/contributors/michael-sasser/)
 contributor page is located in 
 [`./content/contributors/michael-sasser/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/contributors/michael-sasser/).
-It contains an file `_index.md` and a file `michael_sasser_ava.svg`:
+It contains a file `_index.md` and a file `michael_sasser_ava.svg`:
 
 - `_index.md` is the file, which contains all text and references the image
   used.

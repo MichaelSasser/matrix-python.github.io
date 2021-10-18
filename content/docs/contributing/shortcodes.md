@@ -35,7 +35,7 @@ for example, like
 └── _index.md
 ```
 
-In the Markdown file you can than use them with a shortcode:
+Then you can use it with the shortcode in the Markdown file:
 
 <!-- The "/*" and "*/" are only used to prevent them to be rendered.  -->
 <!-- They are not actually part of the shortcode!!!  -->
@@ -56,7 +56,7 @@ For example: `images: ["foo.svg", "bar.jpeg"]`
 ### Image Conventions
 
 Our convention is to use a `svg` image whenever possible.
-If this is not possible you use a `png` image, if your image contains
+If this is not possible, you use a `png` image, if your image contains
 an alpha channel. If not use an `jpeg` image or an `gif`, if your image
 only references a low number of colors.
 Other formats are only accepted if they are used for a special purpose.
@@ -89,7 +89,7 @@ or HTML:
 <a href="{{</* ref "shortcodes" */>}}#image-conventions">Image Conventions</a>
 ```
 
-HTML links are normally only used in in HTML documents or nested shortcodes, 
+HTML links are normally only used in HTML documents or nested shortcodes, 
 like the following `alert` code, where you can't use Markdown.
 
 ```text
@@ -104,7 +104,7 @@ Which will looks in the rendered form like the following `alert`.
 A link inside an alert: <a href="{{< ref "workflow" >}}">Workflow</a>.
 {{< /alert >}}
 
-For more information check 
+For more information, check 
 [Hugo -- Links and Cross References →](https://gohugo.io/content-management/cross-references/)
 
 
