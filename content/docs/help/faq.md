@@ -13,6 +13,14 @@ weight: 630
 toc: true
 ---
 
+## Q: How can I report issues?
+{{< alert icon="⚠" >}}
+If the issue is website related, please follow our guide on how to 
+[create an issue]({{< ref "contribute_to_the_website" >}}#create-an-issue) 
+on GitHub.
+{{< /alert >}}
+
+{{< reporting_issues >}}
 
 ## Q: Which language has the Community agreed on?
 
@@ -43,13 +51,16 @@ rooms". If you are not on matrix.org, you can add that server.
 
 No, we are not planning to bridge this room.
 
-## Q: What does a moderator do?
+## Q: What is a moderator?
 
-A moderator in Matrix is a person given special authority to enforce the rules on a room.
+A moderator in Matrix is a person given special authority to enforce the rules
+in our community. Our moderators are:
+
+{{< moderators >}}
 
 ## Q: How do I become a moderator?
 
-In our community it's like the American band
+In our community it's like the American rock band
 [Sugarloaf](https://en.wikipedia.org/wiki/Sugarloaf_(band)) sung:
 > *Don't call us, We'll call you.*
 
@@ -60,4 +71,14 @@ information and know how to be compliant with our
 
 If we are interested in you to becoming a moderator, we will contact you.
 
+## Q: How can I contribute to the website?
 
+Follow our guide on how to [contribute to the website]({{< ref "contribute_to_the_website" >}}).
+
+
+## Q: Who has contributed to the website?
+
+You will find our contributors in the tables below or in the 
+[about]({{< ref "about" >}}) page.
+
+{{< contributors >}}
