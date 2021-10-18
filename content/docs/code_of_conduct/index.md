@@ -8,7 +8,7 @@ draft: false
 images: []
 menu:
   docs:
-    parent: "contributing"
+    parent: "code_of_conduct"
 weight: 200
 toc: true
 ---
