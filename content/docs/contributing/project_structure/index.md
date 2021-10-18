@@ -1,7 +1,7 @@
 ---
 title: "Project Structure"
-description: "Contribute to our communtiy by improving our documentation."
-lead: "Contribute to our communtiy by improving our documentation."
+description: "The project structure describes the function of a document"
+lead: "The project structure describes the function of a document"
 date: 2021-10-10T00:00:00+00:00
 lastmod: 2021-10-10T00:00:00+00:00
 draft: false
@@ -21,17 +21,21 @@ toc: true
 | [`./content/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/) | The base directory for all content except the "[Home](https://matrix-python.github.io/)" page |
 
 
-## The Documentation (Docs)
+## The Documentation
 
-| Variable                                                                                                                        | Description                            |
-| ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| [`./content/docs/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs)                          | The base directory for the docs        |
-| [`./content/docs/contributing`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/contributing) | The "Contributing" section of the docs |
-| [`./content/docs/prologue`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/prologue)         | The "Prologue"section of the docs      |
-| [`./content/docs/tutorial`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/tutorial)         | The "Tutorial" section of the docs     |
-| [`./content/docs/help`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/help)                 | The "Help" section of the docs         |
+| Variable                                                                                                                              | Description                               |
+| -------------------------------------------------------------------------------------------------------------------------------       | --------------------------------------    |
+| [`./content/docs/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs)                                | The base directory for the docs           |
+| [`./content/docs/prologue`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/prologue)               | The "Prologue"section of the docs         |
+| [`./content/docs/tutorial`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/tutorial)               | The "Tutorial" section of the docs        |
+| [`./content/docs/code_of_conduct`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/code_of_conduct) | The "Code of Conduct" section of the docs |
+| [`./content/docs/contributing`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/contributing)       | The "Contributing" section of the docs    |
+| [`./content/docs/help`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/help)                       | The "Help" section of the docs            |
 
-{{< alert icon="⚠" text="Remember to add every image you used to the images in the document header as described in the <a href=\"#images\">Images section</a>." />}}
+{{< alert icon="⚠" >}}
+Remember to add every image you used to the images in the document header as 
+described in the <a href="{{< ref "shortcodes" >}}#images">Images section</a>.
+{{< /alert >}}
 
 ## The Contributors
 
@@ -39,9 +43,12 @@ toc: true
 | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | [`./content/contributors/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/contributors) | The base directory of the contributors |
 
-A Contributor page is the personal pages every contributor has, when they 
-want to write a blog entry. The contributor page is needed in the 
-config section of the blog entry to show the reader more about the person 
+A Contributor page is the personal page every contributor has.
+The table of contributors is generated from that page.
+Make sure to create your page, when you contribute to the website.
+
+In addition, the contributor page is needed in the 
+header of the blog entry to show the reader more about the person 
 who wrote the blog entry.
 
 {{< img src="blog_card.jpeg" alt="blog card example" caption="<center><em>Example: Blog Card from the \"Home\" page</em></center>" class="border-0"  >}}
@@ -54,7 +61,8 @@ In this case it was:
 If you click on one of the contributors, marked with a red underline, you will
 see the contributor page of this user. For example 
 [Michael's](https://matrix-python.github.io/contributors/michael-sasser/)
-contributor page is located in [`./content/contributors/michael-sasser/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/contributors/michael-sasser/).
+contributor page is located in 
+[`./content/contributors/michael-sasser/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/contributors/michael-sasser/).
 It contains an file `_index.md` and a file `michael_sasser_ava.svg`:
 
 - `_index.md` is the file, which contains all text and references the image
@@ -69,7 +77,10 @@ running this command:
 
 `$ npm run create contributors/my-username/_index.md`
 
-{{< alert icon="⚠" text="Remember to add every image you used to the images in the document header as described in the <a href=\"#images\">Images section</a>." />}}
+{{< alert icon="⚠" >}}
+Remember to add every image you used to the images in the document header as 
+described in the <a href="{{< ref "shortcodes" >}}#images">Images section</a>.
+{{< /alert >}}
 
 ## The Blog
 
@@ -78,7 +89,10 @@ running this command:
 | [`./content/blog/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/blog) | The base directory of the blog |
 
 
-{{< alert icon="⚠" text="Remember to add every image you used to the images in the document header as described in the <a href=\"#images\">Images section</a>." />}}
+{{< alert icon="⚠" >}}
+Remember to add every image you used to the images in the document header as 
+described in the <a href="{{< ref "shortcodes" >}}#images">Images section</a>.
+{{< /alert >}}
 
 
 ## The About Page
@@ -90,7 +104,10 @@ running this command:
 The about page is special because it is a single site. It only contains
 a `index.md` which fully represents the about page.
 
-{{< alert icon="⚠" text="Remember to add every image you used to the images in the document header as described in the <a href=\"#images\">Images section</a>." />}}
+{{< alert icon="⚠" >}}
+Remember to add every image you used to the images in the document header as 
+described in the <a href="{{< ref "shortcodes" >}}#images">Images section</a>.
+{{< /alert >}}
 
 ## The Privacy-Policy
 

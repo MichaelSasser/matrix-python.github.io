@@ -1,7 +1,7 @@
 ---
 title: "Shortcodes"
-description: "How to work with images, links ..."
-lead: "How to work with images, links ..."
+description: "Shortcodes are functions, which can be used repeatably"
+lead: "Shortcodes are functions, which can be used repeatably"
 date: 2021-10-10T00:00:00+00:00
 lastmod: 2021-10-10T00:00:00+00:00
 draft: false
@@ -59,6 +59,7 @@ Our convention is to use a `svg` image whenever possible.
 If this is not possible you use a `png` image, if your image contains
 an alpha channel. If not use an `jpeg` image or an `gif`, if your image
 only references a low number of colors.
+Other formats are only accepted if they are used for a special purpose.
 
 
 ## Links and Cross References
@@ -77,15 +78,15 @@ document using a relative or absolute path.
 You can use the shortcode in Markdown:
 
 ```markdown
-[Contribute to this website]({{</* ref "contributing" */>}})
-[Image Conventions]({{</* ref "contributing" */>}}#image-conventions)
+[shortcodes]({{</* ref "shortcodes" */>}})
+[Image Conventions]({{</* ref "shortcodes" */>}}#image-conventions)
 ```
 
 or HTML:
 
 ```text
-<a href="{{</* ref "contributing" */>}}"Contribute to This Website</a>
-<a href="{{</* ref "contributing" */>}}#image-conventions">Image Conventions</a>
+<a href="{{</* ref "shortcodes" */>}}"Shortcodes</a>
+<a href="{{</* ref "shortcodes" */>}}#image-conventions">Image Conventions</a>
 ```
 
 HTML links are normally only used in in HTML documents or nested shortcodes, 
@@ -93,14 +94,14 @@ like the following `alert` code, where you can't use Markdown.
 
 ```text
 {{</* alert icon="⚠" */>}}
-A link inside an alert: <a href="{{</* ref "contributing" */>}}">Contribute to This Website</a>.
+A link inside an alert: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
 {{</* /alert */>}}
 ```
 
 Which will looks in the rendered form like the following `alert`.
 
 {{< alert icon="⚠" >}}
-A link inside an alert: <a href="{{< ref "contributing" >}}">Contribute to This Website</a>.
+A link inside an alert: <a href="{{< ref "workflow" >}}">Workflow</a>.
 {{< /alert >}}
 
 For more information check 

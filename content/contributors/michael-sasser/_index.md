@@ -9,7 +9,7 @@ matrix_identifier: "@michael:michaelsasser.org"
 matrix_username: "Michael Sasser"
 matrix_moderator: true
 website_contributor: true
-github_username: MichaelSasser
+github_username: "MichaelSasser"
 ---
 
 <img src="michael_sasser_ava.svg" alt="Michael Sasser Avatar" width="256"/>
