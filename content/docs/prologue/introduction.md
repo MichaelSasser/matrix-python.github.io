@@ -75,4 +75,6 @@ Help upgrading Element? [How to update Element →]({{< ref "how-to-update" >}})
 
 You have problems joining the community? [Troubleshooting →]({{< ref "troubleshooting" >}})
 
+Have you experience or witness unacceptable behaviour? [FAQ →]({{< ref "faq" >}}#q-how-can-i-report-issues)
+
 There are questions left? [FAQ →]({{< ref "faq" >}})
