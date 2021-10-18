@@ -1,0 +1,41 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>GitHub</th>
+      <th>Matrix</th>
+      <th>Matrix Identifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range where (where (where (where (where .Site.Pages "Section"
+    "contributors") "Params.matrix_username" "!=" nil)
+    "Params.matrix_identifier" "!=" nil) "Params.website_contributor" "==" true)
+    "Params.github_username" "!=" nil -}}
+
+    <tr>
+      <td>
+        <a href="{{ .RelPermalink }}">{{ .Params.title }}</a>
+      </td>
+      <td>
+        <a href="https://github.com/{{ .Params.github_username }}">
+          {{ .Params.github_username }}
+        </a>
+      </td>
+      <td>
+        <a href="https://app.element.io/#/user/{{ .Params.matrix_identitier }}">
+          {{ .Params.matrix_username }}
+        </a>
+      </td>
+      <td>
+        <a
+          class="text-body"
+          href="https://app.element.io/#/user/{{ .Params.matrix_identitier }}"
+        >
+          {{ .Params.matrix_identifier }}
+        </a>
+      </td>
+    </tr>
+    {{ end -}}
+  </tbody>
+</table>

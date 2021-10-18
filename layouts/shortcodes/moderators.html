@@ -1,0 +1,35 @@
+<!-- This code needs to be changed in reporting_issues as well -->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Matrix</th>
+      <th>Matrix Identifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range where (where (where (where .Site.Pages "Section" "contributors")
+    "Params.matrix_username" "!=" nil) "Params.matrix_identifier" "!=" nil)
+    "Params.matrix_moderator" "==" true -}}
+
+    <tr>
+      <td>
+        <a href="{{ .RelPermalink }}">{{ .Params.title }}</a>
+      </td>
+      <td>
+        <a href="https://app.element.io/#/user/{{ .Params.matrix_identitier }}">
+          {{ .Params.matrix_username }}
+        </a>
+      </td>
+      <td>
+        <a
+          class="text-body"
+          href="https://app.element.io/#/user/{{ .Params.matrix_identitier }}"
+        >
+          {{ .Params.matrix_identifier }}
+        </a>
+      </td>
+    </tr>
+    {{ end -}}
+  </tbody>
+</table>
