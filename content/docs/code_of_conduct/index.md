@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "code_of_conduct"
-weight: 200
+weight: 300
 toc: true
 ---
 

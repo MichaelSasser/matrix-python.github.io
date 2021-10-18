@@ -9,7 +9,7 @@ images: ["blog_card.jpeg"]
 menu:
   docs:
     parent: "contributing"
-weight: 210
+weight: 400
 toc: true
 ---
 
