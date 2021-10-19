@@ -1,11 +1,11 @@
 {{ $page := (index .Params 0) }} {{ $fields := after 1 .Params }} {{ $dt :=
 false }} {{ $image := false }} {{ $contrib := false }}
 
-<h3>The {{ $page }} Markdown Header</h3>
+<h3>The {{ $page }} Front Matter</h3>
 
-Every Markdown file contains a header section in the <i>YAML</i> format to
-configure parts of the page or website A {{ lower $page }} entry needs the
-following following variables in the <code>Markdown</code> header.
+Every Markdown file contains a header section, called front matter, in the
+<i>YAML</i> format to configure parts of the page or website. A {{ lower $page
+}} page needs the following variables in the front matter.
 
 <table class="table">
   <thead>
@@ -92,7 +92,7 @@ following following variables in the <code>Markdown</code> header.
   </tbody>
 </table>
 
-You will find a more complete list and how to use them inside the site in the
+You will find a complete list and how to use them inside the site in the
 <a href="https://gohugo.io/variables/">Hugo docs →</a>
 
 <!-- Image Alert -->
@@ -101,7 +101,7 @@ You will find a more complete list and how to use them inside the site in the
   <div class="flex-shrink-1 alert-icon">⚠</div>
   <div class="w-100">
     Remember to add every image you used to the <i>images</i> variable in the
-    document header as described in the
+    front matter as described in the
     <a href="/docs/contributing/shortcodes#images">image section</a>.
   </div>
 </div>
@@ -113,7 +113,7 @@ You will find a more complete list and how to use them inside the site in the
   <div class="flex-shrink-1 alert-icon">⚠</div>
   <div class="w-100">
     Remember to create your contributors site add your name in the
-    <i>contributory</i> variable in the document header as described in the
+    <i>contributory</i> variable in the front matter as described in the
     <a href="/docs/contributing/project_structure/#the-contributors">
       contributors section</a
     >.
@@ -129,7 +129,7 @@ You will find a more complete list and how to use them inside the site in the
   <li>Example with timezone offset: <code>2021-07-08T12:34:56+01:02</code></li>
   <li>Example without timezone offset: <code>2021-07-08T12:34:56</code></li>
 </ul>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Value</th>
@@ -197,9 +197,10 @@ You will find a more complete list and how to use them inside the site in the
 
 <h5>Header Example</h5>
 
-Remember, the Header is a <code>YAML</code> structure embedded into the Markdown
-file. The <code>---</code> delimiters signal Hugo thet this is a header in the
-<code>YAML</code> format. Here is an example, how a header might look like:
+Remember, the front matter is a <code>YAML</code> structure embedded into the
+Markdown file. The <code>---</code> delimiters signal Hugo that this is a front
+matter in the <code>YAML</code> format. Here is a generated example, how the
+front matter might look like:
 
 <pre><button class="btn btn-copy"></button><code class="language-text">
 ---{{ range $fields }}

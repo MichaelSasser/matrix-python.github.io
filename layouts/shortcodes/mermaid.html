@@ -1,0 +1,23 @@
+{{ if .Page.Params.mermaid -}}
+<figure{{ with .Get "figure_class" }} class="{{.}}"{{ end }}>
+<div class="text-center">
+  <div class="logo-dark d-none">
+    <div class="mermaid{{ with .Get "class" }} {{ . }}{{ end }}">
+      %%{init: { 'theme': 'dark' } }%%
+      {{ $data := replaceRE "(^\\s+```)" "" .Inner -}}
+      {{ replaceRE "(```\\s+$)" "" $data -}}
+    </div>
+  </div>
+  <div class="logo-light">
+    <div class="mermaid{{ with .Get "class" }} {{ . }}{{ end }}">
+      %%{init: { 'theme': 'default' } }%%
+      {{ $data := replaceRE "(^\\s+```)" "" .Inner -}}
+      {{ replaceRE "(```\\s+$)" "" $data -}}
+    </div>
+  </div>
+</div>
+{{ with .Get "caption" }}<figcaption class="figure-caption"><center><em>{{ . | safeHTML }}</em></center></figcaption>{{ end }}
+</figure>
+{{ else -}}
+  {{ errorf "Failed to process mermaid shortcode: %s. Set mermaid to true in page front matter." .Position }}
+{{ end -}}
