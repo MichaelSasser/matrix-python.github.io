@@ -7,14 +7,14 @@ titleAddition = "A Modern Python Chat"
 description = "We are the Python community on matrix, a free and open network for secure, decentralized communication."
 
 ## Open Graph
-images = ["doks.png"]
+images = []
 ogLocale = "en_US"
-domainTLD = "doks.netlify.app"
+domainTLD = "matrix-python.github.io/"
 titleHome = "Matrix+Python"
 
 ## Twitter Cards
-twitterSite = "@getdoks"
-twitterCreator = "@henkverlinde"
+twitterSite = ""
+twitterCreator = ""
 
 ## JSON-LD
 # schemaType = "Person"
@@ -25,10 +25,10 @@ schemaAuthorTwitter = ""
 schemaAuthorLinkedIn = ""
 schemaAuthorGitHub = "https://github.com/matrix-python/"
 schemaLocale = "en-US"
-schemaLogo = "logo-doks.png"
+schemaLogo = ""
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "doks.png"
+schemaImage = ""
 schemaImageWidth = 1280
 schemaImageHeight = 640
 schemaTwitter = ""
@@ -50,7 +50,7 @@ portraitPhotoWidths = [800, 700, 600, 500]
 lqipWidth = "20x"
 
 # Footer
-footer = "Copyright &copy; 2021 Michael Sasser. All Rights Reserved.<br/> Built with <a href=\"https://gohugo.io/\">Hugo</a>, and <a href=\"https://getdoks.org/\">Doks</a>"
+footer = "Copyright &copy; 2021 Michael Sasser. All Rights Reserved.<br /> Built with <a href=\"https://gohugo.io/\">Hugo</a>, and <a href=\"https://getdoks.org/\">Doks</a>"
 
 # Feed
 copyRight = "Copyright (c) 2021 Michael Sasser"
@@ -59,7 +59,7 @@ copyRight = "Copyright (c) 2021 Michael Sasser"
 alert = false
 alertDismissable = true
 # alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\" target=\"_blank\" rel=\"noopener\">Check out Doks v0.2</a>"
-alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
+alertText = ""
 
 # Edit Page
 docsRepo = "https://github.com/matrix-python/matrix-python.github.io"
@@ -77,6 +77,6 @@ repoHost = "GitHub"
   breadCrumb = true
   highLight = true
   kaTex = true
-  collapsibleSidebar = true
+  collapsibleSidebar = false
   multilingualMode = false # Not yet functional
   docsVersioning = false # Not yet functional
