@@ -13,6 +13,12 @@ weight: 110
 toc: false
 ---
 
+{{< info >}}
+You are new to Matrix or Element or you want to know more about the
+features? Follow our Step-by-step tutorial and join our community.
+<a href="{{< ref "docs/tutorial/about_this_tutorial" >}}">Tutorial →</a>
+{{< /info >}}
+
 If you join our (optional) community Space 
 <a href="https://matrix.to/#/#python-community:matrix.org" target="_blank">`#python-community:matrix.org`</a>,
 you will find the following rooms:
