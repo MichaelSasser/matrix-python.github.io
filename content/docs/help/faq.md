@@ -16,8 +16,8 @@ toc: true
 ## Q: How can I report issues?
 
 {{< info >}}
-If the issue is website related, please follow our guide on how to 
-[report an issue]({{< ref "report_issues" >}}) 
+If the issue is website related, please follow our guide on how to
+[report an issue]({{< ref "report_issues" >}})
 on GitHub.
 {{< /info >}}
 
@@ -34,7 +34,7 @@ No, this is an optional feature.
 ## Q: Why are the rooms not bridged to libera.chat (IRC)?
 
 We get asked quite a lot about bridging to libera. The bridge is not and was
-never stable. There are a bunch of  stability and moderation problems. One of
+never stable. There are a bunch of stability and moderation problems. One of
 our biggest critic points of the #python (IRC) is the need to be a to write
 something. It is not that big of a problem, when you used an IRC before, and
 you know how it works. When you don't, you need to look it up. Then you need
@@ -62,11 +62,12 @@ in our community. Our moderators are:
 ## Q: How do I become a moderator?
 
 In our community it's like the American rock band
-[Sugarloaf](https://en.wikipedia.org/wiki/Sugarloaf_(band)) sung:
-> *Don't call us, We'll call you.*
+[Sugarloaf](<https://en.wikipedia.org/wiki/Sugarloaf_(band)>) sung:
 
-We don't have a form to apply. We keep our eyes and ears open for users, who 
-are active in the community, willing to help other users, with **useful** 
+> _Don't call us, We'll call you._
+
+We don't have a form to apply. We keep our eyes and ears open for users, who
+are active in the community, willing to help other users, with **useful**
 information and know how to be compliant with our
 [Code of Conduct]({{< ref "code_of_conduct" >}}).
 
@@ -76,10 +77,9 @@ If we are interested in you to becoming a moderator, we will contact you.
 
 Follow our guide on how to [contribute]({{< ref "contributing" >}}).
 
-
 ## Q: Who has contributed to the website?
 
-You will find our contributors in the tables below or in the 
+You will find our contributors in the tables below or in the
 [about]({{< ref "about" >}}) page.
 
 {{< contributors >}}

@@ -22,6 +22,7 @@ Germany
 
 E-Mail: Michael@MichaelSasser.org
 ```
+
 ## Responsible for content according to § 55 Abs. 2 RStV:
 
 ```

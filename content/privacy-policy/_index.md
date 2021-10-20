@@ -1,5 +1,5 @@
 ---
-title : "privacy-policy"
+title: "privacy-policy"
 description: "privacy-policy"
 lead: ""
 date: 2021-02-15T13:48:23+00:00

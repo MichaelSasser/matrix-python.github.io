@@ -20,7 +20,7 @@ and expect our code of conduct to be honoured. Anyone who violates this code
 of conduct may be banned from the community.
 
 This applies to communication in any room of the Python community Matrix Space
-{{< matrix identifier="#python-community:matrix.org" >}} and commits and comments relating to any 
+{{< matrix identifier="#python-community:matrix.org" >}} and commits and comments relating to any
 project in the `matrix-python` GitHub space.
 
 Our open source community strives to:
@@ -103,20 +103,20 @@ We will not act on complaints regarding:
 
 We do not want:
 
-- Off-Topic conversations in any matrix room other than the "Offtopic" room 
+- Off-Topic conversations in any matrix room other than the "Offtopic" room
   {{< matrix identifier="#python-off-topic:matrix.org" >}}
-- Advertising of any kind, except for the presentation of own Python projects. 
-  However, the presentation offer is only for those, who have already 
-  contributed to the community. In addition, each project may be presented 
-  only once, and only in the "Offtopic" room 
-  {{< matrix identifier="#python-off-topic:matrix.org" >}}. 
-  The moderation team reserves the right to reject or delete project 
-  presentations without giving any reason. 
+- Advertising of any kind, except for the presentation of own Python projects.
+  However, the presentation offer is only for those, who have already
+  contributed to the community. In addition, each project may be presented
+  only once, and only in the "Offtopic" room
+  {{< matrix identifier="#python-off-topic:matrix.org" >}}.
+  The moderation team reserves the right to reject or delete project
+  presentations without giving any reason.
 - Job search or job offers
 - Illegal content
 - Sexual content
 - Copyright infringement
-- Paid or unpaid jobs. We are not a freelance service marketplace 
+- Paid or unpaid jobs. We are not a freelance service marketplace
 - Money transactions
 - Conversations in other languages than English. We have agreed on English as
   common language
@@ -139,8 +139,8 @@ socioeconomic status, and technical ability. We will not tolerate
 discrimination based on any of the protected characteristics above, including
 participants with disabilities.
 
-The Python Community {{< matrix identifier="#python-community:matrix.org" >}} 
-takes a position on acceptable behaviour for its community as defined by the 
+The Python Community {{< matrix identifier="#python-community:matrix.org" >}}
+takes a position on acceptable behaviour for its community as defined by the
 Code of Conduct, and we will not endorse behaviour which is counter to that.
 
 ## Reporting Issues

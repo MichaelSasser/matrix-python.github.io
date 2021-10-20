@@ -10,9 +10,8 @@ images: []
 contributors: ["Michael Sasser"]
 ---
 
-As hobbyists and developers, we know how useful documentations are. 
-When I joined the Matrix network, I felt a bit lost. 
+As hobbyists and developers, we know how useful documentations are.
+When I joined the Matrix network, I felt a bit lost.
 With this little website, we try to help newcomers to get started.
 
 -- Michael
-

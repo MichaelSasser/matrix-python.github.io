@@ -11,7 +11,6 @@ weight: 10
 toc: true
 ---
 
-
 Effective date: January 4, 2021
 
 ## Accountable person
@@ -158,13 +157,13 @@ Used services and service providers:
   https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement;
   Contact information:
 
-    | United States HQ               | EU Office           |
-    |--------------------------------|---------------------|
-    | GitHub Data Protection Officer | GitHub BV           |
-    | 88 Colin P. Kelly Jr. St.      | Vijzelstraat 68-72  |
-    | San Francisco, CA 94107        | 1017 HL Amsterdam   |
-    | United States                  | The Netherlands     |
-    | privacy@github.com             | privacy@github.com  |
+  | United States HQ               | EU Office          |
+  | ------------------------------ | ------------------ |
+  | GitHub Data Protection Officer | GitHub BV          |
+  | 88 Colin P. Kelly Jr. St.      | Vijzelstraat 68-72 |
+  | San Francisco, CA 94107        | 1017 HL Amsterdam  |
+  | United States                  | The Netherlands    |
+  | privacy@github.com             | privacy@github.com |
 
 ### Contact
 
@@ -181,6 +180,7 @@ Processed data types: inventory data (e.g. names, addresses), contact data
 (e.g. e-mail, telephone numbers), content data (e.g. entries in online forms),
 usage data (e.g. websites visited, interest in content, access times), meta /
 communication data (e.g. device Information, IP addresses).
+
 - Affected persons: communication partner.
 - Purposes of processing: contact requests and communication.
 - Legal basis: Contract fulfillment and pre-contractual inquiries (Art. 6 Para.
