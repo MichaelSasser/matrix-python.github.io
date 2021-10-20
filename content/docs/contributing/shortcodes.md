@@ -133,11 +133,11 @@ A link inside a warning: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
 {{</* /warning */>}}
 ```
 
-Which will looks in the rendered form like the following `alert`.
-
+{{< rendered >}}
 {{< warning >}}
 A link inside a warning: <a href="{{< ref "workflow" >}}">Workflow</a>.
 {{< /warning >}}
+{{< /rendered >}}
 
 For more information, check 
 [Hugo -- Links and Cross References →](https://gohugo.io/content-management/cross-references/)
@@ -177,7 +177,9 @@ A "simple" warning.
 
 Both of them render the same alert:
 
+{{< rendered >}}
 {{< warning text="A \"simple\" warning." />}}
+{{< /rendered >}}
 
 Besides the warning alert there are `danger` and `info`. They work exactly
 like `warning` but render in different colors and different default headlines.
@@ -338,8 +340,6 @@ It does not take any parameters.
 ```text
 {{</* reporting_issues */>}}
 ```
-
-**Rendered:**
 
 {{< rendered >}}
   {{< reporting_issues >}}

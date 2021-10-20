@@ -1,0 +1,7 @@
+[data-dark-mode] body .rendered {
+  background-color: darken($body-color-dark, 60%);
+}
+
+.rendered {
+  background-color: $body-color-dark;
+}
