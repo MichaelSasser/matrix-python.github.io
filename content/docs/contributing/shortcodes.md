@@ -125,34 +125,35 @@ or HTML:
 ```
 
 HTML links are normally only used in HTML documents or nested shortcodes, 
-like the following `alert`, where you can't use Markdown.
+like the following `warning`, where you can't use Markdown.
 
 ```text
-{{</* alert icon="⚠" */>}}
-A link inside an alert: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
-{{</* /alert */>}}
+{{</* warning */>}}
+A link inside a warning: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
+{{</* /warning */>}}
 ```
 
 Which will looks in the rendered form like the following `alert`.
 
-{{< alert icon="⚠" >}}
-A link inside an alert: <a href="{{< ref "workflow" >}}">Workflow</a>.
-{{< /alert >}}
+{{< warning >}}
+A link inside a warning: <a href="{{< ref "workflow" >}}">Workflow</a>.
+{{< /warning >}}
 
 For more information, check 
 [Hugo -- Links and Cross References →](https://gohugo.io/content-management/cross-references/)
 
 ## Alerts
 
-Defined in the 
-[Template](https://github.com/h-enk/doks/blob/master/layouts/shortcodes/alert.html).
+`warning` is defined in `layouts/shortcodes/warning.html`.
+`danger` is defined in `layouts/shortcodes/danger.html`.
+`info` is defined in `layouts/shortcodes/info.html`.
 
-Let's start with the alert from the previous section.
+Let's start with the warning alert from the previous section.
 
 ```text
-{{</* alert icon="⚠" */>}}
-A link inside an alert: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
-{{</* /alert */>}}
+{{</* warning */>}}
+A link inside a warning: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
+{{</* /warning */>}}
 ```
 
 This kind of shortcode is called a nested shortcode. You can tell that it is 
@@ -165,28 +166,31 @@ point.
 In the following, we use a simpler example.
 
 ```text
-{{</* alert icon="⚠" text="A \"simple\" alert." /*/>}}
+{{</* wrning text="A \"simple\" warning." /*/>}}
 ```
 
 ```text
-{{</* alert icon="⚠" */>}}
-A "simple" alert.
-{{</* /alert */>}}
+{{</* warning */>}}
+A "simple" warning.
+{{</* /warning */>}}
 ```
 
 Both of them render the same alert:
 
-{{< alert icon="⚠" text="A \"simple\" alert." />}}
+{{< warning text="A \"simple\" warning." />}}
+
+Besides the warning alert there are `danger` and `info`. They work exactly
+like `warning` but render in different colors and different default headlines.
 
 ### Parameters
 
 The alert shortcode has the following parameters
 
-| Parameter | Description                                               |
-| --------- | --------------------------------------------------------- |
-| `icon`    | The icon used as a single character or string             |
-| `text`    | The alert text                                            |
-| `.inner`  | The same as `text` (used, when nested, instead of `text`) |
+| Parameter  | Description                                               |
+| ---------  | --------------------------------------------------------- |
+| `headline` | Change the headline                                       |
+| `text`     | The alert text                                            |
+| `.inner`   | The same as `text` (used, when nested, instead of `text`) |
 
 ### Nested vs "Normal"
 
@@ -210,6 +214,18 @@ graph LR
 There are two special alerts, which are used in the contributing section of 
 the documentation.
 Both of them take no parameters and cannot be nested.
+
+#### Todo Alert
+
+Defined in `layouts/shortcodes/todo.html`.
+
+```text
+{{</* todo */>}}
+```
+
+{{< rendered >}}
+  {{< todo >}}
+{{< /rendered >}}
 
 #### Read the Code of Conduct Alert
 

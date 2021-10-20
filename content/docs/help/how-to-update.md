@@ -24,4 +24,6 @@ update Element on your own.
 If you are using the App on your smartdevice, you have to update manually.
 To do that, use the App-Store, you installed Element with.
 
-{{< alert icon="💡" text="Learn more about <a href=\"https://element.io/get-started\">Element</a>." />}}
+{{< info headline="💡 Learn More" >}}
+Learn more about <a href="https://element.io/get-started">Element</a>.
+{{< /info >}}

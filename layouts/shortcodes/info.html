@@ -1,0 +1,10 @@
+<div class="bd-callout bd-callout-info alert-warning" role="alert">
+  <h5>💡 {{ with .Get "headline" }}{{.}}{{else}}Information{{ end }}</h5>
+  <br /><br />
+  {{ with .Get "text"}}
+  <div>{{ . | safeHTML }}</div>
+  {{ else }} {{ with .Inner}}
+  <div>{{ . | markdownify}}</div>
+  {{ else }} {{ errorf "No valid text variable or Inner content given"}} {{ end
+  }} {{ end}}
+</div>

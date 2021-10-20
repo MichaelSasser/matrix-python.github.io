@@ -139,7 +139,10 @@ In this case `about:` does not get any value.
 | [`./content/privacy-policy/gdpr`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/privacy-policy/gdpr)       | Contains the GDPR                          |
 | [`./content/privacy-policy/imprint`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/privacy-policy/imprint) | Contains the imprint                       |
 
-{{< alert icon="⚠" text="Do not use any images in the privacy-policy or imprint." />}}
+{{< info >}}
+Do not use any images in the privacy-policy or imprint.
+{{< /info >}}
+
 
 This directory contains out privacy-policy (GDPR; the 
 [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) 

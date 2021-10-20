@@ -20,7 +20,11 @@ You will find the code of this website on GitHub:
 
 {{< alert icon="GitHub" text="<a href=\"https://github.com/matrix-python/matrix-python.github.io\">https://github.com/matrix-python/matrix-python.github.io</a>" />}}
 
-{{< alert icon="⚠" text="Before you start, make sure you hand in an <a href=\"https://github.com/MichaelSasser/matrixctl/issues/new/choose\">issue</a>. Describe, what you like to change/add and why." />}}
+{{< warning >}}
+Before you start, make sure you hand in an 
+<a href="https://github.com/MichaelSasser/matrixctl/issues/new/choose">issue</a>.
+Describe, what you like to change/add and why.
+{{< /warning >}}
 
 1.  Make sure you have Node.js and NPM installed.
 2.  Create a fork of this repository.

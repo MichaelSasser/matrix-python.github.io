@@ -14,11 +14,12 @@ toc: true
 ---
 
 ## Q: How can I report issues?
-{{< alert icon="⚠" >}}
+
+{{< info >}}
 If the issue is website related, please follow our guide on how to 
 [report an issue]({{< ref "report_issues" >}}) 
 on GitHub.
-{{< /alert >}}
+{{< /info >}}
 
 {{< reporting_issues >}}
 
