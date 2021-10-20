@@ -147,5 +147,3 @@ This directory contains out privacy-policy (GDPR; the
 ([(EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj))
 is a regulation in European law on data protection and privacy in the EU.)
 and our imprint.
-
-<!--vim: set ft=pandoc :-->
