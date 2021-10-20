@@ -1,7 +1,17 @@
 <!--
 **IMPORTANT: Please do not create a Pull Request without creating an issue first.**
+**WARNING**
 
-Thank you for your pull request!
+Every text or image you use must have been created or written by yourself!
+
+By creating a Pull Request, you agree that the image or text may be used 
+without any restriction for community projects under the direction of the 
+moderation team at any time.
+
+Non-compliance may have legal consequences and can lead to immediate 
+exclusion from the community.
+
+**Thank you for your pull request!**
 -->
 
 fixes #
@@ -17,6 +27,8 @@ fixes #
 - [ ] Have you created an issue first?
 - [ ] Have you checked to ensure there aren't other open Pull Requests
       for the same update/change?
+- [ ] I have written and created text and images entirely by myself. I have 
+      not used any third-party content.
 
 I have read and accept the:
 

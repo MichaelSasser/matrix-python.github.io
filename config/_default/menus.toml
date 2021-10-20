@@ -36,8 +36,14 @@
   url = "/docs/tutorial/"
 
 [[docs]]
-  name = "Contibuting"
+  name = "Code of Conduct"
   weight = 30
+  identifier = "code_of_conduct"
+  url = "/docs/code_of_conduct/"
+
+[[docs]]
+  name = "Contibuting"
+  weight = 40
   identifier = "contributing"
   url = "/docs/contributing/"
 

@@ -1,0 +1,209 @@
+{{ $page := (index .Params 0) }} {{ $fields := after 1 .Params }} {{ $dt :=
+false }} {{ $image := false }} {{ $contrib := false }}
+
+<h3>The {{ $page }} Front Matter</h3>
+
+Every Markdown file contains a header section, called front matter, in the
+<i>YAML</i> format to configure parts of the page or website. A {{ lower $page
+}} page needs the following variables in the front matter.
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $fields }}
+    <tr>
+      <td><code>{{ . }}</code></td>
+      <td>
+        <!-- list of (add the list off variable to the of part too) -->
+        {{ if eq . "images" "contributors" }} <code>list</code> of {{ end }}
+        <!-- str -->
+        {{ if eq . "title" "description" "lead" "matrix_identifier"
+        "matrix_username" "github_username" "images" "contributors" }}
+        <code>str</code> {{ end }}
+        <!-- int -->
+        {{ if eq . "weight" }} <code>int</code> {{ end }}
+        <!-- datetime -->
+        {{ if eq . "date" "lastmod" }} {{ $dt = true }}
+        <code>datetime</code> {{ end }}
+        <!-- bool -->
+        {{ if eq . "draft" "matrix_moderator" "website_contributor" "toc" }}
+        <code>bool</code> {{ end }}
+        <!-- structure -->
+        {{ if eq . "menu" }}
+        <code>structure</code> {{ end }}
+      </td>
+      <td>
+        <!-- title -->
+        {{ if eq . "title"}} The title of the page {{ end }}
+        <!-- description -->
+        {{ if eq . "description"}} The page description, normally for SEO{{ end
+        }}
+        <!-- lead -->
+        {{ if eq . "lead"}} The page description shown after the title or in
+        cards {{ end }}
+        <!-- date -->
+        {{ if eq . "date"}} The datetime the page was created {{ end }}
+        <!-- contributors -->
+        {{ if eq . "contributors"}}{{ $contrib = true }} A list of contributors
+        {{ end }}
+        <!-- lastmod -->
+        {{ if eq . "lastmod"}} The datetime the page was modified {{ end }}
+        <!-- draft -->
+        {{ if eq . "draft"}} <code>flase</code> shows the page,
+        <code>true</code> hides the page, as it does not exist{{ end }}
+        <!-- weigth -->
+        {{ if eq . "weight"}} The weight, or priority of the page for page
+        sorting{{ end }}
+        <!-- images -->
+        {{ if eq . "images"}}{{ $image = true}} Images, which will be converted
+        and moved to the static directory. Remember to add every image you used
+        here {{ end }}
+        <!-- matrix_identifier -->
+        {{ if eq . "matrix_identifier"}} The matrix user identifier e.g.
+        <code>"@michael:michaelsasser.org"</code>{{ end }}
+        <!-- matrix_username -->
+        {{ if eq . "matrix_username"}} The matrix nickname e.g.
+        <code>"Michael Sasser"</code>
+        {{ end }}
+        <!-- matrix_moderator -->
+        {{ if eq . "matrix_moderator"}} <code>true</code>, when the user is a
+        moderator; <code>false</code>, when not {{ end }}
+        <!-- website_contributor -->
+        {{ if eq . "website_contributor"}} <code>true</code>, when the user is a
+        website contributor; <code>false</code>, when not {{ end }}
+        <!-- github_username -->
+        {{ if eq . "github_username"}} The GitHub username of that user e.g.
+        <code>"MichaelSasser"</code> {{ end }}
+        <!-- menu -->
+        {{ if eq . "menu"}} A structure which describes the path to the parent
+        menu {{ end }}
+        <!-- toc -->
+        {{ if eq . "toc"}} <code>true</code>, when a table of content should be
+        created for that site; <code>false</code>, when not {{ end }}
+      </td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+
+You will find a complete list and how to use them inside the site in the
+<a href="https://gohugo.io/variables/">Hugo docs →</a>
+
+<!-- Image Alert -->
+{{ if eq $image true}}
+<div class="alert alert-warning d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">⚠</div>
+  <div class="w-100">
+    Remember to add every image you used to the <i>images</i> variable in the
+    front matter as described in the
+    <a href="/docs/contributing/shortcodes#images">image section</a>.
+  </div>
+</div>
+{{ end }}
+
+<!-- Image Alert -->
+{{ if eq $contrib true}}
+<div class="alert alert-warning d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">⚠</div>
+  <div class="w-100">
+    Remember to create your contributors site add your name in the
+    <i>contributory</i> variable in the front matter as described in the
+    <a href="/docs/contributing/project_structure/#the-contributors">
+      contributors section</a
+    >.
+  </div>
+</div>
+{{ end }}
+
+<!-- The datetime type -->
+{{ if eq $dt true}}
+<h5>The Datetime Type</h5>
+<p>The date and time can be used with and without timezone offset means:</p>
+<ul>
+  <li>Example with timezone offset: <code>2021-07-08T12:34:56+01:02</code></li>
+  <li>Example without timezone offset: <code>2021-07-08T12:34:56</code></li>
+</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Optional</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>2021</code></td>
+      <td>No</td>
+      <td>Year</td>
+    </tr>
+    <tr>
+      <td><code>07</code></td>
+      <td>No</td>
+      <td>Month</td>
+    </tr>
+    <tr>
+      <td><code>08</code></td>
+      <td>No</td>
+      <td>Day of the month</td>
+    </tr>
+    <tr>
+      <td>(<code>T</code>)</td>
+      <td>No</td>
+      <td>(After this delimiter follows the time)</td>
+    </tr>
+    <tr>
+      <td><code>12</code></td>
+      <td>No</td>
+      <td>Hour</td>
+    </tr>
+    <tr>
+      <td><code>34</code></td>
+      <td>No</td>
+      <td>Minute</td>
+    </tr>
+    <tr>
+      <td><code>56</code></td>
+      <td>No</td>
+      <td>Second</td>
+    </tr>
+    <tr>
+      <td><code>+</code> or <code>-</code></td>
+      <td>Yes</td>
+      <td>
+        <code>+</code> for a positive or <code>-</code> a negative timezone
+        offset
+      </td>
+    </tr>
+    <tr>
+      <td><code>01</code></td>
+      <td>Yes</td>
+      <td>Timezone offset in hours</td>
+    </tr>
+    <tr>
+      <td><code>02</code></td>
+      <td>Yes</td>
+      <td>Timezone offset in minutes</td>
+    </tr>
+  </tbody>
+</table>
+{{ end }}
+
+<h5>Header Example</h5>
+
+Remember, the front matter is a <code>YAML</code> structure embedded into the
+Markdown file. The <code>---</code> delimiters signal Hugo that this is a front
+matter in the <code>YAML</code> format. Here is a generated example, how the
+front matter might look like:
+
+<pre><button class="btn btn-copy"></button><code class="language-text">
+---{{ range $fields }}
+  {{ if eq . "images"}}{{ . }}: ["foo.svg" "bar.svg"] {{ end }}{{ if eq . "title" }}{{ . }}: "My Title" {{ end }}{{ if eq . "description" "lead" }}{{ . }}: "A description of the page content" {{ end }}{{ if eq . "weight" }}{{ . }}: 50 {{ end }}{{ if eq . "contributors" }}{{ . }}: ["UserA" "UserB" "UserC"] {{ end }}{{ if eq . "matrix_identifier" }}{{ . }}: "@user:matrix.org" {{ end }}{{ if eq . "matrix_username" "github_username" }}{{ . }}: "UserName" {{ end }}{{ if eq . "date" "lastmod" }}{{ . }}: 2021-10-08T14:48:42+01:00 {{ end }}{{ if eq . "draft" "matrix_moderator" "website_contributor" "toc" }}{{ . }}: false {{ end }}{{ if eq . "menu" }}{{ . }}: [...]  # see below {{ end }}{{ end }}
+---
+</code></pre>

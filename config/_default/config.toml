@@ -131,3 +131,6 @@ rel  = "sitemap"
   [[module.mounts]]
     source = "data"
     target = "data"
+  [[module.mounts]]  # Add mermaid
+    source = "node_modules/mermaid"
+    target = "assets/mermaid"

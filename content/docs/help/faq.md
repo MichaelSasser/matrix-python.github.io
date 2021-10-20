@@ -16,7 +16,7 @@ toc: true
 ## Q: How can I report issues?
 {{< alert icon="⚠" >}}
 If the issue is website related, please follow our guide on how to 
-[create an issue]({{< ref "contribute_to_the_website" >}}#create-an-issue) 
+[report an issue]({{< ref "report_issues" >}}) 
 on GitHub.
 {{< /alert >}}
 
@@ -73,7 +73,7 @@ If we are interested in you to becoming a moderator, we will contact you.
 
 ## Q: How can I contribute to the website?
 
-Follow our guide on how to [contribute to the website]({{< ref "contribute_to_the_website" >}}).
+Follow our guide on how to [contribute]({{< ref "contributing" >}}).
 
 
 ## Q: Who has contributed to the website?
