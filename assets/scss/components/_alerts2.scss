@@ -13,73 +13,117 @@ $dark:          $gray-800 !default;
   margin-bottom: 1.25rem;
   // border: 1px solid #ddd;
 
-  border: 0px solid;
-  border-left-width: .5rem;
-  border-radius: .25rem;
-  h2,h3,h4,h5 {
+  border: 0 solid;
+  border-left-width: 0.5rem;
+  border-radius: 0.25rem;
+
+  h2,
+  h3,
+  h4,
+  h5 {
     margin-top: 0;
-    margin-bottom: .25rem
+    margin-bottom: 0.25rem;
   }
+
   p:last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
   }
+
   code {
-    border-radius: .25rem
+    border-radius: 0.25rem;
   }
+
   br {
-    display: block; 
-    margin-bottom: .25em;
+    display: block;
+    margin-bottom: 0.25em;
     content: " ";
   }
 }
 
-.bd-callout-primary{
+.bd-callout-primary {
   border-left-color: $primary;
-  h2,h3,h4,h5 {
-    color: $primary
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $primary;
   }
 }
 
-.bd-callout-secondary{
+.bd-callout-secondary {
   border-left-color: $secondary;
-  h2,h3,h4,h5 {
-    color: $secondary
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $secondary;
   }
 }
+
 .bd-callout-success {
   border-left-color: $success;
-  h2,h3,h4,h5 {
-    color: $success
-  }
-}
-.bd-callout-info {
-  border-left-color: $info;
-  h2,h3,h4,h5 {
-    color: $info
-  }
-}
-.bd-callout-warning {
-  border-left-color: $warning;
-  h2,h3,h4,h5 {
-    color: $warning
-  }
-}
-.bd-callout-danger {
-  border-left-color:$danger;
-  h2,h3,h4,h5 {
-    color: $danger
-  }
-}
-.bd-callout-light {
-  border-left-color: $light;
-  h2,h3,h4,h5 {
-    color: $light
-  }
-}
-.bd-callout-dark {
-  border-left-color: $dark;
-  h2,h3,h4,h5 {
-    color: $dark
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $success;
   }
 }
 
+.bd-callout-info {
+  border-left-color: $info;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $info;
+  }
+}
+
+.bd-callout-warning {
+  border-left-color: $warning;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $warning;
+  }
+}
+
+.bd-callout-danger {
+  border-left-color: $danger;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $danger;
+  }
+}
+
+.bd-callout-light {
+  border-left-color: $light;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $light;
+  }
+}
+
+.bd-callout-dark {
+  border-left-color: $dark;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $dark;
+  }
+}

@@ -390,5 +390,4 @@ As you see, this shortcode can only be used as nested shortcode.
 
 
 
-<!--vim: set ft=pandoc :-->
 
