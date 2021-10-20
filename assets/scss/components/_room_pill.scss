@@ -1,0 +1,36 @@
+.pill {
+  color: $pink-500;
+}
+
+.pill-wrapper {
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6em;
+  padding-right: 0.7em;
+  padding-left: 0em;
+  background-color: $beige;
+  // font: 16px/1.6 sans-serif;
+  gap: 0px;
+}
+
+.pill-img {
+  background-color: darken($body-color-dark, 60%);
+  color: $white;
+  height: 1.3em;
+  width: 1.3em;
+  border-radius: 50%;
+}
+
+[data-dark-mode] body .pill {
+  color: $blue-300;
+}
+
+[data-dark-mode] body .pill-img {
+  color: $border-dark;
+  background-color: $body-color-dark;
+}
+
+[data-dark-mode] body .pill-wrapper {
+  background-color: $border-dark;
+}

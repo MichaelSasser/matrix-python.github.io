@@ -17,18 +17,14 @@ conversation is fun - and it builds a stronger community.
 So, as Spaces have made it out of labs, and we want to increase the community 
 feeling, we decided to give it a go - so **we are excited to announce our new Python community Space:**
 
-<a href="https://matrix.to/#/#python-community:matrix.org" target="_blank">`#python-community:matrix.org`</a> 
+{{< matrix identifier="#python-community:matrix.org" >}}
  
 In the Space you will find two new rooms:
 - **Meta** room -- for suggestions and proposals: 
-  <a href="https://matrix.to/#/#python-meta:matrix.org" target="_blank">
-  `#python-meta:matrix.org`
-  </a>
+  {{< matrix identifier="#python-meta:matrix.org" >}}
   _The rules of the Python room apply to this room as well._
 - **Offtopic** room -- for everything off-topic:
-  <a href="https://matrix.to/#/#python-off-topic:matrix.org" target="_blank">
-  `#python-off-topic:matrix.org`
-  </a>
+  {{< matrix identifier="#python-off-topic:matrix.org" >}}
   _The rules of the Python room apply to this room as well, except the 
   "no-off-topic" rule, of course 😜_
 

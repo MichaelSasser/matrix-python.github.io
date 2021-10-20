@@ -293,11 +293,6 @@ identifier (user or room) and email address.<br />
 They are used to have the option to change the representation globally for all
 of them at the same time.
 
-{{< alert icon="⚠" >}}
-Yes, the representation is quite basic and needs some work in the future.
-Maybe they will merge into a single shortcode.
-{{< /alert >}}
-
 ### Matrix
 
 Defined in `layouts/shortcodes/matrix.html`.
