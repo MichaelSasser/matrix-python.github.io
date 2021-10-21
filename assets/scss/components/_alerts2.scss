@@ -85,13 +85,13 @@ $dark:          $gray-800 !default;
 }
 
 .bd-callout-warning {
-  border-left-color: $warning;
+  border-left-color: adjust-hue($warning, -10%);
 
   h2,
   h3,
   h4,
   h5 {
-    color: $warning;
+    color: adjust-hue($warning, -10%);
   }
 }
 
@@ -125,5 +125,16 @@ $dark:          $gray-800 !default;
   h4,
   h5 {
     color: $dark;
+  }
+}
+
+[data-dark-mode] body .bd-callout-warning {
+  border-left-color: $warning;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $warning;
   }
 }
