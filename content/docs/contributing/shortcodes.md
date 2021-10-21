@@ -221,6 +221,8 @@ Both of them take no parameters and cannot be nested.
 
 Defined in `layouts/shortcodes/todo.html`.
 
+##### Example
+
 ```text
 {{</* todo */>}}
 ```
@@ -233,6 +235,8 @@ Defined in `layouts/shortcodes/todo.html`.
 
 Defined in `layouts/shortcodes/read_coc_alert.html`.
 
+##### Example
+
 ```text
 {{</* read_coc_alert */>}}
 ```
@@ -244,6 +248,8 @@ Defined in `layouts/shortcodes/read_coc_alert.html`.
 #### Contributing Alert
 
 Defined in `layouts/shortcodes/contributing_alert.html`.
+
+##### Example
 
 ```text
 {{</* contributing_alert */>}}
@@ -264,6 +270,8 @@ This is described in [Project Structure: The Contributors]({{< ref "project_stru
 
 Defined in `layouts/shortcodes/contributors.html`.
 
+#### Example
+
 ```text
 {{</* contributors */>}}
 ```
@@ -275,6 +283,8 @@ Defined in `layouts/shortcodes/contributors.html`.
 ### Moderators
 
 Defined in `layouts/shortcodes/moderators.html`.
+
+#### Example
 
 ```text
 {{</* moderators */>}}
@@ -300,9 +310,13 @@ of them at the same time.
 
 Defined in `layouts/shortcodes/matrix.html`.
 
+#### Parameters
+
 | Parameter    | Description                                  |
 | ------------ | -------------------------------------------- |
 | `identifier` | The public Matrix room/space/user identifier |
+
+#### Example
 
 ```text
 {{</* matrix identifier="@michael:michaelsasser.org" */>}}
@@ -316,9 +330,13 @@ Defined in `layouts/shortcodes/matrix.html`.
 
 Defined in `layouts/shortcodes/email.html`.
 
+#### Parameters
+
 | Parameter | Description       |
 | --------- | ----------------- |
 | `address` | The email address |
+
+#### Example
 
 ```text
 {{</* email address="Info@MichaelSasser.org" */>}}
@@ -337,6 +355,8 @@ Defined in `layouts/shortcodes/reporting_issues.html`.
 This shortcode will render the "Reporting Issues" section of the Code of
 Conduct, which is used in many places on this website.<br />
 It does not take any parameters.
+
+### Example
 
 ```text
 {{</* reporting_issues */>}}
@@ -357,10 +377,14 @@ with a heading line, some descriptions, a table of variables and there
 descriptions, in addition how to use the datetime string (if needed) and some
 generated example.
 
+### Parameters
+
 | Parameter | Description      |
 | --------- | ---------------- |
 | `1`       | The section name |
 | `2..n`    | The variables    |
+
+### Example
 
 ```text
 {{</* variable_structure "Foo" "title" "description" */>}}
@@ -375,6 +399,8 @@ generated example.
 `rendered` produces a box around a rendered object with the word _Rendered_
 on top. It is used only on this site to show rendered shortcodes in a box.
 
+### Example
+
 ```text
 {{</* rendered */>}}
 Hello
@@ -387,4 +413,63 @@ As you see, this shortcode can only be used as nested shortcode.
 {{< rendered >}}
 Hello
 {{< /rendered >}}
+{{< /rendered >}}
+
+## Figure
+
+Defined in `layouts/shortcodes/figure.html`.
+
+`figure` is a nested shortcode which produces a figure.
+
+### Parameters
+
+| Parameter      | Description                          |
+| -------------- | ------------------------------------ |
+| `figure_class` | Add classes to the figure            |
+| `caption`      | The caption                          |
+| `.Inner`       | Whatever will be shown in the figure |
+
+### Example
+
+```text
+{{</* figure caption="The caption line" */>}}
+Hello World
+{{</* /figure */>}}
+```
+
+{{< rendered >}}
+{{< figure caption="The caption line" >}}
+Hello World
+{{< /figure >}}
+{{< /rendered >}}
+
+## Post
+
+Defined in `layouts/shortcodes/post.html`.
+
+Render a `card` of a blog post. This shortcode cannot be nested.
+If it somehow finds multiple blog posts with the same title, it will render
+only the oldest post.
+
+### Parameters
+
+| Parameter   | Description                                                            |
+| ----------- | ---------------------------------------------------------------------- |
+| `title`     | The title of the post to be shown                                      |
+| `linked`    | Adds the link to the card to the post, if `linked` is not `false`      |
+| `container` | Renders a `class="container"` around it, if `container` is not `false` |
+
+{{< info headline="Note" >}}
+In this shortcodes the <code>false</code> value is not a boolean value.
+It is just a string. Everything else, even <code>nil</code>, will render them.
+{{< /info >}}
+
+### Example
+
+```text
+{{</* post title="Spaces Announcement 🎉" linked="false" container="false" */>}}
+```
+
+{{< rendered >}}
+{{< post title="Spaces Announcement 🎉" linked="false" container="false" >}}
 {{< /rendered >}}

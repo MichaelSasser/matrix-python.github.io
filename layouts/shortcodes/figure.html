@@ -1,0 +1,5 @@
+<figure{{ with .Get "figure_class" }} class="{{.}}"{{ end }}>
+  {{ .Inner }}
+  {{ with .Get "caption" }}<figcaption class="figure-caption">
+    <center><em>{{ . | safeHTML }}</em></center></figcaption>{{ end }}
+</figure>

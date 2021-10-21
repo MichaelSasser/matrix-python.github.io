@@ -5,7 +5,7 @@ lead: "The project structure describes the function of a document"
 date: 2021-10-10T00:00:00+00:00
 lastmod: 2021-10-10T00:00:00+00:00
 draft: false
-images: ["blog_card.jpeg"]
+images: []
 menu:
   docs:
     parent: "contributing"
@@ -70,7 +70,9 @@ In addition, the contributor page is needed in the
 header of the blog entry to show the reader more about the person
 who wrote the blog entry.
 
-{{< img src="blog_card.jpeg" alt="blog card example" caption="<center><em>Example: Blog Card from the \"Home\" page</em></center>" class="border-0"  >}}
+{{<figure caption="Blog Card from the \"Home\" page" >}}
+{{< post title="Spaces Announcement 🎉" linked="false" container="false" >}}
+{{< /figure >}}
 
 The above example shows an entry, which featured multiple contributors.
 To add the contributors to the blog entry the `contributors` variable is used.
