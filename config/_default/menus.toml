@@ -85,11 +85,6 @@
   weight = 10
 
 [[footer]]
-  name = "Internal"
-  url = "/internal/documentation/about/"
-  weight = 20
-
-[[footer]]
   name = "GDPR"
   url = "/privacy-policy/gdpr/"
   identifier = "GDPR"
