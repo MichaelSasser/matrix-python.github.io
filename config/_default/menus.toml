@@ -79,6 +79,21 @@
   post = "v0.1.0"
   weight = 20
 
+[[footer_docs]]
+  name = "Introduction"
+  url = "/docs/prologue/introduction"
+  weight = 10
+
+[[footer_docs]]
+  name = "Tutorial"
+  url = "/docs/tutorial/about_this_tutorial"
+  weight = 20
+
+[[footer_docs]]
+  name = "FAQ"
+  url = "/docs/help/faq"
+  weight = 30
+
 [[footer]]
   name = "Code of Conduct"
   url = "/docs/code_of_conduct/"

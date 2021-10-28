@@ -1,0 +1,56 @@
+<footer class="footer">
+  <div class="container-xxl">
+    <div class="row row-cols-8 py-3 my-3">
+      <div class="col-lg-6">
+        <h2>Matrix+Python</h2>
+        <p class="text-muted link-dark">{{ .Site.Params.footer | safeHTML }}</p>
+      </div>
+
+      <div class="col-lg-2"></div>
+
+      <div class="col">
+        <h5>Links</h5>
+        <ul class="nav flex-column">
+          {{- $current := . -}} {{ range .Site.Menus.main -}} {{- $active := or
+          ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .)
+          -}} {{- $active = or $active (eq .Name $current.Title) -}} {{- $active
+          = or $active (and (eq .Name "Docs") (eq $current.Section "docs")) -}}
+          {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section
+          "blog" "authors")) -}}
+          <li class="nav-item mb-2 m-0">
+            <a class="nav-link p-0 text-muted" href="{{ .URL | relLangURL }}"
+              >{{ .Name }}</a
+            >
+          </li>
+          {{ end -}}
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5>Docs</h5>
+        <ul class="nav flex-column">
+          {{ range .Site.Menus.footer_docs -}}
+          <li class="nav-item mb-2 m-0">
+            <a class="nav-link p-0 text-muted" href="{{ .URL | relURL }}"
+              >{{ .Name }}</a
+            >
+          </li>
+          {{ end -}}
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          {{ range .Site.Menus.footer -}}
+          <li class="nav-item mb-2 m-0">
+            <a class="nav-link p-0 text-muted" href="{{ .URL | relURL }}"
+              >{{ .Name }}</a
+            >
+          </li>
+          {{ end -}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
