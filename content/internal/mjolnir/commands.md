@@ -75,10 +75,10 @@ you are about to do.
 
 ## All Commands
 
-{{< info >}}
+{{< note >}}
 Some of the following commands cannot be used with this instance of Mjölnir
 because it does not use a homeserver administrator account anymore.
-{{< /info >}}
+{{< /note >}}
 
 | Command                                                              | Description                                                                                                                      |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |

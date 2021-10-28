@@ -1,5 +1,5 @@
 <div class="bd-callout bd-callout-info alert-warning" role="alert">
-  <h5>💡 {{ with .Get "headline" }}{{.}}{{else}}Information{{ end }}</h5>
+  <h5>💡 <b>Note</b>{{ with .Get "headline" }}: {{.}}{{ end }}</h5>
   <br /><br />
   {{ with .Get "text"}}
   <div>{{ . | safeHTML }}</div>

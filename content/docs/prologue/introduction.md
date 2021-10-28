@@ -64,11 +64,11 @@ You are new to Matrix or Element or you want to know more about the
 features? Follow our Step-by-step tutorial and join our community.
 [Tutorial →]({{< ref "docs/tutorial/about_this_tutorial" >}})
 
-{{< info >}}
+{{< note >}}
 This tutorial focuses on Element as client for Matrix. There are many more
 Clients available. If you want to use another client, make sure to check out
 the client's documentation.
-{{< /info >}}
+{{< /note >}}
 
 ## Help
 

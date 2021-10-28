@@ -15,11 +15,11 @@ toc: true
 
 ## Q: How can I report issues?
 
-{{< info >}}
+{{< note >}}
 If the issue is website related, please follow our guide on how to
 [report an issue]({{< ref "report_issues" >}})
 on GitHub.
-{{< /info >}}
+{{< /note >}}
 
 {{< reporting_issues >}}
 

@@ -146,7 +146,7 @@ For more information, check
 
 `warning` is defined in `layouts/shortcodes/warning.html`.
 `danger` is defined in `layouts/shortcodes/danger.html`.
-`info` is defined in `layouts/shortcodes/info.html`.
+`note` is defined in `layouts/shortcodes/note.html`.
 
 Let's start with the warning alert from the previous section.
 
@@ -181,7 +181,7 @@ Both of them render the same alert:
 {{< warning text="A \"simple\" warning." />}}
 {{< /rendered >}}
 
-Besides the warning alert there are `danger` and `info`. They work exactly
+Besides the warning alert there are `danger` and `note`. They work exactly
 like `warning` but render in different colors and different default headlines.
 
 ### Parameters
@@ -459,10 +459,10 @@ only the oldest post.
 | `linked`    | Adds the link to the card to the post, if `linked` is not `false`      |
 | `container` | Renders a `class="container"` around it, if `container` is not `false` |
 
-{{< info headline="Note" >}}
+{{< note headline="Note" >}}
 In this shortcodes the <code>false</code> value is not a boolean value.
 It is just a string. Everything else, even <code>nil</code>, will render them.
-{{< /info >}}
+{{< /note >}}
 
 ### Example
 
