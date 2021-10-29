@@ -61,7 +61,7 @@ copyRight = "Code licensed MIT, docs CC BY 3.0."
 alert = false
 alertDismissable = true
 # alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\" target=\"_blank\" rel=\"noopener\">Check out Doks v0.2</a>"
-alertText = ""
+alertText = "Coming soon &mdash; This website is under development."
 
 # Edit Page
 docsRepo = "https://github.com/matrix-python/matrix-python.github.io"
