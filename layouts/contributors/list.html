@@ -1,142 +1,97 @@
 {{ define "main" }}
-<div class="row justify-content-center">
-  <article>
-    <h1 class="text-center">{{ .Title }}</h1>
-    <p class="text-center lead">{{ .Params.lead | safeHTML }}</p>
-    <div class="text-center">{{ .Content }}</div>
-    <div class="row mb-2 justify-content-center">
-      {{ range .Data.Pages.ByDate -}}
-      <!-- Contributor View -->
-      {{ if eq .Section "blog" -}}
+  <div class="row justify-content-center">
+    <article>
+      <h1 class="text-center">{{ .Title }}</h1>
+      <p class="text-center lead">{{ .Params.lead | safeHTML }}</p>
+      <div class="text-center">{{ .Content }}</div>
+      <div class="row mb-2 justify-content-center">
+        {{ range .Data.Pages.ByDate -}}
 
-      <div class="col-md-8">
-        <div
-          class="
-            row
-            g-0
-            border
-            rounded
-            overflow-hidden
-            flex-md-row
-            mb-4
-            shadow-sm
-            h-md-250
-            position-relative
-          "
-        >
-          <div class="card">
-            <div class="card-body">
+          {{ $avatar_name := "" }}
+          {{ $avatar := "" }}
+
+          {{ if ne .Params.images nil}}
+            <!-- avatar_name e.g. "foo.svg" -->
+            {{ $avatar_name = index (.Params.images) 0 }}
+            <!-- avatar_path e.g. "/path/to/" -->
+            {{ $avatar_path := path.Dir (.Path) }}
+            <!-- avatar e.g. "/path/to/foo.svg" -->
+            {{ $avatar = $avatar_name | printf "/%s/%s" $avatar_path | printf "%s" }}
+          {{ end }}
+
+        <div class="col-md-8">
+          <div
+            class="
+              row
+              g-0
+              border
+              rounded
+              overflow-hidden
+              flex-md-row
+              mb-4
+              shadow-sm
+              h-md-250
+              position-relative
+            "
+          >
+            <div class="col p-4 flex-column position-static">
+              {{ if eq .Params.bot true -}}
+                <span class="badge rounded-pill bg-info">Bot</span>
+              {{ end }} 
+              {{ if eq .Params.matrix_moderator true -}}
+                <span class="badge rounded-pill bg-success">Moderator</span>
+              {{ end }} 
+              {{ if eq .Params.website_contributor true -}}
+                <span class="badge rounded-pill bg-primary">Website</span>
+              {{ end }}
               <h3 class="mb-0">{{ .Params.title }}</h3>
-
-              <p class="card-text mb-auto">{{ .Params.lead | safeHTML }}</p>
-
-              {{ partial "main/blog-meta.html" . -}}
+              <small class="pb-3 d-flex text-muted">
+                Since {{ .PublishDate.Format "Jan 2, 2006" }}
+              </small>
+              <p class="card-text mb-auto">
+                {{ if isset .Params "lead"}}
+                  {{ truncate 80 " [...]" .Params.lead }}
+                {{ else }}
+                  {{ if eq .Params.matrix_moderator true }}
+                    Hi, I’m {{ .Params.title }}, a member of the moderation team.
+                  {{ else if eq .Params.website_contributor true }}
+                    Hi, I’m {{ .Params.title }}, a contributor to this website.
+                  {{ end }}
+                {{ end }}
+              </p>
+              <a href="{{ .RelPermalink }}" class="stretched-link"></a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              {{ if ne $avatar_name nil }}
+                <img
+                  class="img-fluid lazyload blur-up"
+                  src="{{ $avatar | safeHTML }}"
+                  alt="{{ .Params.title }} Avatar"
+                  width="256"
+                  height="256"
+                />
+              {{else}}
+              <svg
+                class="bd-placeholder-img"
+                width="256"
+                height="256"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Missing Thumbnail</title>
+                <rect width="100%" height="100%" fill="#55595c"></rect>
+                <text x="40%" y="43%" fill="#eceeef" dy=".3em">Missing</text>
+                <text x="36%" y="57%" fill="#eceeef" dy=".3em">Thumbnail</text>
+              </svg>
+              {{end}}
             </div>
           </div>
         </div>
+        {{ end -}}
       </div>
-
-      <!-- Contributors View -->
-      {{ else }}
-
-      <!-- a -->
-      {{ $avatar_name := "" }}
-      <!-- a -->
-      {{ $avatar := "" }}
-      <!-- a -->
-
-      {{ if ne .Params.images nil}}
-      <!-- avatar_name e.g. "foo.svg" -->
-      {{ $avatar_name = index (.Params.images) 0 }}
-      <!-- avatar_path e.g. "/path/to/" -->
-      {{ $avatar_path := path.Dir (.Path) }}
-      <!-- avatar e.g. "/path/to/foo.svg" -->
-      {{ $avatar = $avatar_name | printf "/%s/%s" $avatar_path | printf "%s" }}
-
-      <!-- a -->
-      {{ end }}
-
-      <div class="col-md-8">
-        <div
-          class="
-            row
-            g-0
-            border
-            rounded
-            overflow-hidden
-            flex-md-row
-            mb-4
-            shadow-sm
-            h-md-250
-            position-relative
-          "
-        >
-          <div class="col p-4 flex-column position-static">
-            {{ if eq .Params.bot true -}}
-            <span class="badge rounded-pill bg-info">Bot</span>
-            {{ end }} {{ if eq .Params.matrix_moderator true -}}
-            <span class="badge rounded-pill bg-success">Moderator</span>
-            {{ end }} {{ if eq .Params.website_contributor true -}}
-            <span class="badge rounded-pill bg-primary">Website</span>
-            {{ end }}
-            <!-- <span class="badge rounded-pill bg-danger">Blog</span> -->
-            <h3 class="mb-0">{{ .Params.title }}</h3>
-            <small class="pb-3 d-flex text-muted">
-              Since {{ .PublishDate.Format "Jan 2, 2006" }}
-            </small>
-            <p class="card-text mb-auto">
-              <!-- a -->
-              {{ if isset .Params "lead"}}
-              <!-- a -->
-              {{ truncate 80 " [...]" .Params.lead }}
-              <!-- a -->
-              {{ else }}
-              <!-- a -->
-              {{ if eq .Params.matrix_moderator true }}
-              <!-- a -->
-              Hi, I’m {{ .Params.title }}, a member of the moderation team.
-              <!-- a -->
-              {{ else if eq .Params.website_contributor true }}
-              <!-- a -->
-              Hi, I’m {{ .Params.title }}, a contributor to this website.
-              <!-- a -->
-              {{ end }}
-              <!-- a -->
-              {{ end }}
-            </p>
-            <a href="{{ .RelPermalink }}" class="stretched-link"></a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            {{ if ne $avatar_name nil }}
-            <img
-              class="img-fluid lazyload blur-up"
-              src="{{ $avatar | safeHTML }}"
-              alt="{{ .Params.title }} Avatar"
-              width="256"
-              height="256"
-            />
-            {{else}}
-            <svg
-              class="bd-placeholder-img"
-              width="256"
-              height="256"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: Thumbnail"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Missing Thumbnail</title>
-              <rect width="100%" height="100%" fill="#55595c"></rect>
-              <text x="40%" y="43%" fill="#eceeef" dy=".3em">Missing</text>
-              <text x="36%" y="57%" fill="#eceeef" dy=".3em">Thumbnail</text>
-            </svg>
-            {{end}}
-          </div>
-        </div>
-      </div>
-      {{ end -}} {{ end }}
-    </div>
-  </article>
-</div>
+    </article>
+  </div>
 {{ end }}
