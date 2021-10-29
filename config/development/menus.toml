@@ -1,11 +1,11 @@
 [[footer]]
-  name = "Code of Conduct"
-  url = "/docs/code_of_conduct/"
+  name = "Contributors"
+  url = "/contributors/"
   weight = 10
 
 [[footer]]
-  name = "Internal"
-  url = "/internal/documentation/about/"
+  name = "Code of Conduct"
+  url = "/docs/code_of_conduct/"
   weight = 20
 
 [[footer]]
@@ -19,3 +19,8 @@
   url = "/privacy-policy/imprint/"
   identifier = "Imprint"
   weight = 40
+
+[[footer]]
+  name = "Internal"
+  url = "/internal/documentation/about/"
+  weight = 50

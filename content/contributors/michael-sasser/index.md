@@ -1,6 +1,7 @@
 ---
 title: "Michael Sasser"
 description: "Member of the moderation team"
+lead: "Hi, I'm Michael, a member of the moderation team."
 date: 2021-10-10T00:00:00+00:00
 lastmod: 2021-10-10T00:00:00+00:00
 draft: false

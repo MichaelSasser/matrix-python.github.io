@@ -95,9 +95,14 @@
   weight = 30
 
 [[footer]]
+  name = "Contributors"
+  url = "/contributors/"
+  weight = 10
+
+[[footer]]
   name = "Code of Conduct"
   url = "/docs/code_of_conduct/"
-  weight = 10
+  weight = 20
 
 [[footer]]
   name = "GDPR"

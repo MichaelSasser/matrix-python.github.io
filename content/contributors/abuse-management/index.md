@@ -1,10 +1,12 @@
 ---
-title: "Mjolnir"
+title: "Abuse Management"
 description: "Member of the moderation team"
 date: 2020-02-16T01:33:00+00:00
 lastmod: 2021-02-16T01:33:00+00:00
 draft: false
-images: ["abuse_management_ava"]
+images: ["abuse_management_ava.svg"]
+matrix_moderator: true
+bot: true
 ---
 
 <img src="abuse_management_ava.svg" alt="Abuse Management Avatar" width="256"/>
