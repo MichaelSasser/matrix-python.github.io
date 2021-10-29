@@ -2,7 +2,7 @@
 title: "Michael Sasser"
 description: "Member of the moderation team"
 lead: "Hi, I'm Michael, a member of the moderation team."
-date: 2021-10-10T00:00:00+00:00
+date: 2020-12-31T00:00:00+02:00
 lastmod: 2021-10-10T00:00:00+00:00
 draft: false
 images: ["michael_sasser_ava.svg"]
