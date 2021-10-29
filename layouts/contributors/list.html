@@ -109,6 +109,7 @@
           <div class="col-auto d-none d-lg-block">
             {{ if ne $avatar_name nil }}
             <img
+              class="img-fluid lazyload blur-up"
               src="{{ $avatar | safeHTML }}"
               alt="{{ .Params.title }} Avatar"
               width="256"
