@@ -6,7 +6,6 @@
           <h1 class="blog-post-title">{{ .Title }}</h1>
           <p class="blog-post-meta">{{ partial "main/blog-meta.html" . }}</p>
         </div>
-        <p class="lead">{{ .Params.lead | safeHTML }}</p>
         {{ if isset .Params "header_image" }}
           <div class="text-center">
             <figure>
@@ -21,7 +20,7 @@
             </figure>
           </div>
         {{ end }}
-
+        <p class="lead">{{ .Params.lead | safeHTML }}</p>
 
         <div class="clearfix">
           {{ if isset .Params "floating_image" }}
