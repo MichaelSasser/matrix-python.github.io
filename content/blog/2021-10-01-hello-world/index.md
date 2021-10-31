@@ -1,7 +1,7 @@
 ---
 title: "Hello World 👋"
 description: "Introducing our new documentation websites."
-lead: "Welcome to the community page for the Python Community."
+lead: "Welcome to the Python Community on Matrix website. As hobbyists and developers, we know how useful documentations are. When we joined the Matrix network, we felt a bit lost too. With this website, we try to help newcomers to get started."
 date: 2021-10-01T09:19:42+01:00
 lastmod: 2021-10-01T09:19:42+01:00
 draft: false
@@ -10,8 +10,8 @@ images: []
 contributors: ["Michael Sasser"]
 ---
 
-As hobbyists and developers, we know how useful documentations are.
-When I joined the Matrix network, I felt a bit lost.
-With this little website, we try to help newcomers to get started.
+{{< todo >}}
 
--- Michael
+<!--
+  TODO: Add more content and describe, what is on the page and how to find it.
+-->

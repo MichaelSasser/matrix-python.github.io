@@ -108,7 +108,7 @@ The `title` in this case would be your nickname on Matrix.
 | ------------------------------------------------------------------------------------------------------ | ------------------------------ |
 | [`./content/blog/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/blog) | The base directory of the blog |
 
-{{< variable_structure "Blog" "title" "description" "lead" "date" "lastmod" "draft" "weight" "images" "contributors" >}}
+{{< variable_structure "Blog" "title" "description" "lead" "date" "lastmod" "draft" "weight" "images" "contributors" "image" "floating_image" "floating_image_width" "floating_image_position" "floating_image_caption" "header_image" >}}
 
 Notice, the `weight` in blog posts is always `50`.
 
