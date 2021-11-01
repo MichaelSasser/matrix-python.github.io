@@ -14,9 +14,13 @@
         >
         <p class="meta">
           and chat with
-          {{ $rooms := getJSON .Site.Params.matrix_room_data_url "/_matrix/client/r0/publicRooms" }}
-          {{ range where $rooms.chunk "canonical_alias" "==" .Site.Params.users_room }}
-            {{ .num_joined_members }}
+          {{ if eq (getenv "HUGO_ENV") "production" }}
+            {{ $rooms := getJSON .Site.Params.matrix_room_data_url "/_matrix/client/r0/publicRooms" }}
+            {{ range where $rooms.chunk "canonical_alias" "==" .Site.Params.users_room }}
+              {{ .num_joined_members }}
+            {{ end }}
+          {{ else }}
+            0000
           {{ end }}
           community Pythoneers.
         </p>
