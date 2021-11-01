@@ -15,8 +15,14 @@
         <p class="meta">
           and chat with
           <img
-            alt="Matrix"
+            alt="number of members"
+            class="img-fluid lazyload blur-up logo-dark d-none"
             src="https://img.shields.io/matrix/python:matrix.org?color=9fdcfc&label=%20&style=flat-square"
+          />
+          <img
+            alt="number of members"
+            class="img-fluid lazyload blur-up logo-light"
+            src="https://img.shields.io/matrix/python:matrix.org?color=5d2f86&label=%20&style=flat-square"
           />
           about Python.
         </p>
@@ -268,7 +274,7 @@
   <section class="section section-sm mt-3 pt-3">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-12 col-lg-10 col-xl-16">
+        <div class="col-md-12 col-lg-10 col-xl-15">
           <h2 class="h3 mt-3 text-center">Latest from our blog</h2>
           <div class="card-list">
             {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section"
