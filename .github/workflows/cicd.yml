@@ -21,6 +21,9 @@ on:
   push:
     branches:
       - master
+  schedule:  # update number of user in the room every day
+    - cron:  '0 5 * * *'
+
 
 jobs:
   deploy:
