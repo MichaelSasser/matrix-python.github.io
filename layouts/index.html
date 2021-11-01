@@ -14,17 +14,11 @@
         >
         <p class="meta">
           and chat with
-          <img
-            alt="number of members"
-            class="img-fluid lazyload blur-up logo-dark d-none"
-            src="https://img.shields.io/matrix/python:matrix.org?color=9fdcfc&label=%20&style=flat-square"
-          />
-          <img
-            alt="number of members"
-            class="img-fluid lazyload blur-up logo-light"
-            src="https://img.shields.io/matrix/python:matrix.org?color=5d2f86&label=%20&style=flat-square"
-          />
-          about Python.
+          {{ $rooms := getJSON .Site.Params.matrix_room_data_url "/_matrix/client/r0/publicRooms" }}
+          {{ range where $rooms.chunk "canonical_alias" "==" .Site.Params.users_room }}
+            {{ .num_joined_members }}
+          {{ end }}
+          community members about Python.
         </p>
       </div>
     </div>

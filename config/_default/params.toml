@@ -69,6 +69,9 @@ editPage = true
 docsRepoBranch = "master"
 repoHost = "GitHub"
 
+matrix_room_data_url = "https://matrix.org"
+users_room = "#python:matrix.org"  # The room the users get pulled from
+
 [options]
   lazySizes = true
   clipBoard = true
