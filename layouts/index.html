@@ -14,7 +14,7 @@
         >
         <p class="meta">
           and chat with
-          {{ if eq (getenv "HUGO_ENV") "production" }}
+          {{ if hugo.IsProduction }}
             {{ $rooms := getJSON .Site.Params.matrix_room_data_url "/_matrix/client/r0/publicRooms" }}
             {{ range where $rooms.chunk "canonical_alias" "==" .Site.Params.users_room }}
               {{ .num_joined_members }}
@@ -22,7 +22,7 @@
           {{ else }}
             0000
           {{ end }}
-          community Pythoneers.
+          Pythoneers.
         </p>
       </div>
     </div>
