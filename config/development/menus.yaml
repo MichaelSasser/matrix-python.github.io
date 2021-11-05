@@ -1,0 +1,18 @@
+footer:
+  - name: Contributors
+    url: /contributors/
+    weight: 10
+  - name: Code of Conduct
+    url: /docs/code_of_conduct/
+    weight: 20
+  - name: GDPR
+    url: /privacy-policy/gdpr/
+    identifier: GDPR
+    weight: 30
+  - name: Imprint
+    url: /privacy-policy/imprint/
+    identifier: Imprint
+    weight: 40
+  - name: Internal
+    url: /internal/documentation/about/
+    weight: 50

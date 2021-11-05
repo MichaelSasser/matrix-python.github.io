@@ -1,0 +1,78 @@
+title: Matrix+Python
+titleSeparator: '-'
+titleAddition: A Modern Python Chat
+description: >-
+  We are the Python community on matrix, a free and open network for secure,
+  decentralized communication.
+images: []
+ogLocale: en_US
+domainTLD: matrix-python.github.io/
+titleHome: Matrix+Python
+twitterSite: ''
+twitterCreator: ''
+schemaType: Organization
+schemaName: Matrix+Python
+schemaAuthor: Michael Sasser
+schemaAuthorTwitter: ''
+schemaAuthorLinkedIn: ''
+schemaAuthorGitHub: 'https://github.com/matrix-python/'
+schemaLocale: en-US
+schemaLogo: ''
+schemaLogoWidth: 512
+schemaLogoHeight: 512
+schemaImage: ''
+schemaImageWidth: 1280
+schemaImageHeight: 640
+schemaTwitter: ''
+schemaLinkedIn: ''
+schemaGitHub: 'https://github.com/matrix-python/'
+schemaSection: blog
+siteLinksSearchBox: false
+themeColor: '#fff'
+quality: 85
+bgColor: '#fff'
+landscapePhotoWidths:
+  - 900
+  - 800
+  - 700
+  - 600
+  - 500
+portraitPhotoWidths:
+  - 800
+  - 700
+  - 600
+  - 500
+lqipWidth: 20x
+footer: >-
+  Designed by the Python Community on Matrix<br />team with the help of our <a
+  href="/contributors">contributors</a> ❤️.<br />Based on <a
+  href="https://getdoks.org/" target="_blank" rel="license noopener">Doks</a>,
+  built with <a href="https://gohugo.io/" target="_blank" rel="license
+  noopener">Hugo</a>.<br />Code licensed <a
+  href="https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE.txt"
+  target="_blank" rel="license noopener">MIT</a>, docs <a
+  href="https://creativecommons.org/licenses/by/3.0/" target="_blank"
+  rel="license noopener">CC BY 3.0</a>.
+copyRight: 'Code licensed MIT, docs CC BY 3.0.'
+alert: false
+alertDismissable: true
+alertText: Coming soon &mdash; This website is under development.
+docsRepo: 'https://github.com/matrix-python/matrix-python.github.io'
+editPage: true
+docsRepoBranch: master
+repoHost: GitHub
+matrix_room_data_url: 'https://matrix.org'
+users_room: '#python:matrix.org'
+options:
+  lazySizes: true
+  clipBoard: true
+  instantPage: true
+  flexSearch: false
+  darkMode: true
+  bootStrapJs: true
+  breadCrumb: true
+  highLight: true
+  kaTex: true
+  collapsibleSidebar: false
+  multilingualMode: false
+  docsVersioning: false
