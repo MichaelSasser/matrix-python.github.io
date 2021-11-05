@@ -1,0 +1,26 @@
+{{ $contributors := .Params.contributors }}
+
+
+<p>
+  <small
+    >Posted {{ .PublishDate.Format "January 2, 2006" }} by
+    {{ if isset .Params "contributors" -}}
+      {{- range $index, $contributor := $contributors -}}
+        {{- if gt $index 0 -}}
+          {{ if eq $index (sub (len $contributors) 1) }}
+            <span> and </span>
+          {{- else -}}
+            <span>, </span>
+          {{- end -}}
+        {{- end -}}<a
+          class="stretched-link position-relative"
+          href="{{ "/contributors/" | relURL }}{{ . | urlize }}/"
+          >{{- . -}}</a
+        >
+      {{- end -}}
+    {{ end -}}&nbsp;&hyphen;&nbsp;<strong
+      >{{ .ReadingTime -}}&nbsp;min read</strong
+    ></small
+  >
+</p>
+<p></p>
