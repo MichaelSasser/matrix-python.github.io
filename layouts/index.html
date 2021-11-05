@@ -392,7 +392,9 @@
                     <a
                       class="stretched-link text-body"
                       href="{{ .RelPermalink }}"
-                      >{{ .Params.title }}</a
+                      >{{ .Params.title }}{{ if eq .Draft true }}
+                        <span class="badge bg-danger">Draft</span>
+                      {{ end }}</a
                     >
                   </h3>
                   <p>{{ .Params.lead | safeHTML }}</p>

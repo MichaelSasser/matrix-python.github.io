@@ -1,0 +1,100 @@
+{{ define "main" }}
+
+  <!-- Get the last element from the current URL -->
+  {{ $lastUrlElement := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+
+
+  <!-- Page is blog or blogpage for a specific year -->
+  {{ $is_blog := false }}
+  {{ if (eq $lastUrlElement "blog") }}
+    {{ $is_blog = true }}
+  {{ end }}
+
+
+  <!-- Check if path for pagination should be /blog/ or /blog/<year>/ -->
+  {{ $current := "" }}
+  {{ if eq $is_blog true }}
+    {{ $current = (where .Site.RegularPages "Section" "blog") }}
+  {{ else }}
+    {{ $current = .Data.Pages }}
+  {{ end }}
+
+
+  <!-- Grouped blog posts by year (all blog posts) -->
+  {{ $grouped_pages := (where .Site.RegularPages "Section" "blog").GroupByDate "2006" }}
+
+
+  <div class="container">
+    <div class="row g-5 justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-10">
+        {{ if eq $is_blog false }}
+          <h1 class="pb-4 mb-4 fst-italic">
+            Archive &mdash;
+            {{ $lastUrlElement }}
+          </h1>
+        {{ end }}
+        <!-- Setup paginate from "current" -->
+        {{ $paginator := .Paginate $current -}}
+        {{ range $paginator.Pages -}}
+          <article class="blog-post">
+            <h2 class="blog-post-title">
+              <a class="text-body" href="{{ .RelPermalink }}"
+                >{{ .Params.title }}{{ if eq .Draft true }}
+                  <span class="badge bg-danger">Draft</span>
+                {{ end }}</a
+              >
+            </h2>
+            <p class="blog-post-meta">
+              {{ partial "main/blog-meta.html" . -}}
+            </p>
+
+            <p>
+              {{ .Params.lead | safeHTML }}
+            </p>
+            <p><a href="{{ .RelPermalink }}">Continue reading →</a></p>
+          </article>
+        {{ end -}}
+        <!-- Pagination -->
+        <div class="pagination justify-content-center">
+          {{ $.Scratch.Set "paginator" true }}
+          {{ template "_internal/pagination.html" . }}
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-3 mb-3 bg-light rounded">
+            <h4 class="fst-italic" style="margin-top: 0rem;">
+              About this Blog
+            </h4>
+
+            <p class="mb-0">
+              {{ .Params.lead | safeHTML }}
+            </p>
+          </div>
+
+          <div class="p-4">
+            <h4 class="fst-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+              {{ range $grouped_pages }}
+
+                <li>
+                  <!-- Lock the already selected archive -->
+                  {{ if ne $lastUrlElement .Key }}
+                    <a href="/blog/{{ .Key }}"
+                      >{{ .Key }}
+                      <span class="badge bg-secondary">{{ .Len }}</span></a
+                    >
+                  {{ else }}
+                    {{ .Key }}
+                    <span class="badge bg-secondary">{{ .Len }}</span>
+                  {{ end }}
+                </li>
+              {{ end }}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}
