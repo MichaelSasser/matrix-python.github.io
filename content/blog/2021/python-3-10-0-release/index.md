@@ -7,6 +7,8 @@ lastmod: 2021-10-04T08:28:31+02:00
 draft: false
 weight: 50
 contributors: ["Michael Sasser"]
+categories: ["Python"]
+tags: ["python", "release"]
 images: ["python.svg"]
 header_image: "python.svg"
 ---

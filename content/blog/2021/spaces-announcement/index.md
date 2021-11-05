@@ -6,8 +6,10 @@ date: 2021-10-08T14:48:42+01:00
 lastmod: 2021-10-08T14:52:16+01:00
 draft: false
 weight: 50
-contributors: ["Michael Sasser", "BrenBarn", "ilex", "James Belchamber"]
+contributors: ["Michael Sasser", "ilex", "BrenBarn", "James Belchamber"]
 images: ["spaces.jpeg"]
+categories: ["Matrix"]
+tags: ["matrix", "spaces", "announcement"]
 floating_image: "spaces.jpeg"
 floating_image_width: 40
 floating_image_position: "right"

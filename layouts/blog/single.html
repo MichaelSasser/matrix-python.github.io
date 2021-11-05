@@ -9,7 +9,11 @@
               <span class="badge bg-danger">Draft</span>
             {{ end }}
           </h1>
-          <p class="blog-post-meta">{{ partial "main/blog-meta.html" . }}</p>
+          <p class="blog-post-meta">
+            {{ .Scratch.Set "tags_enabled" true }}
+            {{ partial "main/blog-meta.html" . }}
+            {{ .Scratch.Set "tags_enabled" false }}
+          </p>
         </div>
         {{ if isset .Params "header_image" }}
           <div class="text-center">
