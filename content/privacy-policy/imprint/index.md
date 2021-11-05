@@ -14,25 +14,25 @@ toc: true
 
 Information according to § 5 TMG
 
-```
-Michael Sasser
-Benzinoring 56
-67657 Kaiserslautern
-Germany
-
-E-Mail: Michael@MichaelSasser.org
-```
+<address>
+<strong>Michael Sasser</strong><br />
+Benzinoring 56<br />
+67657 Kaiserslautern<br />
+Germany<br />
+<br />
+<a href="mailto:Michael@MichaelSasser.org">Michael@MichaelSasser.org</a>
+</address>
 
 ## Responsible for content according to § 55 Abs. 2 RStV:
 
-```
-Michael Sasser
-Benzinoring 56
-67657 Kaiserslautern
-Germany
-
-E-Mail: Michael@MichaelSasser.org
-```
+<address>
+<strong>Michael Sasser</strong><br />
+Benzinoring 56<br />
+67657 Kaiserslautern<br />
+Germany<br />
+<br />
+<a href="mailto:Michael@MichaelSasser.org">Michael@MichaelSasser.org</a>
+</address>
 
 ## Disclaimer:
 
@@ -64,15 +64,19 @@ immediately.
 
 ## Copyright
 
+The code is
+[MIT](https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE.md)
+licensed, the docs are [CC BY 4.0](https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE_DOCS.md) licensed.
+
 The content and works on these pages created by the site operators are subject
 to German copyright law. The reproduction, processing, distribution and any
-kind of exploitation outside the limits of copyright require the written
-consent of the respective author or creator. Downloads and copies of this site
-are for private, non-commercial use only. As far as the contents on this side
-were not created by the operator, the copyrights of third parties are
-considered. In particular contents of third parties are marked as such. If you
-should still be aware of a copyright infringement, we ask for a note. Upon
-discovery of violations, we will remove such content immediately.
+kind of exploitation outside the limits of those two licenses require the
+written consent of the respective author or creator.
+As far as the contents
+on this side were not created by the operator, the copyrights of third
+parties are considered. In particular contents of third parties are marked as
+such. If you should still be aware of a copyright infringement, we ask for a
+note. Upon discovery of violations, we will remove such content immediately.
 
 ## Privacy Policy
 

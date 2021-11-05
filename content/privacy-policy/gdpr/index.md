@@ -11,20 +11,20 @@ weight: 10
 toc: true
 ---
 
-Effective date: January 4, 2021
+Effective date: <em>January 4, 2021</em>
 
 ## Accountable person
 
-```
-Michael Sasser
-Benzinoring 56
-67657 Kaiserslautern
-Germany
+<address>
+<strong>Michael Sasser</strong><br />
+Benzinoring 56<br />
+67657 Kaiserslautern<br />
+Germany<br />
+<br />
+<a href="mailto:Michael@MichaelSasser.org">Michael@MichaelSasser.org</a>
+</address>
 
-Email address: Michael@MichaelSasser.org
-```
-
-Imprint: https://michaelsasser.github.io/matrix-room-python/imprint-gdpr/imprint/
+Please take a look to our [Imprint →]({{<ref "privacy-policy/imprint">}})
 
 ## Overview of data processing
 
@@ -152,9 +152,11 @@ servers connected via the Internet.
 
 Used services and service providers:
 
-- GitHub: hosting platform for websites; Service provider: GitHub Inc.;
-  Website: https://www.github.com; Data protection declaration:
-  https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement;
+- GitHub: hosting platform for websites;<br />
+  Service provider: GitHub Inc.;<br />
+  Website: [https://www.github.com](https://www.github.com);<br />
+  Data protection declaration:
+  [https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement](https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement);<br />
   Contact information:
 
   | United States HQ               | EU Office          |
