@@ -112,3 +112,7 @@ module:
       target: data
     - source: node_modules/mermaid
       target: assets/mermaid
+    - source: node_modules/@fortawesome/fontawesome-free/scss
+      target: assets/scss/fontawesome
+    - source: node_modules/@fortawesome/fontawesome-free/webfonts
+      target: static/fonts/vendor/fontawesome
