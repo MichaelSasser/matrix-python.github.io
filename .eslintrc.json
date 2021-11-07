@@ -6,6 +6,7 @@
     "node": true
   },
   "extends": "eslint:recommended",
+  "plugins": ["eslint-plugin-html"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -29,3 +30,4 @@
     ]
   }
 }
+
