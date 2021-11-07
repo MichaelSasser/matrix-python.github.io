@@ -28,13 +28,14 @@
   {{ end }}
 {{ end }}
 
-<ol class="list-unstyled mb-0">
+<ul class="blog-tags">
   <!-- Using uniq values -->
   {{ range $uniq_tag := (uniq $tags) }}
     <li>
-      <a href="/tags/{{ lower $uniq_tag }}"
-        >{{ $uniq_tag }}
-        <span class="badge bg-secondary">
+      <a href="/tags/{{ lower $uniq_tag }}">
+      <i class="fas fa-tags"></i>
+      {{ $uniq_tag }}
+        <span class="badge text-dark">
           <!-- compare and count one element after another -->
           {{ $counter := 0 }}
           {{ range $item := $tags }}
@@ -47,4 +48,4 @@
       </a>
     </li>
   {{ end }}
-</ol>
+</ul>
