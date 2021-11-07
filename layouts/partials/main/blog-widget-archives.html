@@ -1,24 +1,27 @@
-
 <!-- Get the last element from the current URL -->
 {{ $lastUrlElement := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+
 
 <!-- Grouped blog posts by year (all blog posts) -->
 {{ $grouped_pages := (where .Site.RegularPages "Section" "blog").GroupByDate "2006" }}
 
-<ol class="list-unstyled mb-0">
-  {{ range $grouped_pages }}
 
-    <li>
-      <!-- Lock the already selected archive -->
-      {{ if ne $lastUrlElement .Key }}
-        <a href="/blog/{{ .Key }}"
-          >{{ .Key }}
-          <span class="badge bg-secondary">{{ .Len }}</span></a
-        >
-      {{ else }}
-        {{ .Key }}
-        <span class="badge bg-secondary">{{ .Len }}</span>
-      {{ end }}
-    </li>
-  {{ end }}
-</ol>
+<div class="p-4">
+  <h4 class="fst-italic" style="margin-top: 0rem;">Archives</h4>
+  <ul class="list-unstyled mb-0">
+    {{ range $grouped_pages }}
+
+      <li>
+        <!-- Lock the already selected archive -->
+        {{ if ne $lastUrlElement .Key }}
+          <a href="/blog/{{ .Key }}"
+            >{{ .Key }} <span class="badge bg-secondary">{{ .Len }}</span></a
+          >
+        {{ else }}
+          {{ .Key }}
+          <span class="badge bg-secondary">{{ .Len }}</span>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</div>

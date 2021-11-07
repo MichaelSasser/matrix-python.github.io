@@ -2,9 +2,13 @@
 {{ $lastUrlElement := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
 
 
+<!-- Get the third last element from the current URL -->
+{{ $thirdLastUrlElement := index (last 3 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+
+
 <!-- Page is blog or blogpage for a specific year -->
 {{ $is_blog := false }}
-{{ if (eq $lastUrlElement "blog") }}
+{{ if (or (eq $lastUrlElement "blog") (eq $thirdLastUrlElement "blog")) }}
   {{ $is_blog = true }}
 {{ end }}
 
@@ -17,33 +21,40 @@
   {{ $current = .Data.Pages }}
 {{ end }}
 
+
 <!-- Store for all elements (not uniq) -->
 {{ $categoies := slice }}
 
-<!-- find all catefories start with current -->
+
+<!-- find all categories start with current -->
 {{ range  (where $current "Params.categories" "!=" nil) }}
   {{ range .Page.Params.categories }}
     {{ $categoies = $categoies | append . }}
   {{ end }}
 {{ end }}
 
-<ol class="list-unstyled mb-0">
-  <!-- Using uniq values -->
-  {{ range $uniq_category := (uniq $categoies) }}
-    <li>
-      <a href="/categories/{{ lower $uniq_category }}"
-        >{{ $uniq_category }}
-        <span class="badge bg-secondary">
-          <!-- compare and count one element after another -->
-          {{ $counter := 0 }}
-          {{ range $item := $categoies }}
-            {{ if eq $item $uniq_category }}
-              {{ $counter = add $counter 1 }}
-            {{ end }}
-          {{ end }}
-          {{ $counter }}
-        </span>
-      </a>
-    </li>
-  {{ end }}
-</ol>
+{{ if gt (len $categoies) 0 }}
+  <div class="p-4">
+    <h4 class="fst-italic" style="margin-top: 0rem;">Categories</h4>
+    <ul class="list-unstyled mb-0">
+      <!-- Using uniq values -->
+      {{ range $uniq_category := (uniq $categoies) }}
+        <li>
+          <a href="/categories/{{ lower $uniq_category }}"
+            >{{ $uniq_category }}
+            <span class="badge bg-secondary">
+              <!-- compare and count one element after another -->
+              {{ $counter := 0 }}
+              {{ range $item := $categoies }}
+                {{ if eq $item $uniq_category }}
+                  {{ $counter = add $counter 1 }}
+                {{ end }}
+              {{ end }}
+              {{ $counter }}
+            </span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

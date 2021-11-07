@@ -8,7 +8,7 @@ draft: false
 weight: 50
 contributors: ["Michael Sasser"]
 categories: ["Python"]
-tags: ["python", "release"]
+tags: ["Python", "Release"]
 images: ["python.svg"]
 header_image: "python.svg"
 ---

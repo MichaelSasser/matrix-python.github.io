@@ -9,7 +9,7 @@ weight: 50
 contributors: ["Michael Sasser", "ilex", "BrenBarn", "James Belchamber"]
 images: ["spaces.jpeg"]
 categories: ["Matrix"]
-tags: ["matrix", "spaces", "announcement"]
+tags: ["Matrix", "Spaces", "Announcement"]
 floating_image: "spaces.jpeg"
 floating_image_width: 40
 floating_image_position: "right"

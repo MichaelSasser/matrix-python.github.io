@@ -45,6 +45,13 @@
   }
 }
 
+.blog-widget-table {
+  tr,
+  td {
+    border: none;
+  }
+}
+
 [data-dark-mode] .blog-tags {
   li {
     a {

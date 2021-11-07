@@ -1,90 +1,91 @@
 {{ define "main" }}
 
-  <div class="row justify-content-center">
-    <div class="col-md-12 col-lg-12 col-xl-12">
-      <article class="blog-post">
-        <div class="blog-header">
-          <h1 class="blog-post-title">
-            {{ .Title }}{{ if eq .Draft true }}
-              <span class="badge bg-danger">Draft</span>
-            {{ end }}
-          </h1>
-          <p class="blog-post-meta">
-            {{ .Scratch.Set "tags_enabled" true }}
-            {{ partial "main/blog-meta.html" . }}
-            {{ .Scratch.Set "tags_enabled" false }}
-          </p>
-        </div>
-        {{ if isset .Params "header_image" }}
-          <div class="text-center">
-            <figure>
-              <img
-                data-sizes="auto"
-                class="img-fluid 
-                {{ if eq .Site.Params.options.lazySizes true -}}
-                  lazyload blur-up
-                {{ end }}"
-                src="{{ .Params.header_image }}"
-              />
-            </figure>
-          </div>
-        {{ end }}
-        <p class="lead">{{ .Params.lead | safeHTML }}</p>
-
-        <div class="clearfix">
-          {{ if isset .Params "floating_image" }}
-            {{ $width := 50 }}
-            {{ $position := "right" }}
-            {{ $margin := "left" }}
-            {{ $margin_bot := "0" }}
-            <!-- width -->
-            {{ if isset .Params "floating_image_width" }}
-              {{ $width =  .Params.floating_image_width }}
-            {{ end }}
-            <!-- bot margin -->
-            {{ if isset .Params "floating_image_margin_below" }}
-              {{ if eq .Params.floating_image_margin_below "true" }}
-                {{ $margin_bot = "32" }}
+  <div class="container">
+    <div class="row g-5 justify-content-center">
+      <div class="col-md-12 col-lg-12 col-xl-12">
+        <article class="blog-post">
+          <div class="blog-header">
+            <h1 class="blog-post-title">
+              {{ .Title }}{{ if eq .Draft true }}
+                <span class="badge bg-danger">Draft</span>
               {{ end }}
-            {{ end }}
-            <!-- position -->
-            {{ if isset .Params "floating_image_position" }}
-              {{ if ne .Params.floating_image_position "right" }}
-                {{ $margin = "right" }}
-                {{ if ne .Params.floating_image_position "left" }}
-                  {{ errorf "Failed to set the floating image position to: %s. The image position must be \"left\" or \"right\"." .Params.floating_image_position }}
+            </h1>
+            <!-- <p class="blog-post-meta"> -->
+            <!--   {{ partial "main/blog-meta.html" . }} -->
+            <!-- </p> -->
+          </div>
+          {{ if isset .Params "header_image" }}
+            <div class="text-center">
+              <figure>
+                <img
+                  data-sizes="auto"
+                  class="img-fluid 
+                {{ if eq .Site.Params.options.lazySizes true -}}
+                    lazyload blur-up
+                  {{ end }}"
+                  src="{{ .Params.header_image }}"
+                />
+              </figure>
+            </div>
+          {{ end }}
+          <p class="lead">{{ .Params.lead | safeHTML }}</p>
+
+          <div class="clearfix">
+            {{ if isset .Params "floating_image" }}
+              {{ $width := 50 }}
+              {{ $position := "right" }}
+              {{ $margin := "left" }}
+              {{ $margin_bot := "0" }}
+              <!-- width -->
+              {{ if isset .Params "floating_image_width" }}
+                {{ $width =  .Params.floating_image_width }}
+              {{ end }}
+              <!-- bot margin -->
+              {{ if isset .Params "floating_image_margin_below" }}
+                {{ if eq .Params.floating_image_margin_below "true" }}
+                  {{ $margin_bot = "32" }}
                 {{ end }}
               {{ end }}
-              {{ $position =  .Params.floating_image_position }}
-            {{ end }}
-            <figure
-              style="max-width: {{ $width }}%; 
+              <!-- position -->
+              {{ if isset .Params "floating_image_position" }}
+                {{ if ne .Params.floating_image_position "right" }}
+                  {{ $margin = "right" }}
+                  {{ if ne .Params.floating_image_position "left" }}
+                    {{ errorf "Failed to set the floating image position to: %s. The image position must be \"left\" or \"right\"." .Params.floating_image_position }}
+                  {{ end }}
+                {{ end }}
+                {{ $position =  .Params.floating_image_position }}
+              {{ end }}
+              <figure
+                style="max-width: {{ $width }}%; 
                      float:{{ $position }}; 
                      margin-{{ $margin }}: 30px;
                      margin-bottom: {{ $margin_bot }}px;
                      margin-top: 0;
           "
-            >
-              <img
-                data-sizes="auto"
-                class="img-fluid
+              >
+                <img
+                  data-sizes="auto"
+                  class="img-fluid
                 {{ if eq .Site.Params.options.lazySizes true -}}
-                  lazyload blur-up
-                {{ end }}"
-                src="{{ .Params.floating_image }}"
-              />
-              {{ if isset .Params "floating_image_caption" }}
-                <figcaption class="figure-caption">
-                  <center>
-                    <em>{{ .Params.floating_image_caption | safeHTML }}</em>
-                  </center>
-                </figcaption>
-              {{ end }}
-            </figure>
-          {{ end }}
-          <p>{{ .Content }}</p>
-        </div>
-      </article>
+                    lazyload blur-up
+                  {{ end }}"
+                  src="{{ .Params.floating_image }}"
+                />
+                {{ if isset .Params "floating_image_caption" }}
+                  <figcaption class="figure-caption">
+                    <center>
+                      <em>{{ .Params.floating_image_caption | safeHTML }}</em>
+                    </center>
+                  </figcaption>
+                {{ end }}
+              </figure>
+            {{ end }}
+            <p>{{ .Content }}</p>
+          </div>
+        </article>
+      </div>
+      {{ partial "main/blog-sidebar.html" . }}
     </div>
   </div>
 {{ end }}
