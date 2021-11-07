@@ -36,8 +36,8 @@
         <!-- Setup paginate from "current" -->
         {{ $paginator := .Paginate $current -}}
         {{ range $paginator.Pages -}}
-          <article class="blog-post">
-            <h2 class="blog-post-title">
+          <article class="blog-post mb-5">
+            <h2 class="blog-post-title mb-0 mt-0">
               <a class="text-body" href="{{ .RelPermalink }}"
                 >{{ .Params.title }}{{ if eq .Draft true }}
                   <span class="badge bg-danger">Draft</span>
@@ -48,10 +48,12 @@
               {{ partial "main/blog-meta.html" . -}}
             </p>
 
-            <p>
+            <p class="mb-0">
               {{ .Params.lead | safeHTML }}
             </p>
-            <p><a href="{{ .RelPermalink }}">Continue reading →</a></p>
+           <div class="blog-continue-reading">
+            <a href="{{ .RelPermalink }}" class="btn btn-outline-primary" role="button">Continue reading</a>
+           </div> 
           </article>
         {{ end -}}
         <!-- Pagination -->
