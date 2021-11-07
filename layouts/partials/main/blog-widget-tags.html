@@ -1,0 +1,50 @@
+<!-- Get the last element from the current URL -->
+{{ $lastUrlElement := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+
+
+<!-- Page is blog or blogpage for a specific year -->
+{{ $is_blog := false }}
+{{ if (eq $lastUrlElement "blog") }}
+  {{ $is_blog = true }}
+{{ end }}
+
+
+<!-- Check if path for pagination should be /blog/ or /blog/<year>/ -->
+{{ $current := "" }}
+{{ if eq $is_blog true }}
+  {{ $current = (where .Site.RegularPages "Section" "blog") }}
+{{ else }}
+  {{ $current = .Data.Pages }}
+{{ end }}
+
+<!-- Store for all elements (not uniq) -->
+{{ $tags := slice }}
+
+
+<!-- find all tags - start with current -->
+{{ range  (where $current "Params.tags" "!=" nil) }}
+  {{ range .Page.Params.tags }}
+    {{ $tags = $tags | append . }}
+  {{ end }}
+{{ end }}
+
+<ol class="list-unstyled mb-0">
+  <!-- Using uniq values -->
+  {{ range $uniq_tag := (uniq $tags) }}
+    <li>
+      <a href="/tags/{{ lower $uniq_tag }}"
+        >{{ $uniq_tag }}
+        <span class="badge bg-secondary">
+          <!-- compare and count one element after another -->
+          {{ $counter := 0 }}
+          {{ range $item := $tags }}
+            {{ if eq $item $uniq_tag }}
+              {{ $counter = add $counter 1 }}
+            {{ end }}
+          {{ end }}
+          {{ $counter }}
+        </span>
+      </a>
+    </li>
+  {{ end }}
+</ol>

@@ -74,97 +74,17 @@
 
           <div class="p-4">
             <h4 class="fst-italic" style="margin-top: 0rem;">Archives</h4>
-            <ol class="list-unstyled mb-0">
-              {{ range $grouped_pages }}
-
-                <li>
-                  <!-- Lock the already selected archive -->
-                  {{ if ne $lastUrlElement .Key }}
-                    <a href="/blog/{{ .Key }}"
-                      >{{ .Key }}
-                      <span class="badge bg-secondary">{{ .Len }}</span></a
-                    >
-                  {{ else }}
-                    {{ .Key }}
-                    <span class="badge bg-secondary">{{ .Len }}</span>
-                  {{ end }}
-                </li>
-              {{ end }}
-            </ol>
+          {{ partial "main/blog-widget-archives.html" . }}
           </div>
 
           <div class="p-4">
             <h4 class="fst-italic" style="margin-top: 0rem;">Categories</h4>
-            <ol class="list-unstyled mb-0">
-              <!-- Store for all elements (not uniq) -->
-              {{ $categoies := slice }}
-              {{ $grouped_categoies := slice }}
-
-
-              <!-- start with current -->
-              {{ range  (where $current "Params.categories" "!=" nil) }}
-                {{ range .Page.Params.categories }}
-                  {{ $categoies = $categoies | append . }}
-                {{ end }}
-              {{ end }}
-
-
-              <!-- Using uniq values -->
-              {{ range $uniq_category := (uniq $categoies) }}
-                <li>
-                  <a href="/categories/{{ lower $uniq_category }}"
-                    >{{ $uniq_category }}
-                    <span class="badge bg-secondary">
-                      <!-- compare and count one element after another -->
-                      {{ $counter := 0 }}
-                      {{ range $item := $categoies }}
-                        {{ if eq $item $uniq_category }}
-                          {{ $counter = add $counter 1 }}
-                        {{ end }}
-                      {{ end }}
-                      {{ $counter }}
-                    </span>
-                  </a>
-                </li>
-              {{ end }}
-            </ol>
+          {{ partial "main/blog-widget-categories.html" . }}
           </div>
 
           <div class="p-4">
             <h4 class="fst-italic" style="margin-top: 0rem;">Tags</h4>
-            <ol class="list-unstyled mb-0">
-              <!-- Store for all elements (not uniq) -->
-              {{ $tags := slice }}
-              {{ $grouped_tags := slice }}
-
-
-              <!-- start with current -->
-              {{ range  (where $current "Params.tags" "!=" nil) }}
-                {{ range .Page.Params.tags }}
-                  {{ $tags = $tags | append . }}
-                {{ end }}
-              {{ end }}
-
-
-              <!-- Using uniq values -->
-              {{ range $uniq_tag := (uniq $tags) }}
-                <li>
-                  <a href="/tags/{{ lower $uniq_tag }}"
-                    >{{ $uniq_tag }}
-                    <span class="badge bg-secondary">
-                      <!-- compare and count one element after another -->
-                      {{ $counter := 0 }}
-                      {{ range $item := $tags }}
-                        {{ if eq $item $uniq_tag }}
-                          {{ $counter = add $counter 1 }}
-                        {{ end }}
-                      {{ end }}
-                      {{ $counter }}
-                    </span>
-                  </a>
-                </li>
-              {{ end }}
-            </ol>
+          {{ partial "main/blog-widget-tags.html" . }}
           </div>
         </div>
       </div>
