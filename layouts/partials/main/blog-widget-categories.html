@@ -8,7 +8,7 @@
 
 <!-- Page is blog or blogpage for a specific year -->
 {{ $is_blog := false }}
-{{ if (or (eq $lastUrlElement "blog") (eq $thirdLastUrlElement "blog")) }}
+{{ if (or (or (eq $lastUrlElement "blog") (eq $lastUrlElement "categories")) (or (eq $thirdLastUrlElement "blog") (eq $lastUrlElement "tags"))) }}
   {{ $is_blog = true }}
 {{ end }}
 

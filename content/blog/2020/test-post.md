@@ -8,6 +8,7 @@ draft: true
 weight: 50
 images: []
 contributors: ["Michael Sasser"]
+categories: ["website", "matrix"]
 ---
 
 But for now, the post is needed and might not be removed until release.
