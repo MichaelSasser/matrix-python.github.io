@@ -41,7 +41,7 @@
       {{ range $uniq_category := (uniq $categoies) }}
         <li>
           <a href="/categories/{{ lower $uniq_category }}"
-            >{{ $uniq_category }}
+            >{{ $uniq_category | title }}
             <span class="badge bg-secondary">
               <!-- compare and count one element after another -->
               {{ $counter := 0 }}
