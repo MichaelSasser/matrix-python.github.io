@@ -1,0 +1,145 @@
+{{ define "main" }}
+
+  <!-- Check if path for pagination should be /blog/ or /blog/<year>/ -->
+  {{ $blog := (where .Site.RegularPages "Section" "blog") }}
+
+
+  <!-- Store for all elements (not uniq) -->
+  {{ $categories := newScratch }}
+  {{ $temp_categories := slice }}
+
+  <!-- find all categories and number of occurences -->
+  <!-- The structure is so, because sort removes the key -->
+  <!-- structure: [{<category name>: {"category" : <category name>, "count": 1, "pages":[page_1, page_n]}}, ...] -->
+  {{ range $temp_page :=  (where $blog "Params.categories" "!=" nil) }}
+    {{ range $c := .Page.Params.categories }}
+      <!-- was there already an occurence of that category -->
+      {{ if in $temp_categories (lower $c) }}
+        <!-- get current value of count -->
+        {{ $count := ($categories.Get (lower $c)).count }}
+        {{ $pages := ($categories.Get (lower $c)).pages }}
+        {{ $category_page := ($categories.Get (lower $c)).category_page }}
+        <!-- Write a new map back, with the current count + 1 and the additional page -->
+        {{ $categories.Set (lower $c) (dict "category" (lower $c) "count" (add $count 1) "pages" ($pages | append $temp_page) "category_page" $category_page) }}
+      {{ else }}
+        <!-- get category page, by compareing the category page with the category name used in the blog post (the one from above) -->
+        {{ $category_page := "" }}
+        {{ range (where $.Site.RegularPages "Section" "categories") }}
+          {{ if eq (lower .Title) (lower $c) }}
+            {{ $category_page = . }}
+          {{ end }}
+        {{ end }}
+        <!-- create the category with the initial count of 1 -->
+        {{ $categories.Set (lower $c) (dict "category" (lower $c) "count" 1 "pages" (slice $temp_page) "category_page" $category_page)}}
+        {{ $temp_categories = $temp_categories | append (lower $c) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  <!-- {{/* values: {{sort $categories.Values "count" "desc"}}<br /> */}} -->
+
+  <div class="container">
+    <div class="section pt-5">
+    <div class="row g-5 justify-content-center">
+      <div class="col-md-12 col-lg-12 col-xl-12">
+        <h1 class="pb-4 mb-4 fst-italic">
+          {{ .Title }}
+        </h1>
+        <p class="lead">{{ .Params.lead | safeHTML }}</p>
+        <div class="text-center">{{ .Content }}</div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {{ range (sort $categories.Values "count" "desc")}}
+            {{/*  {{.}}<br /> */}}
+            <div class="col">
+              <div class="card text-center h-100">
+                <div class="card-image">
+                  <a href="{{ .Page.Permalink }}">
+                  <!-- The first page hugo finds (any page) -->
+                  {{ $firstChild := index .pages 0 }}
+                  <!-- If the category_page exists -->
+                  {{ if ne .category_page "" }}
+
+                    <!-- This overwrites any existing image to the first one -->
+                    <!-- in the category -->
+                    {{ $firstChild = index .category_page }}
+                  {{ end }}
+                    <!-- does images exist? -->
+                    {{ if isset $firstChild.Params "images" }}
+                      <!-- if it has more then one elements -->
+                      {{ if gt (len $firstChild.Params.images) 0 }}
+
+                        {{ $images := $firstChild.Params.images }}
+                        <!-- image_name e.g. "my.svg" -->
+                        {{ $image_name := (index $images 0) }}
+
+
+                        <!-- image_path e.g. "/path/to/" -->
+                        {{ $image_path := $firstChild.RelPermalink | relURL }}
+                        <!-- avatar e.g. "/path/to/foo.svg" -->
+                        {{ $image := $image_name | printf "%s%s" $image_path | printf "%s" }}
+                        <img
+                          src="{{ $image }}"
+                          class="card-img-top lazyload blur-up"
+                          alt=""
+                          width="100%"
+                          height="256px"
+                        />
+                        <!-- Not able to find an image -->
+                      {{ else }}
+
+                        <svg
+                          class="card-img-top bd-placeholder-img lazyload blur-up"
+                          width="100%"
+                          height="256px"
+                          xmlns="http://www.w3.org/2000/svg"
+                          role="img"
+                          aria-label="Placeholder: Thumbnail"
+                          preserveAspectRatio="xMidYMid slice"
+                          focusable="false"
+                        >
+                          <title>Missing Thumbnail</title>
+                          <rect
+                            width="100%"
+                            height="100%"
+                            fill="#55595c"
+                          ></rect>
+                          <text x="45%" y="43%" fill="#eceeef" dy=".3em">
+                            Missing
+                          </text>
+                          <text x="42.5%" y="57%" fill="#eceeef" dy=".3em">
+                            Thumbnail
+                          </text>
+                        </svg>
+                      {{ end }}
+                    {{ end }}
+                  </a>
+                </div>
+                <div class="card-body pb-1">
+                  <a class="stretched-link" href="/categories/{{.category}}"></a>
+                  <h4 class="card-title">{{ .category | title }}</h4>
+                  <p class="card-text">
+              {{ if ne .category_page "" }}
+                {{ .category_page.Params.lead }}
+              {{ else }}
+              <span class="text-muted">This category is new and does not have a description.</span>
+              {{end}}
+                  </p>
+                  <div class="card-footer">
+                    <small class="text-muted">
+                      {{ .count }}
+                      Post{{ if ne .count 1 }}s{{ end }}
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ partial "main/blog-sidebar.html" . }}
+    </div>
+  </div>
+    </div>
+  </div>
+
+{{ end }}

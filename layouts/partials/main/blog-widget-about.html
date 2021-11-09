@@ -2,12 +2,16 @@
 {{ $lastUrlElement := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
 
 
+<!-- Get the second last element from the current URL -->
+{{ $secondLastUrlElement := index (last 2 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+
+
 <!-- Get the third last element from the current URL -->
 {{ $thirdLastUrlElement := index (last 3 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
 
-{{ if (or (eq $lastUrlElement "blog") (not (eq $thirdLastUrlElement "blog"))) }}
+{{ if (or (eq $lastUrlElement "blog") (not (or (eq $thirdLastUrlElement "blog") (eq $secondLastUrlElement "categories") (eq $lastUrlElement "categories")))) }}
   <div class="p-3 mb-3 bg-light rounded">
-    <h4 class="fst-italic" style="margin-top: 0rem;">About this Blog</h4>
+    <h4 class="fst-italic" style="margin-top: 0rem;">About</h4>
     <p class="mb-0">
       {{ .Params.lead | safeHTML }}
     </p>

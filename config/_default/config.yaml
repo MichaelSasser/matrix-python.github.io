@@ -1,4 +1,5 @@
-baseurl: 'https://matrix-python.github.io/'
+---
+baseurl: "https://matrix-python.github.io/"
 canonifyURLs: false
 disableAliases: true
 disableHugoGeneratorInject: true
@@ -9,6 +10,8 @@ buildDrafts: true
 languageCode: en-US
 paginate: 7
 rssLimit: 10
+disableKinds:
+  - term
 outputs:
   home:
     - HTML
@@ -22,8 +25,8 @@ outputs:
 mediaTypes:
   text/netlify:
     suffixes:
-      - ''
-    delimiter: ''
+      - ""
+    delimiter: ""
 outputFormats:
   REDIRECTS:
     mediaType: text/netlify
@@ -44,7 +47,7 @@ outputFormats:
     rel: sitemap
 caches:
   getjson:
-    dir: ':cacheDir/:project'
+    dir: ":cacheDir/:project"
     maxAge: 10s
 markup:
   goldmark:
@@ -61,7 +64,7 @@ markup:
   highlight:
     codeFences: false
     guessSyntax: false
-    hl_Lines: ''
+    hl_Lines: ""
     lineNoStart: 1
     lineNos: false
     lineNumbersInTable: true
@@ -73,7 +76,7 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 permalinks:
-  blog: '/blog/:year/:title/'
+  blog: "/blog/:year/:title/"
 minify:
   tdewolff:
     html:
@@ -82,7 +85,7 @@ module:
   hugoVersion:
     extended: true
     min: 0.80.0
-    max: ''
+    max: ""
   mounts:
     - source: node_modules/@hyas/doks/archetypes
       target: archetypes

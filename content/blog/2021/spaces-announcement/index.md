@@ -8,8 +8,8 @@ draft: false
 weight: 50
 contributors: ["Michael Sasser", "ilex", "BrenBarn", "James Belchamber"]
 images: ["spaces.jpeg"]
-categories: ["Matrix"]
-tags: ["Matrix", "Spaces", "Announcement"]
+categories: ["matrix"]
+tags: ["matrix", "spaces", "announcement"]
 floating_image: "spaces.jpeg"
 floating_image_width: 40
 floating_image_position: "right"

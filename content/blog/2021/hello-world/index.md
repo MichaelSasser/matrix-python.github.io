@@ -8,8 +8,8 @@ draft: false
 weight: 50
 images: []
 contributors: ["Michael Sasser"]
-categories: ["Website"]
-tags: ["Announcement", "Docs", "Blog"]
+categories: ["website"]
+tags: ["announcement", "docs", "blog"]
 ---
 
 {{< todo >}}

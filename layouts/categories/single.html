@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+  {{ $blog := where .Site.RegularPages "Section" "blog" }}
+
+  {{ $pages := slice }}
+
+  {{ range $temp_page :=  (where $blog "Params.categories" "!=" nil) }}
+    {{ range $c := .Page.Params.categories }}
+      {{ if eq (lower $c) (lower $.Title) }}
+        {{ $pages = $pages | append $temp_page }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+
+  <div class="container">
+    <div class="section pt-5">
+      <a href="/categories/">&#8592; Back to categories</a>
+      <div class="row g-5 justify-content-center">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+        <h1 class="pb-4 mb-4 fst-italic">
+          Category: {{ .Title }}
+        </h1>
+        <p class="lead">{{ .Params.lead | safeHTML }}</p>
+        <div class="text-center mb-5">{{ .Content }}</div>
+        <!-- TODO -->
+        <!-- Pagination is currently not supportet in single pages -->
+        <!-- Setup paginate from "current" -->
+      <!--   {{/*  -->
+      <!-- {{ $paginator := .Paginate $blog -}} -->
+      <!--   {{ $paginator }} -->
+      <!--   {{ range $paginator.Pages -}} -->
+
+      <!--     {{ . }} -->
+      <!--     {{ partial "main/blog-post-list-layout.html" . -}} -->
+      <!--   {{ end }} -->
+
+
+      <!--   <div class="pagination justify-content-center"> -->
+      <!--     {{ $.Scratch.Set "paginator" true }} -->
+      <!--     {{ template "_internal/pagination.html" . }} -->
+      <!--   </div> -->
+      <!--   */}} -->
+        {{ range $pages -}}
+          {{ partial "main/blog-post-list-layout.html" . -}}
+        {{ end }}
+
+        </div>
+        {{ partial "main/blog-sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+
+{{ end }}

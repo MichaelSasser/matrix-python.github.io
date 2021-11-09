@@ -1,0 +1,21 @@
+<article class="blog-post mb-5">
+  <h2 class="blog-post-title mb-0 mt-0">
+    <a class="text-body" href="{{ .RelPermalink }}"
+      >{{ .Params.title }}{{ if eq .Draft true }}
+        <span class="badge bg-danger">Draft</span>
+      {{ end }}</a
+    >
+  </h2>
+  <p class="blog-post-meta">
+    {{ partial "main/blog-meta.html" . -}}
+  </p>
+
+  <p class="mb-0">
+    {{ .Params.lead | safeHTML }}
+  </p>
+  <div class="blog-continue-reading">
+    <a href="{{ .RelPermalink }}" class="btn btn-outline-primary" role="button"
+      >Continue reading</a
+    >
+  </div>
+</article>

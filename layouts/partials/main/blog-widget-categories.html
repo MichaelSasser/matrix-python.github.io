@@ -2,13 +2,17 @@
 {{ $lastUrlElement := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
 
 
+<!-- Get the seconf last element from the current URL -->
+{{ $secondLastUrlElement := index (last 2 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+
+
 <!-- Get the third last element from the current URL -->
 {{ $thirdLastUrlElement := index (last 3 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
 
 
 <!-- Page is blog or blogpage for a specific year -->
 {{ $is_blog := false }}
-{{ if (or (eq $lastUrlElement "blog") (eq $thirdLastUrlElement "blog")) }}
+{{ if (or (eq $lastUrlElement "blog") (eq $lastUrlElement "categories") (eq $secondLastUrlElement "categories") (eq $thirdLastUrlElement "blog") (eq $lastUrlElement "tags")) }}
   {{ $is_blog = true }}
 {{ end }}
 
@@ -41,7 +45,7 @@
       {{ range $uniq_category := (uniq $categoies) }}
         <li>
           <a href="/categories/{{ lower $uniq_category }}"
-            >{{ $uniq_category }}
+            >{{ $uniq_category | title }}
             <span class="badge bg-secondary">
               <!-- compare and count one element after another -->
               {{ $counter := 0 }}
