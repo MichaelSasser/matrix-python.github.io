@@ -9,6 +9,7 @@ weight: 50
 images: []
 contributors: ["Michael Sasser"]
 categories: ["website", "matrix" , "foo"]
+tags: ["beta", "best", "bad", "bold", "bass", "brass", "baby", "boring", "banana", "beyond", "baseball", "bellman", "bell"]
 ---
 
 But for now, the post is needed and might not be removed until release.

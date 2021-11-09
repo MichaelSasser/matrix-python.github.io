@@ -8,6 +8,8 @@ draft: true
 weight: 50
 images: []
 contributors: ["Michael Sasser"]
+categories: ["foo", "bar", "baz", "does", "not", "exist", "some", "category"]
+tags: ["apple", "ascending", "axis", "adoring", "ass", "and", "assembly", "ada", "antenna", "acceleration", "accelerating", "asylum"]
 ---
 
 But for now, the post is needed and might not be removed until release.

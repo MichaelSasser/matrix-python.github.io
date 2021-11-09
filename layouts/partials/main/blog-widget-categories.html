@@ -12,7 +12,7 @@
 
 <!-- Page is blog or blogpage for a specific year -->
 {{ $is_blog := false }}
-{{ if (or (eq $lastUrlElement "blog") (eq $lastUrlElement "categories") (eq $secondLastUrlElement "categories") (eq $thirdLastUrlElement "blog") (eq $lastUrlElement "tags")) }}
+{{ if (or (eq $lastUrlElement "blog") (eq $thirdLastUrlElement "blog") (eq $lastUrlElement "categories") (eq $secondLastUrlElement "categories") (eq $lastUrlElement "tags") (eq $secondLastUrlElement "tags")) }}
   {{ $is_blog = true }}
 {{ end }}
 
@@ -38,11 +38,11 @@
 {{ end }}
 
 {{ if gt (len $categoies) 0 }}
-  <div class="p-4">
+  <div class="blog-widget">
     <h4 class="fst-italic" style="margin-top: 0rem;">Categories</h4>
     <ul class="list-unstyled mb-0">
       <!-- Using uniq values -->
-      {{ range $uniq_category := (uniq $categoies) }}
+      {{ range $uniq_category := first 8 (uniq $categoies) }}
         <li>
           <a href="/categories/{{ lower $uniq_category }}"
             >{{ $uniq_category | title }}
@@ -59,6 +59,11 @@
           </a>
         </li>
       {{ end }}
+      <div class="blog-widget-btn pt-2 mt-2">
+        <a href="/categories" class="btn btn-outline-primary" role="button"
+          >All Categories</a
+        >
+      </div>
     </ul>
   </div>
 {{ end }}

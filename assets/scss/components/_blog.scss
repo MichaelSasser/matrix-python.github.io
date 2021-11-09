@@ -23,6 +23,19 @@
   }
 }
 
+.blog-widget {
+  padding: $spacer * 1.5; /* p-4 */
+}
+
+.blog-widget-btn {
+  a {
+    text-transform: capitalize;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+}
+
 .blog-tags {
   list-style: none;
   padding-left: 0;
