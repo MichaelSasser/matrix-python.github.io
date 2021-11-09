@@ -12,7 +12,7 @@
 
 <!-- Page is blog or blogpage for a specific year -->
 {{ $is_blog := false }}
-{{ if (or (eq $lastUrlElement "blog") (eq $lastUrlElement "categories") (eq $secondLastUrlElement "categories") (eq $thirdLastUrlElement "blog") (eq $lastUrlElement "tags")) }}
+{{ if (or (eq $lastUrlElement "blog") (eq $thirdLastUrlElement "blog") (eq $lastUrlElement "categories") (eq $secondLastUrlElement "categories") (eq $lastUrlElement "tags") (eq $secondLastUrlElement "tags")) }}
   {{ $is_blog = true }}
 {{ end }}
 
@@ -42,7 +42,7 @@
     <h4 class="fst-italic" style="margin-top: 0rem;">Tags</h4>
     <ul class="blog-tags">
       <!-- Using uniq values -->
-      {{ range $uniq_tag := (uniq $tags) }}
+      {{ range $uniq_tag := first 10 (uniq $tags) }}
         <li>
           <a href="/tags/{{ lower $uniq_tag }}">
             <i class="fas fa-tags"></i>
@@ -60,6 +60,11 @@
           </a>
         </li>
       {{ end }}
+      <div class="blog-widget-btn pt-2 mt-2">
+        <a href="/tags" class="btn btn-outline-primary" role="button"
+          >All Tags</a
+        >
+      </div>
     </ul>
   </div>
 {{ end }}
