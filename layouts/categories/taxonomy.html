@@ -19,7 +19,7 @@
       <div class="row g-5 justify-content-center">
         <div class="col-md-12 col-lg-12 col-xl-12">
         <h1 class="pb-4 mb-4 fst-italic">
-          Category: {{ .Title }}
+          Category: {{ .Title | title }}
         </h1>
         <p class="lead">{{ .Params.lead | safeHTML }}</p>
         <div class="text-center mb-5">{{ .Content }}</div>

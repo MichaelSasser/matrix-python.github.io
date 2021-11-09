@@ -10,8 +10,6 @@ buildDrafts: true
 languageCode: en-US
 paginate: 7
 rssLimit: 10
-disableKinds:
-  - term
 outputs:
   home:
     - HTML
