@@ -245,24 +245,10 @@
         <div class="col-md-12 col-lg-10 col-xl-15">
           <h2 class="h3 mt-3 text-center">Latest from our blog</h2>
           <div class="card-list">
-            {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section"
+            {{ range first 4 (where .Site.RegularPages.ByDate.Reverse "Section"
               "blog")
             -}}
-              <div class="card">
-                <div class="card-body">
-                  <h3>
-                    <a
-                      class="stretched-link text-body"
-                      href="{{ .RelPermalink }}"
-                      >{{ .Params.title }}{{ if eq .Draft true }}
-                        <span class="badge bg-danger">Draft</span>
-                      {{ end }}</a
-                    >
-                  </h3>
-                  <p>{{ .Params.lead | safeHTML }}</p>
-                  {{ partial "main/blog-meta.html" . -}}
-                </div>
-              </div>
+              {{ partial "main/blog-post-list-layout.html" . -}}
             {{ end -}}
           </div>
         </div>
