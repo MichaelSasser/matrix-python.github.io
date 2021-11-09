@@ -37,14 +37,16 @@
   {{ end }}
   <!-- {{/* values: {{sort $categories.Values "count" "desc"}}<br /> */}} -->
 
-    <div class="row g-5 justify-content-center mb-5">
-      <div class="col-md-12 col-lg-10 col-xl-10">
+  <div class="container">
+    <div class="section pt-5">
+    <div class="row g-5 justify-content-center">
+      <div class="col-md-12 col-lg-12 col-xl-12">
         <h1 class="pb-4 mb-4 fst-italic">
           {{ .Title }}
         </h1>
         <p class="lead">{{ .Params.lead | safeHTML }}</p>
         <div class="text-center">{{ .Content }}</div>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
           {{ range (sort $categories.Values "count" "desc")}}
             {{/*  {{.}}<br /> */}}
             <div class="col">
@@ -137,4 +139,7 @@
       {{ partial "main/blog-sidebar.html" . }}
     </div>
   </div>
+    </div>
+  </div>
+
 {{ end }}
