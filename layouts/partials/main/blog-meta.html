@@ -27,7 +27,7 @@
       {{ end -}}<a
         class="stretched-link position-relative"
         href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
-        >{{ . }}</a
+        >{{ . | title }}</a
       >
     {{- end }}
   {{ end }}
