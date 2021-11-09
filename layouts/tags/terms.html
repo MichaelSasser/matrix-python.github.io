@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+  <div class="container">
+    <div class="section pt-5">
+      <div class="row g-5 justify-content-center">
+        <div class="col-md-12 col-lg-11 col-xl-11">
+          <h1 class="pb-2 mb-2 fst-italic">
+            {{ .Title }}
+          </h1>
+          <p class="lead">{{ .Params.lead | safeHTML }}</p>
+          <div class="text-center pb-4 mb-4">{{ .Content }}</div>
+
+          {{ $letters := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+
+          <ul class="blog-tags">
+            {{ range sort .Site.Taxonomies.tags }}
+              {{ $firstChar := substr .Page.Title 0 1 | upper }}
+
+              <!-- make sure to only have tags where the first char is a letter -->
+              {{ if $firstChar | in $letters }}
+                {{ $curLetter := $.Scratch.Get "curLetter" }}
+                <!-- if $curLetter is nott set or the letter has changed -->
+                {{ if ne $firstChar $curLetter }}
+                <!-- end the last ul -->
+                  </ul>
+                  <!-- update the current letter and print it -->
+                  {{ $.Scratch.Set "curLetter" $firstChar }}
+                  <h4 class="text-center">{{ $firstChar }}</h4>
+                  <hr />
+                  <!-- start a new ul -->
+                  <ul class="blog-tags">
+                {{ end }}
+
+
+                <li>
+                  <a href="{{ .Page.Permalink }}">
+                    <i class="fas fa-tags"></i>
+                    {{ .Page.Title | title }}
+                    <span class="badge text-dark">
+                      {{ .Count }}
+                    </span>
+                  </a>
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+        {{ partial "main/blog-sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}

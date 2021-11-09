@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+  {{ $blog := where .Site.RegularPages "Section" "blog" }}
+
+  {{ $pages := slice }}
+
+
+  <!-- Find the blog posts (pages) -->
+  {{ range $temp_page :=  (where $blog "Params.tags" "!=" nil) }}
+    {{ range $t := .Page.Params.tags }}
+      {{ if eq (lower $t) (lower $.Title) }}
+        {{ $pages = $pages | append $temp_page }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+
+  <div class="container">
+    <div class="section pt-5">
+      <a href="/tags/">&#8592; Back to tags</a>
+      <div class="row g-5 justify-content-center">
+        <div class="col-md-12 col-lg-11 col-xl-11">
+          <h1 class="pb-5 mb-5 fst-italic">
+            <i class="fas fa-tags"></i>
+            Tag:
+            {{ .Title | title }}
+          </h1>
+          {{ $paginator := .Paginate $pages -}}
+          {{ range $paginator.Pages -}}
+            {{ partial "main/blog-post-list-layout.html" . -}}
+          {{ end }}
+          <div class="pagination justify-content-center">
+            {{ $.Scratch.Set "paginator" true }}
+            {{ template "_internal/pagination.html" . }}
+          </div>
+        </div>
+        {{ partial "main/blog-sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}
