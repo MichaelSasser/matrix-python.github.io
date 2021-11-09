@@ -39,7 +39,10 @@
 
 {{ if gt (len $categoies) 0 }}
   <div class="blog-widget">
-    <h4 class="fst-italic" style="margin-top: 0rem;">Categories</h4>
+    <h4 class="fst-italic" style="margin-top: 0rem;">
+      <i class="fas fa-folder-open"></i> Categories
+    </h4>
+
     <ul class="list-unstyled mb-0">
       <!-- Using uniq values -->
       {{ range $uniq_category := first 8 (uniq $categoies) }}

@@ -39,7 +39,9 @@
 
 {{ if gt (len $tags) 0 }}
   <div class="p-4">
-    <h4 class="fst-italic" style="margin-top: 0rem;">Tags</h4>
+    <h4 class="fst-italic" style="margin-top: 0rem;">
+      <i class="fas fa-tags"></i> Tags
+    </h4>
     <ul class="blog-tags">
       <!-- Using uniq values -->
       {{ range $uniq_tag := first 10 (uniq $tags) }}
