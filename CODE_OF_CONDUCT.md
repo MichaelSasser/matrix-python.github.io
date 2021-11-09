@@ -103,7 +103,8 @@ We do not want:
 - Conversations in other languages than English. We have agreed on English as
   common language
 - Images or screenshots of code or error messages. Please use Markdown code
-  blocks or spans as described in the [Tutorial →]({{< ref "docs/tutorial/formatting" >}})
+  blocks or spans as described in the 
+  [Tutorial →](https://matrix-python.github.io/docs/tutorial/formatting/)
 
 ## Diversity Statement
 
@@ -129,7 +130,7 @@ endorse behaviour which is counter to that.
 
 If you experience or witness unacceptable behaviour — or have any other
 concerns — please report it by contacting us via email
-[abuse@michaelsasser.org](mailto://abuse@michaelsasser.org) or in Matrix:
+[abuse@MichaelSasser.org](mailto://abuse@MichaelSasser.org) or in Matrix:
 
 | Name             | Matrix Username                                                                          |
 | ---------------- | ---------------------------------------------------------------------------------------- |

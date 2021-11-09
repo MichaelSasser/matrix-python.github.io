@@ -38,12 +38,12 @@ from the community.
 
 To contribute to this project, check our
 [Contributer Documentation →](
-https://matrix-python.github.io/docs/contributing/contribute_to_the_website/)
+https://matrix-python.github.io/docs/contributing/workflow/)
 
 ## License
 
 Designed by the Python Community on Matrix team with the help of our 
-[contributors](http://localhost:1313/contributors/) ❤️.<br />
+[contributors](https://matrix-python.github.io/contributors/) ❤️.<br />
 Based on [Doks](https://getdoks.org/"), built with 
 [Hugo](https://gohugo.io/).<br />
 Code licensed 
