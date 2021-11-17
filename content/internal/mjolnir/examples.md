@@ -14,9 +14,9 @@ toc: true
 ---
 
 {{< danger >}}
-Keep in mind, some of the commands listed below can do a massive amount of
+Keep in mind, some commands shown below can do a massive amount of
 damage with just a single command!<br />
-Do not run any command, if you don't know, what it does. Make sure to read
+Do not run any command, if you don't know what it does. Make sure to read
 this documentation thoroughly before using the bot.
 {{< /danger >}}
 
@@ -41,7 +41,7 @@ mjolnir ban coc @user:example.tld spam
    For more information, see [List Shortcodes →]({{< relref "commands" >}}#list-shortcodes)
 2. Ban the user with the user identifier `@user:example.tld` in all community 
    rooms and Spaces, if the user is in that room or Space. Use `spam` as reason
-   which gets displayed to the banned user.
+   which gets displayed to the banned user
 3. Because of that specific `reason` (`spam`), redact the latest events
    the user created.<br />
    For more information, see [Reason →]({{< relref "commands" >}}#reason)
@@ -59,7 +59,7 @@ mjolnir redact <user ID> [room alias/ID] [limit]
 
 {{< note headline="This might redact everything a user wrote" >}}
 1000 events are often more than a user ever produced. Always use a limit, if
-you don't want to wipe the whole history of that user.<br /><br />
+you want to avoid wiping the whole history of that user.<br /><br />
 If the user just joined and spammed, this is what you want.
 {{< /note >}}
 
@@ -115,12 +115,12 @@ mjolnir kick @user:example.tld spam
 
 1. Kick the user with the user identifier `@user:example.tld` in all community 
    rooms and Spaces, if the user is in that room or Space. Use `spam` as reason
-   which gets displayed to the banned user.
+   which gets displayed to the kicked user
 3. Because of that specific `reason` (`spam`), redact the latest events
    the user created.<br />
    For more information, see [Reason →]({{< relref "commands" >}}#reason)
 
-### Example: Kick from a single rooms
+### Example: Kick from a single room
 
 ```text
 mjolnir kick @user:example.tld #room@element.tld foo
