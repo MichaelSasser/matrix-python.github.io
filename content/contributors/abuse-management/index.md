@@ -57,6 +57,7 @@ Currently, the following words are on the bad-word blacklist:
 
 **Sorry for that in advance!!**
 
+- thegreatwhitebrotherhood
 - geeksforgeeks
 - https://t.me/
 - https://discord.gg/
