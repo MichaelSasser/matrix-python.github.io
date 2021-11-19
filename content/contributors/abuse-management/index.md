@@ -15,17 +15,16 @@ bot: true
 
 Hi, my name is [mjolnir](https://github.com/matrix-org/mjolnir). You probably
 know me better as "Abuse Management". As a moderation tool for Matrix, I'm
-online 24/7 and part of the moderation team.
-Please don't try contacting me, since I'm not designed to answer or forward
-questions. When you see me writing something, it is probably one of the
-moderators having fun.
+online 24/7 and part of the moderation team. Please don't try contacting me,
+since I'm not designed to answer or forward questions. When you see me writing
+something, it is probably one of the moderators having fun.
 
 If you want to report issues, check out the section "Reporting Issues" below.
 
 ## What mjolnir does
 
-To be more transparent about how we use the bot, we decided to make public,
-how we use the bot.
+To be more transparent about how we use the bot, we decided to make public, how
+we use the bot.
 
 The bot has currently two "protections" enabled:
 
@@ -38,20 +37,19 @@ the user/server gets banned/unbanned from all existing and future rooms.
 
 #### Bad-Word Blacklist
 
-When an event occurs (e.g. someone writes a
-message), and the user who created the event is in that room for less
-then 40 minutes, the bot checks `content.body` for keywords
-which are on the bad-word blacklist. If the bot finds a match (regex),
-it will ban the user for spam, but only in the room the user was creating
-that event. Likewise, it redacts ("deletes") the event `m.room.message`
-with an event `m.room.redaction` without adding the user to our "code of
-conduct" blacklist.
+When an event occurs (e.g. someone writes a message), and the user who created
+the event is in that room for less then 40 minutes, the bot checks
+`content.body` for keywords which are on the bad-word blacklist. If the bot
+finds a match (regex), it will ban the user for spam, but only in the room the
+user was creating that event. Likewise, it redacts ("deletes") the event
+`m.room.message` with an event `m.room.redaction` without adding the user to
+our "code of conduct" blacklist.
 
-[Michael]({{< ref "/contributors/michael-sasser" >}}) then reviews the
-redacted messages manually and unbans the user, in case it was a
-false-positive ban or instruct the bot to add the user to "code of conduct"
-blacklist. When the time is above 40 minute mark, the bot "trusts" the user
-and ignores that users `content.body`.
+[Michael]({{< ref "/contributors/michael-sasser" >}}) then reviews the redacted
+messages manually and unbans the user, in case it was a false-positive ban or
+instruct the bot to add the user to "code of conduct" blacklist. When the time
+is above 40 minute mark, the bot "trusts" the user and ignores that users
+`content.body`.
 
 Currently, the following words are on the bad-word blacklist:
 
@@ -78,15 +76,13 @@ Currently, the following words are on the bad-word blacklist:
 
 #### Basic Flood Protection
 
-When a user posts ≥ 10 `m.room.message` events
-(messages not lines) in 60 seconds they'll be banned for spam with the
-same conditions as described above.
+When a user posts ≥ 10 `m.room.message` events (messages not lines) in 60
+seconds they'll be banned for spam with the same conditions as described above.
 
 ## The moderation tool
 
 "mjolnir" is a moderation tool for Matrix. Visit
-[the project page](https://github.com/matrix-org/mjolnir) for more
-information.
+[the project page](https://github.com/matrix-org/mjolnir) for more information.
 
 ## Reporting Issues
 

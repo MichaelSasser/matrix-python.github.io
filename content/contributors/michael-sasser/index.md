@@ -18,6 +18,5 @@ github_username: "MichaelSasser"
 Hi, I'm Michael, a member of the moderation team.
 
 If you have any questions, feel free to contact me on matrix
-{{< matrix identifier="michael:michaelsasser.org" >}}
-or via E-Mail
+{{< matrix identifier="michael:michaelsasser.org" >}} or via E-Mail
 {{< email address="Info@MichaelSasser.org" >}}.

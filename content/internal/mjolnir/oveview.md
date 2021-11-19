@@ -16,5 +16,4 @@ toc: true
 {{< todo >}}
 
 Mjölnir (or mjolnir) is a moderation tool for Matrix. Visit
-[the project page](https://github.com/matrix-org/mjolnir) for more
-information.
+[the project page](https://github.com/matrix-org/mjolnir) for more information.

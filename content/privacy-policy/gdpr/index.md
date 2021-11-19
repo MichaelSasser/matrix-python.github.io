@@ -131,8 +131,8 @@ transferred, notification of successful access, browser type and version, the
 user's operating system, referrer URL (the previously visited page) and, as a
 rule, IP Addresses and the requesting provider belong.
 
-The server log files can be used on the one hand for security purposes, e.g.
-to avoid overloading the server (especially in the case of abusive attacks, so-
+The server log files can be used on the one hand for security purposes, e.g. to
+avoid overloading the server (especially in the case of abusive attacks, so-
 called DDoS attacks) and on the other hand to ensure the load on the servers
 and their stability.
 
@@ -152,9 +152,8 @@ servers connected via the Internet.
 
 Used services and service providers:
 
-- GitHub: hosting platform for websites;<br />
-  Service provider: GitHub Inc.;<br />
-  Website: [https://www.github.com](https://www.github.com);<br />
+- GitHub: hosting platform for websites;<br /> Service provider: GitHub
+  Inc.;<br /> Website: [https://www.github.com](https://www.github.com);<br />
   Data protection declaration:
   [https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement](https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement);<br />
   Contact information:
@@ -209,8 +208,8 @@ Change and update of the data protection declaration
 
 We ask you to inform yourself regularly about the content of our data
 protection declaration. We will adapt the data protection declaration as soon
-as the changes to the data processing carried out by us make this necessary.
-We will inform you as soon as the changes require your participation (e.g.
+as the changes to the data processing carried out by us make this necessary. We
+will inform you as soon as the changes require your participation (e.g.
 consent) or other individual notification.
 
 If we provide addresses and contact information of companies and organizations

@@ -66,17 +66,18 @@ immediately.
 
 The code is
 [MIT](https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE.md)
-licensed, the docs are [CC BY 4.0](https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE_DOCS.md) licensed.
+licensed, the docs are
+[CC BY 4.0](https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE_DOCS.md)
+licensed.
 
 The content and works on these pages created by the site operators are subject
 to German copyright law. The reproduction, processing, distribution and any
 kind of exploitation outside the limits of those two licenses require the
-written consent of the respective author or creator.
-As far as the contents
-on this side were not created by the operator, the copyrights of third
-parties are considered. In particular contents of third parties are marked as
-such. If you should still be aware of a copyright infringement, we ask for a
-note. Upon discovery of violations, we will remove such content immediately.
+written consent of the respective author or creator. As far as the contents on
+this side were not created by the operator, the copyrights of third parties are
+considered. In particular contents of third parties are marked as such. If you
+should still be aware of a copyright infringement, we ask for a note. Upon
+discovery of violations, we will remove such content immediately.
 
 ## Privacy Policy
 

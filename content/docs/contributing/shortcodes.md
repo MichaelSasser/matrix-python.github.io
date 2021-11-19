@@ -14,8 +14,7 @@ toc: true
 mermaid: true
 ---
 
-{{< read_coc_alert >}}
-{{< contributing_alert >}}
+{{< read_coc_alert >}} {{< contributing_alert >}}
 
 to be able to use a shortcode, you must know, if it takes arguments and where
 they come from.
@@ -34,13 +33,12 @@ In addition they can be called or used in different configurations, depending
 on how the function of the shortcode was implemented.
 
 Some of the shortcodes came with Hugo, some with the template and others are
-created by us.<br />
-Our shortcodes are located as `HTML` files in `layouts/shortcodes/`.
-The files have the same name as the shortcodes.
+created by us.<br /> Our shortcodes are located as `HTML` files in
+`layouts/shortcodes/`. The files have the same name as the shortcodes.
 
-Because of all of that, this documentation is your best friend.
-In addition if you find a shortcode used in a page on this website, you can
-copy/paste and adjust it to your need.
+Because of all of that, this documentation is your best friend. In addition if
+you find a shortcode used in a page on this website, you can copy/paste and
+adjust it to your need.
 
 ## Images
 
@@ -50,9 +48,9 @@ copy/paste and adjust it to your need.
 [Template](https://github.com/h-enk/doks/blob/master/layouts/shortcodes/img-simple.html).
 
 It is possible to use the formats `jpeg`, `png`, `tiff`, `bmp`, `gif` and
-`svg`. Images are lazyloaded, blurred up, and responsive. They need to be
-place in a [page bundle](https://gohugo.io/content-management/page-bundles/),
-for example, like
+`svg`. Images are lazyloaded, blurred up, and responsive. They need to be place
+in a [page bundle](https://gohugo.io/content-management/page-bundles/), for
+example, like
 [this site](https://github.com/matrix-python/matrix-python.github.io/blob/master/content/docs/contributing/shortcodes):
 
 ```bash
@@ -74,30 +72,27 @@ Then you can use it with the shortcode in the Markdown file:
 - Use
   `{{</* img-simple src="my_image.jpeg" alt="my image" class="border-0" */>}}`
   for images smaller than 300 px, if they don't need a figure and caption
-- Use `{{</* img src="my_image.jpeg" alt="my image" class="border-0" */>}}`
-  for images larger than 300 px, if they don't need a figure and caption
+- Use `{{</* img src="my_image.jpeg" alt="my image" class="border-0" */>}}` for
+  images larger than 300 px, if they don't need a figure and caption
 - Use
   `{{</* img src="my_image.jpeg" alt="my image" caption="<center><em>My Caption</em></center>" class="border-0" */>}}`
   for image larger than 300 px, or if they need a figure and caption.
 
 Remember to add every image you use to the `images` variable in the document
-header. <br />
-For example: `images: ["foo.svg", "bar.jpeg"]`
+header. <br /> For example: `images: ["foo.svg", "bar.jpeg"]`
 
 ### Image Conventions
 
-Our convention is to use a `svg` image whenever possible.
-If this is not possible, you use a `png` image, if your image contains
-an alpha channel. If not use an `jpeg` image or an `gif`, if your image
-only references a low number of colors.
-Other formats are only accepted if they are used for a special purpose.
+Our convention is to use a `svg` image whenever possible. If this is not
+possible, you use a `png` image, if your image contains an alpha channel. If
+not use an `jpeg` image or an `gif`, if your image only references a low number
+of colors. Other formats are only accepted if they are used for a special
+purpose.
 
 ## Links and Cross References
 
-`ref` is defined by
-[Hugo](https://gohugo.io/functions/ref/).<br />
-`relref` is defined by
-[Hugo](https://gohugo.io/functions/relref/).
+`ref` is defined by [Hugo](https://gohugo.io/functions/ref/).<br /> `relref` is
+defined by [Hugo](https://gohugo.io/functions/relref/).
 
 The `ref` and `relref` shortcodes can be used to create permalinks, to a
 document using a relative or absolute path.
@@ -113,8 +108,8 @@ document using a relative or absolute path.
 You can use the shortcode in Markdown:
 
 ```markdown
-[shortcodes]({{</* ref "shortcodes" */>}})
-[Image Conventions]({{</* ref "shortcodes" */>}}#image-conventions)
+[shortcodes]({{</* ref "shortcodes" */>}}) [Image
+Conventions]({{</* ref "shortcodes" */>}}#image-conventions)
 ```
 
 or HTML:
@@ -124,8 +119,8 @@ or HTML:
 <a href="{{</* ref "shortcodes" */>}}#image-conventions">Image Conventions</a>
 ```
 
-HTML links are normally only used in HTML documents or nested shortcodes,
-like the following `warning`, where you can't use Markdown.
+HTML links are normally only used in HTML documents or nested shortcodes, like
+the following `warning`, where you can't use Markdown.
 
 ```text
 {{</* warning */>}}
@@ -133,20 +128,17 @@ A link inside a warning: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
 {{</* /warning */>}}
 ```
 
-{{< rendered >}}
-{{< warning >}}
-A link inside a warning: <a href="{{< ref "workflow" >}}">Workflow</a>.
-{{< /warning >}}
-{{< /rendered >}}
+{{< rendered >}} {{< warning >}} A link inside a warning: <a
+href="{{< ref "workflow" >}}">Workflow</a>. {{< /warning >}} {{< /rendered >}}
 
 For more information, check
 [Hugo -- Links and Cross References →](https://gohugo.io/content-management/cross-references/)
 
 ## Alerts
 
-`warning` is defined in `layouts/shortcodes/warning.html`.
-`danger` is defined in `layouts/shortcodes/danger.html`.
-`note` is defined in `layouts/shortcodes/note.html`.
+`warning` is defined in `layouts/shortcodes/warning.html`. `danger` is defined
+in `layouts/shortcodes/danger.html`. `note` is defined in
+`layouts/shortcodes/note.html`.
 
 Let's start with the warning alert from the previous section.
 
@@ -177,12 +169,11 @@ A "simple" warning.
 
 Both of them render the same alert:
 
-{{< rendered >}}
-{{< warning text="A \"simple\" warning." />}}
+{{< rendered >}} {{< warning text="A \"simple\" warning." />}}
 {{< /rendered >}}
 
-Besides the warning alert there are `danger` and `note`. They work exactly
-like `warning` but render in different colors and different default headlines.
+Besides the warning alert there are `danger` and `note`. They work exactly like
+`warning` but render in different colors and different default headlines.
 
 ### Parameters
 
@@ -198,24 +189,17 @@ The alert shortcode has the following parameters
 
 Tho determine, which one to use, we prepared a simple decision diagram:
 
-{{< mermaid caption="Alert Shortcode Decision Diagram">}}
-graph LR
-A([Alert Shortcode])
-A --> B{Contains <br /> Shortcode?}
-B -->|No| C{Contains <br /> HTML?}
-C -->|No| D{More then 80 <br /> characters?}
+{{< mermaid caption="Alert Shortcode Decision Diagram">}} graph LR A([Alert
+Shortcode]) A --> B{Contains <br /> Shortcode?} B -->|No| C{Contains <br />
+HTML?} C -->|No| D{More then 80 <br /> characters?}
 
-B -->|Yes| E([Nested])
-C -->|Yes| E
-D -->|Yes| E
-D -->|No| F([Normal])
+B -->|Yes| E([Nested]) C -->|Yes| E D -->|Yes| E D -->|No| F([Normal])
 {{< /mermaid >}}
 
 ### Special Alerts
 
-There are two special alerts, which are used in the contributing section of
-the documentation.
-Both of them take no parameters and cannot be nested.
+There are two special alerts, which are used in the contributing section of the
+documentation. Both of them take no parameters and cannot be nested.
 
 #### Todo Alert
 
@@ -227,9 +211,7 @@ Defined in `layouts/shortcodes/todo.html`.
 {{</* todo */>}}
 ```
 
-{{< rendered >}}
-{{< todo >}}
-{{< /rendered >}}
+{{< rendered >}} {{< todo >}} {{< /rendered >}}
 
 #### Read the Code of Conduct Alert
 
@@ -241,9 +223,7 @@ Defined in `layouts/shortcodes/read_coc_alert.html`.
 {{</* read_coc_alert */>}}
 ```
 
-{{< rendered >}}
-{{< read_coc_alert >}}
-{{< /rendered >}}
+{{< rendered >}} {{< read_coc_alert >}} {{< /rendered >}}
 
 #### Contributing Alert
 
@@ -255,16 +235,14 @@ Defined in `layouts/shortcodes/contributing_alert.html`.
 {{</* contributing_alert */>}}
 ```
 
-{{< rendered >}}
-{{< contributing_alert >}}
-{{< /rendered >}}
+{{< rendered >}} {{< contributing_alert >}} {{< /rendered >}}
 
 ## Contributors and Moderators
 
 The contributors/moderators shortcode renders a table of all
 contributors/moderators from the data entered in the front matter of there
-contributors page.
-This is described in [Project Structure: The Contributors]({{< ref "project_structure">}}#the-contributors)
+contributors page. This is described in [Project Structure: The
+Contributors]({{< ref "project_structure">}}#the-contributors)
 
 ### Contributors
 
@@ -276,9 +254,7 @@ Defined in `layouts/shortcodes/contributors.html`.
 {{</* contributors */>}}
 ```
 
-{{< rendered >}}
-{{< contributors >}}
-{{< /rendered >}}
+{{< rendered >}} {{< contributors >}} {{< /rendered >}}
 
 ### Moderators
 
@@ -290,9 +266,7 @@ Defined in `layouts/shortcodes/moderators.html`.
 {{</* moderators */>}}
 ```
 
-{{< rendered >}}
-{{< moderators >}}
-{{< /rendered >}}
+{{< rendered >}} {{< moderators >}} {{< /rendered >}}
 
 <!--
 Because this can get quite long, a rendered version can be found in the
@@ -302,9 +276,8 @@ Because this can get quite long, a rendered version can be found in the
 ## Matrix & Email
 
 The Matrix and email shortcodes are render an representation of an matrix
-identifier (user or room) and email address.<br />
-They are used to have the option to change the representation globally for all
-of them at the same time.
+identifier (user or room) and email address.<br /> They are used to have the
+option to change the representation globally for all of them at the same time.
 
 ### Matrix
 
@@ -322,8 +295,7 @@ Defined in `layouts/shortcodes/matrix.html`.
 {{</* matrix identifier="@michael:michaelsasser.org" */>}}
 ```
 
-{{< rendered >}}
-{{< matrix identifier="@michael:michaelsasser.org" >}}
+{{< rendered >}} {{< matrix identifier="@michael:michaelsasser.org" >}}
 {{< /rendered >}}
 
 ### Email
@@ -342,8 +314,7 @@ Defined in `layouts/shortcodes/email.html`.
 {{</* email address="Info@MichaelSasser.org" */>}}
 ```
 
-{{< rendered >}}
-{{< email address="Info@MichaelSasser.org" >}}
+{{< rendered >}} {{< email address="Info@MichaelSasser.org" >}}
 {{< /rendered >}}
 
 Both can used inside a text.
@@ -353,8 +324,8 @@ Both can used inside a text.
 Defined in `layouts/shortcodes/reporting_issues.html`.
 
 This shortcode will render the "Reporting Issues" section of the Code of
-Conduct, which is used in many places on this website.<br />
-It does not take any parameters.
+Conduct, which is used in many places on this website.<br /> It does not take
+any parameters.
 
 ### Example
 
@@ -362,20 +333,17 @@ It does not take any parameters.
 {{</* reporting_issues */>}}
 ```
 
-{{< rendered >}}
-{{< reporting_issues >}}
-{{< /rendered >}}
+{{< rendered >}} {{< reporting_issues >}} {{< /rendered >}}
 
 ## Variable Structure
 
 Defined in `layouts/shortcodes/variable_structure.html`.
 
-The `variable_structure` is used in the
-[Project Structure]({{< ref "project_structure" >}})
-section. It renders a full description of the front matter of a page. It comes
-with a heading line, some descriptions, a table of variables and there
-descriptions, in addition how to use the datetime string (if needed) and some
-generated example.
+The `variable_structure` is used in the [Project
+Structure]({{< ref "project_structure" >}}) section. It renders a full
+description of the front matter of a page. It comes with a heading line, some
+descriptions, a table of variables and there descriptions, in addition how to
+use the datetime string (if needed) and some generated example.
 
 ### Parameters
 
@@ -390,14 +358,13 @@ generated example.
 {{</* variable_structure "Foo" "title" "description" */>}}
 ```
 
-{{< rendered >}}
-{{< variable_structure "Foo" "title" "description" >}}
+{{< rendered >}} {{< variable_structure "Foo" "title" "description" >}}
 {{< /rendered >}}
 
 ## Rendered
 
-`rendered` produces a box around a rendered object with the word _Rendered_
-on top. It is used only on this site to show rendered shortcodes in a box.
+`rendered` produces a box around a rendered object with the word _Rendered_ on
+top. It is used only on this site to show rendered shortcodes in a box.
 
 ### Example
 
@@ -409,11 +376,7 @@ Hello
 
 As you see, this shortcode can only be used as nested shortcode.
 
-{{< rendered >}}
-{{< rendered >}}
-Hello
-{{< /rendered >}}
-{{< /rendered >}}
+{{< rendered >}} {{< rendered >}} Hello {{< /rendered >}} {{< /rendered >}}
 
 ## Figure
 
@@ -437,19 +400,16 @@ Hello World
 {{</* /figure */>}}
 ```
 
-{{< rendered >}}
-{{< figure caption="The caption line" >}}
-Hello World
-{{< /figure >}}
-{{< /rendered >}}
+{{< rendered >}} {{< figure caption="The caption line" >}} Hello World
+{{< /figure >}} {{< /rendered >}}
 
 ## Post
 
 Defined in `layouts/shortcodes/post.html`.
 
-Render a `card` of a blog post. This shortcode cannot be nested.
-If it somehow finds multiple blog posts with the same title, it will render
-only the oldest post.
+Render a `card` of a blog post. This shortcode cannot be nested. If it somehow
+finds multiple blog posts with the same title, it will render only the oldest
+post.
 
 ### Parameters
 
@@ -459,10 +419,9 @@ only the oldest post.
 | `linked`    | Adds the link to the card to the post, if `linked` is not `false`      |
 | `container` | Renders a `class="container"` around it, if `container` is not `false` |
 
-{{< note headline="Note" >}}
-In this shortcodes the <code>false</code> value is not a boolean value.
-It is just a string. Everything else, even <code>nil</code>, will render them.
-{{< /note >}}
+{{< note headline="Note" >}} In this shortcodes the <code>false</code> value is
+not a boolean value. It is just a string. Everything else, even
+<code>nil</code>, will render them. {{< /note >}}
 
 ### Example
 

@@ -15,11 +15,8 @@ toc: true
 
 ## Q: How can I report issues?
 
-{{< note >}}
-If the issue is website related, please follow our guide on how to
-[report an issue]({{< ref "report_issues" >}})
-on GitHub.
-{{< /note >}}
+{{< note >}} If the issue is website related, please follow our guide on how to
+[report an issue]({{< ref "report_issues" >}}) on GitHub. {{< /note >}}
 
 {{< reporting_issues >}}
 
@@ -31,29 +28,27 @@ English.
 
 No, this is an optional feature.
 
-
 ## Q: Are the rooms bridged to ...?
 
-No, and we are not planning to bridge this rooms.<br />
-For more information see [Q: Why are the rooms not bridged to libera.chat (IRC)? →](#q-why-are-the-rooms-not-bridged-to-liberachat-irc)
+No, and we are not planning to bridge this rooms.<br /> For more information
+see
+[Q: Why are the rooms not bridged to libera.chat (IRC)? →](#q-why-are-the-rooms-not-bridged-to-liberachat-irc)
 
 ## Q: Why are the rooms not bridged to libera.chat (IRC)?
 
-The bridge is not and was never stable. There are a bunch of stability and 
+The bridge is not and was never stable. There are a bunch of stability and
 moderation problems. One of our biggest critic points of the `#python` (IRC) is
-the need to be registered on libera to participate. It is not that big of a 
+the need to be registered on libera to participate. It is not that big of a
 difficulty, when you used an IRC before, and you know how it works. Otherwise,
-you need to look it up. Then you need to find out how to you do that via the 
-appbridge/heisenbridge. There is no GUI to do that. That is a bad user 
-experience we don't want.<br />
-In this community, it should be easy to join and chat. We are not interested 
-in scaring away users because of complexity bridging with it.
-If you want to join #python on libera.chat , you can use the usual tools to 
-do so, or you select "Matrix" in "libera.chat" when you click on 
+you need to look it up. Then you need to find out how to you do that via the
+appbridge/heisenbridge. There is no GUI to do that. That is a bad user
+experience we don't want.<br /> In this community, it should be easy to join
+and chat. We are not interested in scaring away users because of complexity
+bridging with it. If you want to join #python on libera.chat , you can use the
+usual tools to do so, or you select "Matrix" in "libera.chat" when you click on
 "explore rooms". If you are not on matrix.org, you can add that server.
 
-**TL;DR**<br />
-We are not planning to bridge this rooms.
+**TL;DR**<br /> We are not planning to bridge this rooms.
 
 ## Q: What is a moderator?
 
@@ -71,8 +66,8 @@ In our community it's like the American rock band
 
 We don't have a form to apply. We keep our eyes and ears open for users, who
 are active in the community, willing to help other users, with **useful**
-information and know how to be compliant with our
-[Code of Conduct]({{< ref "code_of_conduct" >}}).
+information and know how to be compliant with our [Code of
+Conduct]({{< ref "code_of_conduct" >}}).
 
 If we are interested in you to becoming a moderator, we will contact you.
 

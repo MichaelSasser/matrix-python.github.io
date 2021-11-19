@@ -1,7 +1,14 @@
 ---
 title: "Spaces Announcement 🎉"
-description: "Our community has grown to over 3500 members, and we are grateful for everyone who is bearing with us. Thanks Pythoneers!"
-lead: "Our community has grown to over 3500 members, and we are grateful for everyone who is bearing with us. Thanks Pythoneers!<br /> As we grow, we want to provide space for more conversations. Keeping discussion on-topic in this room is the right thing to do, but off-topic conversation is fun -- and it builds a stronger community."
+description:
+  "Our community has grown to over 3500 members, and we are grateful for
+  everyone who is bearing with us. Thanks Pythoneers!"
+lead:
+  "Our community has grown to over 3500 members, and we are grateful for
+  everyone who is bearing with us. Thanks Pythoneers!<br /> As we grow, we want
+  to provide space for more conversations. Keeping discussion on-topic in this
+  room is the right thing to do, but off-topic conversation is fun -- and it
+  builds a stronger community."
 date: 2021-10-08T14:48:42+01:00
 lastmod: 2021-10-08T14:52:16+01:00
 draft: false
@@ -23,9 +30,8 @@ floating_image_caption: "The new Python Community Space"
 <!-- conversation is fun -- and it builds a stronger community. -->
 
 So, as Spaces have made it out of labs, and we want to increase the community
-feeling, we decided to give it a go -- so
-**we are excited to announce our new Python community Space:**
-<br /><br />
+feeling, we decided to give it a go -- so **we are excited to announce our new
+Python community Space:** <br /><br />
 
 <center>
 {{< matrix identifier="#python-community:matrix.org" >}}
@@ -40,10 +46,10 @@ In the Space you will find two new rooms in addition to our Python room:
 | **Offtopic** room | {{< matrix identifier="#python-off-topic:matrix.org" >}} | For everything off-topic      |
 
 The [rules of the Python room]({{< ref "code_of_conduct" >}}) apply to this
-rooms as well, except the "no-off-topic" rule for the Offtopic room, of
-course 😜.
+rooms as well, except the "no-off-topic" rule for the Offtopic room, of course
+😜.
 
-The Space is optional - there will be no changes to this room and you can
-carry on using it as you always have. But we hope you'll join us :)
+The Space is optional - there will be no changes to this room and you can carry
+on using it as you always have. But we hope you'll join us :)
 
 _The moderation team_

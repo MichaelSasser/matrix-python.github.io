@@ -14,34 +14,34 @@ toc: true
 ---
 
 This code of conduct outlines our expectations for participants within the
-Matrix community, as well as steps for reporting unacceptable behaviour.
-We are committed to providing a welcoming and inspiring community for all,
-and expect our code of conduct to be honoured. Anyone who violates this code
-of conduct may be banned from the community.
+Matrix community, as well as steps for reporting unacceptable behaviour. We are
+committed to providing a welcoming and inspiring community for all, and expect
+our code of conduct to be honoured. Anyone who violates this code of conduct
+may be banned from the community.
 
 This applies to communication in any room of the Python community Matrix Space
-{{< matrix identifier="#python-community:matrix.org" >}} and commits and comments relating to any
-project in the `matrix-python` GitHub space.
+{{< matrix identifier="#python-community:matrix.org" >}} and commits and
+comments relating to any project in the `matrix-python` GitHub space.
 
 Our open source community strives to:
 
 - **Be friendly and patient**.
 - **Be welcoming**: We strive to be a community that welcomes and supports
-  people of all backgrounds and identities. This includes, but is not
-  limited to members of any race, ethnicity, culture, national origin,
-  colour, immigration status, social and economic class, educational level,
-  sex, sexual orientation, gender identity and expression, age, size, family
-  status, political belief, religion, and mental and physical ability.
-- **Be considerate**: Your work will be used by other people, and you in
-  turn will depend on the work of others. Any decision you take will
-  affect users and colleagues, and you should take those consequences into
-  account when making decisions. Remember that we're a world-wide community,
-  so you might not be communicating in someone else's primary language.
-- **Be respectful**: Not all of us will agree all the time, but disagreement
-  is no excuse for poor behaviour and poor manners. We might all experience
-  some frustration now and then, but we cannot allow that frustration to turn
-  into a personal attack. It’s important to remember that a community where
-  people feel uncomfortable or threatened is not a productive one.
+  people of all backgrounds and identities. This includes, but is not limited
+  to members of any race, ethnicity, culture, national origin, colour,
+  immigration status, social and economic class, educational level, sex, sexual
+  orientation, gender identity and expression, age, size, family status,
+  political belief, religion, and mental and physical ability.
+- **Be considerate**: Your work will be used by other people, and you in turn
+  will depend on the work of others. Any decision you take will affect users
+  and colleagues, and you should take those consequences into account when
+  making decisions. Remember that we're a world-wide community, so you might
+  not be communicating in someone else's primary language.
+- **Be respectful**: Not all of us will agree all the time, but disagreement is
+  no excuse for poor behaviour and poor manners. We might all experience some
+  frustration now and then, but we cannot allow that frustration to turn into a
+  personal attack. It’s important to remember that a community where people
+  feel uncomfortable or threatened is not a productive one.
 - **Be careful in the words that we choose**: Be kind to others. Do not insult
   or put down other participants. Harassment and other exclusionary behaviour
   aren't acceptable.
@@ -72,8 +72,8 @@ Harassment includes, but is not limited to:
 - Physical contact and simulated physical contact (eg, textual descriptions
   like “hug” or “backrub”) without consent or after a request to stop
 - Threats of violence, both physical and psychological
-- Incitement of violence towards any individual, including encouraging a
-  person to commit suicide or to engage in self-harm
+- Incitement of violence towards any individual, including encouraging a person
+  to commit suicide or to engage in self-harm
 - Deliberate intimidation
 - Stalking or following
 - Harassing photography or recording, including logging online activity for
@@ -107,11 +107,11 @@ We do not want:
   {{< matrix identifier="#python-off-topic:matrix.org" >}}
 - Advertising of any kind, except for the presentation of own Python projects.
   However, the presentation offer is only for those, who have already
-  contributed to the community. In addition, each project may be presented
-  only once, and only in the "Offtopic" room
-  {{< matrix identifier="#python-off-topic:matrix.org" >}}.
-  The moderation team reserves the right to reject or delete project
-  presentations without giving any reason.
+  contributed to the community. In addition, each project may be presented only
+  once, and only in the "Offtopic" room
+  {{< matrix identifier="#python-off-topic:matrix.org" >}}. The moderation team
+  reserves the right to reject or delete project presentations without giving
+  any reason.
 - Job search or job offers
 - Illegal content
 - Sexual content
@@ -121,7 +121,8 @@ We do not want:
 - Conversations in other languages than English. We have agreed on English as
   common language
 - Images or screenshots of code or error messages. Please use Markdown code
-  blocks or spans as described in the [Tutorial →]({{< ref "docs/tutorial/formatting" >}})
+  blocks or spans as described in the [Tutorial
+  →]({{< ref "docs/tutorial/formatting" >}})
 
 ## Diversity Statement
 
