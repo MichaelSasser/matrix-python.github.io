@@ -31,26 +31,29 @@ English.
 
 No, this is an optional feature.
 
+
+## Q: Are the rooms bridged to ...?
+
+No, and we are not planning to bridge this rooms.<br />
+For more information see [Q: Why are the rooms not bridged to libera.chat (IRC)? →](#q-why-are-the-rooms-not-bridged-to-liberachat-irc)
+
 ## Q: Why are the rooms not bridged to libera.chat (IRC)?
 
-We get asked quite a lot about bridging to libera. The bridge is not and was
-never stable. There are a bunch of stability and moderation problems. One of
-our biggest critic points of the #python (IRC) is the need to be a to write
-something. It is not that big of a problem, when you used an IRC before, and
-you know how it works. When you don't, you need to look it up. Then you need
-to find out how you do that via appbridge/heisenbridge. There is no GUI to do
-that. That is a bad user experience we don't want.
+The bridge is not and was never stable. There are a bunch of stability and 
+moderation problems. One of our biggest critic points of the `#python` (IRC) is
+the need to be registered on libera to participate. It is not that big of a 
+difficulty, when you used an IRC before, and you know how it works. Otherwise,
+you need to look it up. Then you need to find out how to you do that via the 
+appbridge/heisenbridge. There is no GUI to do that. That is a bad user 
+experience we don't want.<br />
+In this community, it should be easy to join and chat. We are not interested 
+in scaring away users because of complexity bridging with it.
+If you want to join #python on libera.chat , you can use the usual tools to 
+do so, or you select "Matrix" in "libera.chat" when you click on 
+"explore rooms". If you are not on matrix.org, you can add that server.
 
-In this room, it should be easy to join and chat. We are not interested in
-scaring away users because of the complexity.
-
-If you want to join `#python` on libera.chat , you can use the usual tools to
-do so, or you select "Matrix" in "libera.chat" when you click on "explore
-rooms". If you are not on matrix.org, you can add that server.
-
-**TL;DR**
-
-No, we are not planning to bridge this room.
+**TL;DR**<br />
+We are not planning to bridge this rooms.
 
 ## Q: What is a moderator?
 
