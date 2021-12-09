@@ -1,17 +1,26 @@
 .pill {
   color: $pink-500;
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+  font-weight: $badge-font-weight;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .pill-wrapper {
-  vertical-align: middle;
-  display: inline-flex;
+  vertical-align: baseline;
+  display: inline-block;
   align-items: center;
   border-radius: 6em;
   padding-right: 0.7em;
   padding-left: 0;
   background-color: $beige;
-  // font: 16px/1.6 sans-serif;
   gap: 0;
+
+  // Empty badges collapse automatically
+  &:empty {
+    display: none;
+  }
 }
 
 .pill-img {
