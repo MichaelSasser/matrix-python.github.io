@@ -58,7 +58,23 @@
   }
 }
 
-.blog-widget-table {
+.blog-post-updated {
+  /* text-align: right; */
+  font-size: 14px;
+}
+
+.blog-data-table {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+  h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  th,
   tr,
   td {
     border: none;

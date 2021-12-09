@@ -15,21 +15,27 @@
       >
     {{- end }}
   {{ end }}
-  {{ with .Params.categories }}
-    in
-    {{ range $index, $category := . -}}
-      {{ if gt $index 0 -}}
-        {{ if eq $index (sub (len $.Params.categories ) 1) }}
-          <span> and </span>
-        {{ else -}}
-          <span>, </span>
-        {{ end -}}
-      {{ end -}}<a
-        class="stretched-link position-relative"
-        href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
-        >{{ . | title }}</a
-      >
-    {{- end }}
+
+
+  <!-- 
+  Don't show the categories in a blog post in single view since it is
+  shown in the bottom of the page.
+  -->
+    {{ with .Params.categories }}
+      in
+      {{ range $index, $category := . -}}
+        {{ if gt $index 0 -}}
+          {{ if eq $index (sub (len $.Params.categories ) 1) }}
+            <span> and </span>
+          {{ else -}}
+            <span>, </span>
+          {{ end -}}
+        {{ end -}}<a
+          class="stretched-link position-relative"
+          href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
+          >{{ . | title }}</a
+        >
+      {{- end }}
   {{ end }}
 </p>
 <p class="blog-date">
