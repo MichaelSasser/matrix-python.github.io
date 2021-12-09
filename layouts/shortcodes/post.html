@@ -1,12 +1,16 @@
 <!-- title: The exact title of the blog post -->
 {{$title := .Get "title"}}
 <!-- linked: disable link with "false". Everything else renders it -->
-{{$linked := .Get "linked"}}
+{{$linked := .Get "linked" | default "true" }}
 <!-- container: disable container with "false". Everything else renders it -->
-{{$container := .Get "container"}}
+{{$container := .Get "container" | default "true" }}
+<!-- mt: Set top margin -->
+{{$mt := .Get "mt"  | default "3"}}
+<!-- pt: Set top padding -->
+{{$pt := .Get "pt"  | default "3"}}
 
 <!-- Blog Card -->
-<section class="section section-sm mt-3 pt-3">
+<section class="section section-sm mt-{{- $mt }} pt-{{- $pt -}}">
   {{if ne $container "false"}}
   <div class="container">
     {{ end }}
