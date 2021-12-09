@@ -10,7 +10,6 @@ menu:
   docs:
     parent: "help"
 weight: 620
-toc: false
 ---
 
 ## Unable to join the community Space?

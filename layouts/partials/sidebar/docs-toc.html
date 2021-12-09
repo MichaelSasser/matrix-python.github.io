@@ -1,0 +1,14 @@
+<div class="page-links">
+  <div class="sidebar-actions">
+    {{ if .Site.Params.showRss -}}
+      {{ partial "sidebar/show-rss.html" . }}
+    {{ end -}}
+    {{ if .Site.Params.editPage -}}
+      {{ partial "sidebar/edit-page.html" . }}
+    {{ end -}}
+    {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") -}}
+      <h3>On this page</h3>
+      {{ .TableOfContents }}
+    {{ end -}}
+  </div>
+</div>

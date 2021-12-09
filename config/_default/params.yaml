@@ -1,5 +1,5 @@
 title: Matrix+Python
-titleSeparator: '-'
+titleSeparator: "-"
 titleAddition: A Modern Python Chat
 description: >-
   We are the Python community on matrix, a free and open network for secure,
@@ -8,29 +8,29 @@ images: []
 ogLocale: en_US
 domainTLD: matrix-python.github.io/
 titleHome: Matrix+Python
-twitterSite: ''
-twitterCreator: ''
+twitterSite: ""
+twitterCreator: ""
 schemaType: Organization
 schemaName: Matrix+Python
 schemaAuthor: Michael Sasser
-schemaAuthorTwitter: ''
-schemaAuthorLinkedIn: ''
-schemaAuthorGitHub: 'https://github.com/matrix-python/'
+schemaAuthorTwitter: ""
+schemaAuthorLinkedIn: ""
+schemaAuthorGitHub: "https://github.com/matrix-python/"
 schemaLocale: en-US
-schemaLogo: ''
+schemaLogo: ""
 schemaLogoWidth: 512
 schemaLogoHeight: 512
-schemaImage: ''
+schemaImage: ""
 schemaImageWidth: 1280
 schemaImageHeight: 640
-schemaTwitter: ''
-schemaLinkedIn: ''
-schemaGitHub: 'https://github.com/matrix-python/'
+schemaTwitter: ""
+schemaLinkedIn: ""
+schemaGitHub: "https://github.com/matrix-python/"
 schemaSection: blog
 siteLinksSearchBox: false
-themeColor: '#fff'
+themeColor: "#fff"
 quality: 85
-bgColor: '#fff'
+bgColor: "#fff"
 landscapePhotoWidths:
   - 900
   - 800
@@ -53,16 +53,17 @@ footer: >-
   target="_blank" rel="license noopener">MIT</a>, docs <a
   href="https://github.com/matrix-python/matrix-python.github.io/blob/master/LICENSE_DOCS.md" target="_blank"
   rel="license noopener">CC BY 4.0</a>.
-copyRight: 'Code licensed MIT, docs CC BY 4.0.'
+copyRight: "Code licensed MIT, docs CC BY 4.0."
 alert: false
 alertDismissable: true
 alertText: Coming soon &mdash; This website is under development.
-docsRepo: 'https://github.com/matrix-python/matrix-python.github.io'
+docsRepo: "https://github.com/matrix-python/matrix-python.github.io"
 editPage: true
+showRss: true
 docsRepoBranch: master
 repoHost: GitHub
-matrix_room_data_url: 'https://matrix.org'
-users_room: '#python:matrix.org'
+matrix_room_data_url: "https://matrix.org"
+users_room: "#python:matrix.org"
 options:
   lazySizes: true
   clipBoard: true

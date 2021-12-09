@@ -1,0 +1,34 @@
+{{ $filePath := replace .File.Path "\\" "/" }}
+{{ $editPath := "null" }}
+{{ $glyph := "null" }}
+
+{{ if (eq .Site.Params.repoHost "GitHub") }}
+  {{ $editPath = "/blob/" }}
+  {{ $glyph = "fab fa-github" }}
+{{ else if (eq .Site.Params.repoHost "Gitea") }}
+  {{ $editPath = "/_edit/" }}
+  <!-- TODO: Tea glyph comes with v6, still wouldn't be gitea -->
+  <!-- NOTE: or use gitea svg  -->
+  {{ $glyph = "fas fa-coffee" }}
+{{ else if (eq .Site.Params.repoHost "GitLab") }}
+  {{ $editPath = "/-/blob/" }}
+  {{ $glyph = "fab fa-gitlab" }}
+{{ end }}
+
+{{ $contentPath := print .Site.Params.docsRepo $editPath .Site.Params.docsRepoBranch "/content/" }}
+
+{{ $url := print $contentPath $filePath }}
+
+{{ if .Site.Params.options.multilingualMode }}
+  {{ $url = print $contentPath .Lang "/" $filePath }}
+{{ end }}
+
+
+<p>
+  <a href="{{ $url }}">
+    <i class="{{ $glyph }}"></i>
+    Edit this Page
+    <!-- on -->
+    <!-- {{/* .Site.Params.repoHost */}} -->
+  </a>
+</p>

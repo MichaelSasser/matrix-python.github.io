@@ -10,7 +10,6 @@ menu:
   docs:
     parent: "prologue"
 weight: 110
-toc: false
 ---
 
 {{< note >}} You are new to Matrix or Element or you want to know more about

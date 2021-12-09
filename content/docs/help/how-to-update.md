@@ -10,7 +10,6 @@ menu:
   docs:
     parent: "help"
 weight: 610
-toc: false
 ---
 
 If you are using the `element-web` on `https://app.element.io/` or any web
