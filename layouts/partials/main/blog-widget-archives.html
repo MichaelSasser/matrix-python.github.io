@@ -15,7 +15,7 @@
         <!-- Lock the already selected archive -->
         {{ if ne $lastUrlElement .Key }}
           <a href="/blog/{{ .Key }}"
-            >{{ .Key }} <span class="badge bg-secondary">{{ .Len }}</span></a
+            >{{ .Key }} <span class="badge">{{ .Len }}</span></a
           >
         {{ else }}
           {{ .Key }}
