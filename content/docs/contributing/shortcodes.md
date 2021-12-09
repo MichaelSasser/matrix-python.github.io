@@ -418,6 +418,8 @@ post.
 | `title`     | The title of the post to be shown                                      |
 | `linked`    | Adds the link to the card to the post, if `linked` is not `false`      |
 | `container` | Renders a `class="container"` around it, if `container` is not `false` |
+| `mt`        | The top margin used in a bootstrap class                               |
+| `mp`        | The top padding used in a bootstrap class                              |
 
 {{< note headline="Note" >}} In this shortcodes the <code>false</code> value is
 not a boolean value. It is just a string. Everything else, even

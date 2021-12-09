@@ -50,6 +50,10 @@ Every Markdown file contains a header section, called front matter, in the
           {{ if eq . "menu" }}
             <code>structure</code>
           {{ end }}
+          <!-- blog_post -->
+          {{ if eq . "blog_post" }}
+            <code>str</code>
+          {{ end }}
         </td>
         <td>
           <!-- title -->
@@ -138,6 +142,10 @@ Every Markdown file contains a header section, called front matter, in the
           {{ if eq . "header_image" }}
             A image, which will be placed between the header and the lead with a
             100% width
+          {{ end }}
+          <!-- blog_post -->
+          {{ if eq . "blog_post" }}
+            The title of a blog post, which is available on that subject
           {{ end }}
         </td>
       </tr>
@@ -262,7 +270,7 @@ front matter might look like:
 {{/* prettier-ignore-start */}}
 <pre><button class="btn btn-copy"></button><code class="language-text">
 ---{{ range $fields }}
-    {{ if eq . "images"}}{{ . }}: ["foo.svg" "bar.svg"] {{ end }}{{ if eq . "title" }}{{ . }}: "My Title" {{ end }}{{ if eq . "description" "lead" }}{{ . }}: "A description of the page content" {{ end }}{{ if eq . "weight" }}{{ . }}: 50 {{ end }}{{ if eq . "contributors" }}{{ . }}: ["UserA" "UserB" "UserC"] {{ end }}{{ if eq . "matrix_identifier" }}{{ . }}: "@user:matrix.org" {{ end }}{{ if eq . "matrix_username" "github_username" }}{{ . }}: "UserName" {{ end }}{{ if eq . "date" "lastmod" }}{{ . }}: 2021-10-08T14:48:42+01:00 {{ end }}{{ if eq . "draft" "matrix_moderator" "website_contributor" "toc" }}{{ . }}: false {{ end }}{{ if eq . "menu" }}{{ . }}: [...]  # see below {{ end }}{{ if eq . "floating_image" }}{{ . }}: "foo.svg" {{ end }}{{ if eq . "floating_image_width" }}{{ . }}: 50{{ end }}{{ if eq . "floating_image_position" }}{{ . }}: "right" {{ end }}{{ if eq . "floating_image_caption" }}{{ . }}: "A optional caption line" {{ end }}{{ if eq . "header_image" }}{{ . }}: "foo.svg" {{ end }}{{ end }}
+    {{ if eq . "images"}}{{ . }}: ["foo.svg" "bar.svg"] {{ end }}{{ if eq . "title" }}{{ . }}: "My Title" {{ end }}{{ if eq . "description" "lead" }}{{ . }}: "A description of the page content" {{ end }}{{ if eq . "weight" }}{{ . }}: 50 {{ end }}{{ if eq . "contributors" }}{{ . }}: ["UserA" "UserB" "UserC"] {{ end }}{{ if eq . "matrix_identifier" }}{{ . }}: "@user:matrix.org" {{ end }}{{ if eq . "matrix_username" "github_username" }}{{ . }}: "UserName" {{ end }}{{ if eq . "date" "lastmod" }}{{ . }}: 2021-10-08T14:48:42+01:00 {{ end }}{{ if eq . "draft" "matrix_moderator" "website_contributor" "toc" }}{{ . }}: false {{ end }}{{ if eq . "menu" }}{{ . }}: [...]  # see below {{ end }}{{ if eq . "floating_image" }}{{ . }}: "foo.svg" {{ end }}{{ if eq . "floating_image_width" }}{{ . }}: 50{{ end }}{{ if eq . "floating_image_position" }}{{ . }}: "right" {{ end }}{{ if eq . "floating_image_caption" }}{{ . }}: "A optional caption line" {{ end }}{{ if eq . "header_image" }}{{ . }}: "foo.svg" {{ end }}{{ if eq . "blog_post" }}{{ . }}: "Hello Wrold" {{ end }}{{ end }}
 ---
 </code></pre>
 {{/* prettier-ignore-end */}}
