@@ -85,65 +85,66 @@
               <p>{{ .Content }}</p>
             </div>
             <div class="">
-            <table class="blog-data-table">
-              <tr>
-                <!-- Categories table head-->
-                {{ if isset .Params "categories" }}
-                <th>
-                  <h5><i class="fas fa-folder-open"></i> Categories</h5>
-                </th>
-                {{ end }}
-                <!-- Tags table head-->
-                {{ if isset .Params "tags" }}
-                <th>
-                  <h5><i class="fas fa-tag"></i> Tags</h5>
-                </th>
-                {{ end }}
-              </tr>
-              <tr>
-              <!-- Categories-->
-              <td>
-                {{ with .Params.categories }}
-                  {{ range $index, $category := . -}}
-                    {{ if gt $index 0 -}}
-                      {{ if eq $index (sub (len $.Params.categories ) 1) }}
-                        <span> and </span>
-                      {{ else -}}
-                        <span>, </span>
-                      {{ end -}}
-                    {{ end -}}<a
-                      class="stretched-link position-relative"
-                      href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
-                      >{{ . | title }}</a
-                    >
-                  {{- end }}
-                {{ end }}
-              </td>
-                <!-- Tags -->
-              <td>
-                {{ with .Params.tags }}
-                  {{ range $index, $category := . -}}
-                    {{ if gt $index 0 -}}
-                      {{ if eq $index (sub (len $.Params.tags ) 1) }}
-                        <span> and </span>
-                      {{ else -}}
-                        <span>, </span>
-                      {{ end -}}
-                    {{ end -}}<a
-                      class="stretched-link position-relative"
-                      href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
-                      >{{ . | title }}</a
-                    >
-                  {{- end }}
-                {{ end }}
-              </td>
-              </tr>
-            </table>
+              <table class="blog-data-table">
+                <tr>
+                  <!-- Categories table head-->
+                  {{ if isset .Params "categories" }}
+                    <th>
+                      <h5><i class="fas fa-folder-open"></i> Categories</h5>
+                    </th>
+                  {{ end }}
+                  <!-- Tags table head-->
+                  {{ if isset .Params "tags" }}
+                    <th>
+                      <h5><i class="fas fa-tag"></i> Tags</h5>
+                    </th>
+                  {{ end }}
+                </tr>
+                <tr>
+                  <!-- Categories-->
+                  <td>
+                    {{ with .Params.categories }}
+                      {{ range $index, $category := . -}}
+                        {{ if gt $index 0 -}}
+                          {{ if eq $index (sub (len $.Params.categories ) 1) }}
+                            <span> and </span>
+                          {{ else -}}
+                            <span>, </span>
+                          {{ end -}}
+                        {{ end -}}<a
+                          class="stretched-link position-relative"
+                          href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
+                          >{{ . | title }}</a
+                        >
+                      {{- end }}
+                    {{ end }}
+                  </td>
+                  <!-- Tags -->
+                  <td>
+                    {{ with .Params.tags }}
+                      {{ range $index, $category := . -}}
+                        {{ if gt $index 0 -}}
+                          {{ if eq $index (sub (len $.Params.tags ) 1) }}
+                            <span> and </span>
+                          {{ else -}}
+                            <span>, </span>
+                          {{ end -}}
+                        {{ end -}}<a
+                          class="stretched-link position-relative"
+                          href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
+                          >{{ . | title }}</a
+                        >
+                      {{- end }}
+                    {{ end }}
+                  </td>
+                </tr>
+              </table>
 
               <!-- Last time edited -->
-            <p class="text-muted blog-post-updated">Blog post updated on
-              {{ .Page.Lastmod.Format "January 2, 2006" -}}
-            </p>
+              <p class="text-muted blog-post-updated">
+                Blog post updated on
+                {{ .Page.Lastmod.Format "January 2, 2006" -}}
+              </p>
             </div>
           </article>
         </div>
