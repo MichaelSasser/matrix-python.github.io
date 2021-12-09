@@ -6,6 +6,20 @@
         <div class="col-md-12 col-lg-11 col-xl-11">
           <article class="blog-post">
             <div class="blog-header">
+              {{ if isset .Params "header_image" }}
+                <div class="text-center">
+                  <figure>
+                    <img
+                      data-sizes="auto"
+                      class="img-fluid 
+                {{ if eq .Site.Params.options.lazySizes true -}}
+                        lazyload blur-up
+                      {{ end }}"
+                      src="{{ .Params.header_image }}"
+                    />
+                  </figure>
+                </div>
+              {{ end }}
               <h1 class="blog-post-title">
                 {{ .Title }}{{ if eq .Draft true }}
                   <span class="badge bg-danger">Draft</span>
@@ -15,20 +29,6 @@
                 {{ partial "main/blog-meta.html" . }}
               </p>
             </div>
-            {{ if isset .Params "header_image" }}
-              <div class="text-center">
-                <figure>
-                  <img
-                    data-sizes="auto"
-                    class="img-fluid 
-                {{ if eq .Site.Params.options.lazySizes true -}}
-                      lazyload blur-up
-                    {{ end }}"
-                    src="{{ .Params.header_image }}"
-                  />
-                </figure>
-              </div>
-            {{ end }}
             <p class="lead">{{ .Params.lead | safeHTML }}</p>
 
             <div class="clearfix">
