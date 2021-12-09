@@ -1,0 +1,56 @@
+{{ if or .Prev .Next -}}
+  <div class="blog-navigation">
+    <!-- https://www.feliciano.tech/blog/custom-sort-hugo-single-pages/ -->
+    <div class="row">
+      <div class="col-lg">
+        {{ $pages := where site.RegularPages "Section" .Section -}}
+        {{ with $pages.Prev . -}}
+          <a class="stretched-link" href="{{ .RelPermalink }}">
+            <div class="card">
+              <div class="card-body">
+                <table>
+                  <tr>
+                    <td class="glyph" rowspan="2">
+                      <i class="fas fa-arrow-left"></i>
+                    </td>
+                    <td class="text-muted right">Previous</td>
+                  </tr>
+                  <tr>
+                    <!-- <td></td> -->
+                    <td class="title right">{{- .Title -}}</td>
+                  </tr>
+
+                  <tr></tr>
+                </table>
+              </div>
+            </div>
+          </a>
+        {{ end -}}
+      </div>
+      <div class="col-lg">
+        {{ with $pages.Next . -}}
+          <a class="stretched-link" href="{{ .RelPermalink }}">
+            <div class="card">
+              <div class="card-body">
+                <table>
+                  <tr>
+                    <td class="text-muted left">Next</td>
+                    <td class="glyph" rowspan="2">
+                      <i class="fas fa-arrow-right"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="title left">{{- .Title -}}</td>
+                    <!-- <td></td> -->
+                  </tr>
+
+                  <tr></tr>
+                </table>
+              </div>
+            </div>
+          </a>
+        {{ end -}}
+      </div>
+    </div>
+  </div>
+{{ end -}}

@@ -84,7 +84,14 @@
               {{ end }}
               <p>{{ .Content }}</p>
             </div>
-            <div class="">
+            <div class="blog-data-section">
+              <!-- Last time edited -->
+              {{ if ne .Page.Date .Page.Lastmod }}
+                <p class="blog-post-updated text-muted ">
+                  This blog post was updated on
+                  {{ .Page.Lastmod.Format "January 2, 2006" -}}
+                </p>
+              {{ end }}
               <table class="blog-data-table">
                 <tr>
                   <!-- Categories table head-->
@@ -139,14 +146,9 @@
                   </td>
                 </tr>
               </table>
-
-              <!-- Last time edited -->
-              <p class="text-muted blog-post-updated">
-                Blog post updated on
-                {{ .Page.Lastmod.Format "January 2, 2006" -}}
-              </p>
             </div>
           </article>
+          {{ partial "main/blog-navigation.html" . }}
         </div>
         {{ partial "main/blog-sidebar.html" . }}
       </div>

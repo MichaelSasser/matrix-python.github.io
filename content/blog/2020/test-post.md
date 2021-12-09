@@ -30,6 +30,7 @@ tags:
   ]
 ---
 
-But for now, the post is needed and might not be removed until release.
+But for now, the post is needed and might not be removed until release. Just
+for testing: This post was updated on 2021-12-09T15:42:00+02:00.
 
 {{< todo >}}
