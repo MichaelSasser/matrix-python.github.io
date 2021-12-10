@@ -1,40 +1,33 @@
 {{ define "main" }}
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <h1 class="text-center">{{ .Title }}</h1>
-      {{ $title := .Title }}
-      <div class="text-center">{{ .Content }}</div>
-      <div class="card-list">
-        {{ range $post := where .Site.RegularPages "Section" "blog" -}}
-        <!-- helper: set is_autor to true, if title is in contributors -->
-        {{ $is_author := false }}
-        <!-- check for contributor in list -->
-        {{ range $contributor := $post.Params.contributors }}
-        <!-- a -->
-        {{ if eq $contributor $title }}
-        <!-- a -->
-        {{ $is_author = true }}
-        <!-- a -->
-        {{ end }}
-        <!-- a -->
-        {{ end }}
-        <!-- a -->
-        {{ if eq $is_author true }}
-        <div class="card">
-          <div class="card-body">
-            <h2 class="h3">
-              <a class="stretched-link text-body" href="{{ .RelPermalink }}"
-                >{{ $post.Params.title }}</a
-              >
-            </h2>
-            <p>{{ $post.Params.lead | safeHTML }}</p>
-            {{ partial "main/blog-meta.html" $post -}}
-          </div>
-        </div>
-        {{ end -}} {{ end -}}
-      </div>
-    </article>
+
+  <!-- Store all posts this user made -->
+  {{ $posts := newScratch }}
+
+  {{ range $post := where .Site.RegularPages "Section" "blog" -}}
+
+    <!-- 
+         Compile a slice of posts written by that user in the $post scratch
+         under the "posts" key.
+    -->
+    {{ range $contributor := $post.Params.contributors }}
+      {{ if eq $contributor $.Title }}
+        {{ $posts.Add "posts" (slice $post) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <article>
+        <h1 class="text-center">{{ .Title }}</h1>
+        {{ $title := .Title }}
+        <div class="text-center">{{ .Content }}</div>
+        <h2 class="text-center mt-5 pt-5">My Blog Posts</h2>
+        {{ range ($posts.Get "posts") -}}
+          {{ partial "main/blog-post-list-layout.html" . -}}
+        {{ end -}}
+      </article>
+    </div>
   </div>
-</div>
 {{ end }}
