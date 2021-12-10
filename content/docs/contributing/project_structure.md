@@ -111,23 +111,16 @@ Notice, the `weight` in blog posts is always `50`.
 
 ## The About Page
 
-| Directory                                                                                                                 | Description    |
-| ------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| [`./content/about/index.md`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/about/index.md) | The about page |
+| Directory                                                                                                                   | Description                               |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| [`./content/about/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/about)                    | The "Changelog" entries of the about page |
+| [`./content/about/_index.md`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/about/_index.md) | The upper part of the _About_ page        |
 
-The about page is special because it is a single site. It only contains a
-`index.md` which fully represents the about page.
+The about page is a list view of about page entries, which are shown as a
+linear timeline on the bottom of the page. Everything above is part of
+`_index.md`.
 
-{{< variable_structure "About" "title" "description" "lead" "date" "lastmod" "draft" "images" "menu" "toc" >}}
-
-For an About page the menu structure is:
-
-```text
-menu:
-  about:
-```
-
-In this case `about:` does not get any value.
+{{< variable_structure "About" "title" "description" "lead" "date" "lastmod" "draft" "images" "menu" "toc" "blog_post" >}}
 
 ## The Privacy-Policy
 
