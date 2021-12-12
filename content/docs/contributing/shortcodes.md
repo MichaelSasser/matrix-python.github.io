@@ -1,7 +1,7 @@
 ---
 title: "Shortcodes"
-description: "Shortcodes are functions, which can be used repeatably"
-lead: "Shortcodes are functions, which can be used repeatably"
+description: "Shortcodes are re-usable functions for Markdown documents"
+lead: "Shortcodes are re-usable functions for Markdown documents"
 date: 2021-10-10T00:00:00+00:00
 lastmod: 2021-10-10T00:00:00+00:00
 draft: false
@@ -16,29 +16,20 @@ mermaid: true
 
 {{< read_coc_alert >}} {{< contributing_alert >}}
 
-to be able to use a shortcode, you must know, if it takes arguments and where
-they come from.
+To be able to use shortcodes, you must know, how they work. They are more or
+less like typical Python functions. They can use global or local variables and
+take any amount of named or anonymous arguments.
 
-Compared to a Python function, they can basically do the same thing. They can:
+Depending on how they are called, they might work differently.
 
-- use global variables from the page they are called from or anywhere else.
-- take a predefined number of anonymous arguments
-- take a predefined number of named arguments
-- take a any number of anonymous arguments (`*args`)
-- take a any number of named arguments (`**kwargs`)
-- any combination of that.
-- use no arguments at all
+Some of the shortcodes, we use came with Hugo, a few came with the template and
+others are created by us.<br />
 
-In addition they can be called or used in different configurations, depending
-on how the function of the shortcode was implemented.
+Our shortcodes are located as `HTML` files in `layouts/shortcodes/`. The name
+of the `HTML` file sets the name of the shortcodes.
 
-Some of the shortcodes came with Hugo, some with the template and others are
-created by us.<br /> Our shortcodes are located as `HTML` files in
-`layouts/shortcodes/`. The files have the same name as the shortcodes.
-
-Because of all of that, this documentation is your best friend. In addition if
-you find a shortcode used in a page on this website, you can copy/paste and
-adjust it to your need.
+If you find a shortcode used in on page, you can copy/paste and adjust it to
+your need.
 
 ## Images
 
@@ -47,7 +38,7 @@ adjust it to your need.
 `img-simple` is defined in the
 [Template](https://github.com/h-enk/doks/blob/master/layouts/shortcodes/img-simple.html).
 
-It is possible to use the formats `jpeg`, `png`, `tiff`, `bmp`, `gif` and
+It is possible to use the file formats `jpeg`, `png`, `tiff`, `bmp`, `gif` and
 `svg`. Images are lazyloaded, blurred up, and responsive. They need to be place
 in a [page bundle](https://gohugo.io/content-management/page-bundles/), for
 example, like
@@ -189,6 +180,7 @@ The alert shortcode has the following parameters
 
 Tho determine, which one to use, we prepared a simple decision diagram:
 
+<!-- prettier-ignore-start -->
 {{< mermaid caption="Alert Shortcode Decision Diagram">}}
 graph LR
   A([Alert Shortcode])
@@ -201,13 +193,14 @@ graph LR
   D -->|Yes| E
   D -->|No| F([Normal])
 {{< /mermaid >}}
+<!-- prettier-ignore-end -->
 
 ### Special Alerts
 
 There are two special alerts, which are used in the contributing section of the
 documentation. Both of them take no parameters and cannot be nested.
 
-#### Todo Alert
+#### To-do Alert
 
 Defined in `layouts/shortcodes/todo.html`.
 
@@ -428,8 +421,8 @@ post.
 | `mp`        | The top padding used in a bootstrap class                              |
 
 {{< note headline="Note" >}} In this shortcodes the <code>false</code> value is
-not a boolean value. It is just a string. Everything else, even
-<code>nil</code>, will render them. {{< /note >}}
+a string, not a boolean. Everything else, even <code>nil</code>, will render
+them. {{< /note >}}
 
 ### Example
 
