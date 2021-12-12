@@ -1,6 +1,6 @@
 # The Python Community on Matrix Website
 
-We are the Python community on Matrix, a free and open network for secure, 
+We are the _Python Community_ on Matrix, a free and open network for secure, 
 decentralized communication.
 
 **This website is currently under construction!**
