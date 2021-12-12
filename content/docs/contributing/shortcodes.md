@@ -433,3 +433,57 @@ them. {{< /note >}}
 {{< rendered >}}
 {{< post title="Spaces Announcement 🎉" linked="false" container="false" >}}
 {{< /rendered >}}
+
+## Tabs
+
+Defined in `layouts/shortcodes/tabs.html` and `layouts/shortcodes/tab.html`.
+
+`tabs` is a nested shortcode which produces a tabbed view. To use tabs, you
+need two shortcodes `tabs` and `tab`.
+
+### Parameters
+
+**Tabs**
+
+| Parameter | Description                                              |
+| --------- | -------------------------------------------------------- |
+| `name`    | A namespace to let Hugo distinguish them from each other |
+
+**Tab**
+
+| Parameter  | Description                                            |
+| ---------- | ------------------------------------------------------ |
+| `name`     | A name/label of the tab                                |
+| `codelang` | (optional) Render code blocks with syntax highlighting |
+
+### Example
+
+```text
+{{</* tabs name="some-name" */>}}
+{{{</* tab name="Python" codelang="python" */>}}
+print("Hello World")
+{{</* /tab */>}}
+{{{</* tab name="C" codelang="c" */>}}
+printf("Hello World");
+{{</* /tab */>}}
+{{</* tab name="Description" */>}}
+This is just a description. No code gets rendered.
+{{</* /tab */>}}}
+{{</* /tabs */>}}
+```
+
+<!-- prettier-ignore-start -->
+{{< rendered >}} 
+{{< tabs name="some-name" >}}
+{{{< tab name="Python" codelang="python" >}}
+print("Hello World")
+{{< /tab >}}
+{{{< tab name="C" codelang="c" >}}
+printf("Hello World");
+{{< /tab >}}
+{{< tab name="Description" >}}
+This is just a description. No code gets rendered.
+{{< /tab >}}}
+{{< /tabs >}}
+{{< /rendered >}}
+<!-- prettier-ignore-end -->

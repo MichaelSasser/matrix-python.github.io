@@ -1,0 +1,14 @@
+/* Adapting nav-tabs for dark mode */
+[data-dark-mode] button.nav-link.active {
+  background-color: $body-bg-dark;
+  color: $body-color-dark;
+  border-color: $border-dark;
+}
+
+[data-dark-mode] button.nav-link {
+  color: $link-color-dark;
+}
+
+[data-dark-mode] .nav-tabs {
+  border-bottom: 1px solid $border-dark;
+}
