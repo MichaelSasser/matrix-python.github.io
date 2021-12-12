@@ -189,11 +189,17 @@ The alert shortcode has the following parameters
 
 Tho determine, which one to use, we prepared a simple decision diagram:
 
-{{< mermaid caption="Alert Shortcode Decision Diagram">}} graph LR A([Alert
-Shortcode]) A --> B{Contains <br /> Shortcode?} B -->|No| C{Contains <br />
-HTML?} C -->|No| D{More then 80 <br /> characters?}
+{{< mermaid caption="Alert Shortcode Decision Diagram">}}
+graph LR
+  A([Alert Shortcode])
+  A --> B{Contains <br /> Shortcode?}
+  B -->|No| C{Contains <br /> HTML?}
+  C -->|No| D{More then 80 <br /> characters?}
 
-B -->|Yes| E([Nested]) C -->|Yes| E D -->|Yes| E D -->|No| F([Normal])
+  B -->|Yes| E([Nested])
+  C -->|Yes| E
+  D -->|Yes| E
+  D -->|No| F([Normal])
 {{< /mermaid >}}
 
 ### Special Alerts
