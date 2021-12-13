@@ -14,16 +14,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ---
-
 name: GitHub Pages
 
 on:
   push:
     branches:
       - master
-  schedule:  # update number of user in the room every day
-    - cron:  '0 5 * * *'
-
+  schedule: # update number of user in the room every day
+    - cron: "0 5 * * *"
 
 jobs:
   deploy:
@@ -32,10 +30,16 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
       - uses: actions/setup-node@v2
         with:
-          node-version: '16'
-          cache: 'npm'
+          node-version: "16"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install
