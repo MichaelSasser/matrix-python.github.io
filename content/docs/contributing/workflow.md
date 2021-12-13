@@ -23,7 +23,7 @@ You will find the code of this website on GitHub:
 <a href="https://github.com/MichaelSasser/matrixctl/issues/new/choose">issue</a>.
 Describe, what you like to change/add and why. {{< /warning >}}
 
-1. Make sure you have Node.js and NPM installed.
+1. Make sure you have Node.js, NPM and `git-lfs` installed.
 2. Create a fork of this repository.
 3. Clone the fork (as `origin`) to your local machine.
 4. Add this repository as a remote named `upstream`.
