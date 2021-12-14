@@ -117,3 +117,5 @@ module:
       target: assets/scss/fontawesome
     - source: node_modules/@fortawesome/fontawesome-free/webfonts
       target: static/fonts/vendor/fontawesome
+    - source: node_modules/medium-zoom
+      target: assets/js/vendor/medium-zoom

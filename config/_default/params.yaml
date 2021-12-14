@@ -69,6 +69,7 @@ options:
   clipBoard: true
   instantPage: true
   flexSearch: false
+  mediumZoom: true
   darkMode: true
   bootStrapJs: true
   breadCrumb: true
