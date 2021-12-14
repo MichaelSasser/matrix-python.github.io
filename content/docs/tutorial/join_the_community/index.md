@@ -1,5 +1,5 @@
 ---
-title: "Formatting"
+title: "Join the Community"
 description: ""
 lead: ""
 date: 2021-02-15T20:05:00+00:00
@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "tutorial"
-weight: 230
+weight: 260
 toc: true
 ---
 
