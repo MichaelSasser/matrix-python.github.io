@@ -36,6 +36,10 @@
   }
 }
 
+.blog-navigation a {
+  font-size: $font-size-base * 0.9;
+}
+
 .blog-tags {
   list-style: none;
   padding-left: 0;
@@ -94,10 +98,6 @@
   padding-top: 2rem;
 }
 
-.blog-navigation a {
-  font-size: $font-size-base * 0.9;
-}
-
 @include media-breakpoint-up(lg) {
   .blog-navigation {
     margin-bottom: -1rem;
@@ -121,7 +121,6 @@
   td {
     padding-top: 0;
     padding-bottom: 0;
-    /* text-align: right; */
   }
 
   .right {
