@@ -56,12 +56,22 @@
   {{ $katexConfig := $katexConfig | js.Build -}}
   {{ $slice = $slice | append $katexConfig -}}
 {{ end -}}
-<!-- js/vendor/medium-zoom/dist/medium-zoom.js -->
-{{/* if .Site.Params.options.mediumZoom -*/}}
+
+<!-- medium-zoom -->
+{{ $mediumZoom:= resources.Get "js/medium-zoom.js" -}}
+{{ if .Site.Params.options.mediumZoom -}}
   {{ $mediumZoom:= resources.Get "js/medium-zoom.js" -}}
   {{ $mediumZoom := $mediumZoom | js.Build -}}
   {{ $slice = $slice | append $mediumZoom -}}
-{{/* end -*/}}
+{{ end -}}
+
+<!-- Add snow to the front page for the last 14 days of the year -->
+{{ $snow:= resources.Get "js/snow.js" -}}
+{{ if gt now.YearDay 351 }}
+  {{ $snow:= resources.Get "js/snow.js" -}}
+  {{ $snow := $snow | js.Build -}}
+  {{ $slice = $slice | append $snow -}}
+{{ end -}}
 
 {{ $js := $slice | resources.Concat "main.js" -}}
 
@@ -86,6 +96,9 @@
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" defer></script>
   {{ end -}}
+  {{ if gt now.YearDay 351 }}
+    <script src="{{ $snow.RelPermalink }}" defer></script>
+  {{ end -}}
 {{ else -}}
   {{ $js := $js | minify | fingerprint "sha512" -}}
   {{ $index := $index | minify | fingerprint "sha512" -}}
@@ -96,6 +109,9 @@
   {{ $mermaid := $mermaid | minify | fingerprint "sha512" -}}
   {{ if .Site.Params.options.mediumZoom -}}
     {{ $mediumZoom := $mediumZoom | minify | fingerprint "sha512" -}}
+  {{ end -}}
+  {{ if gt now.YearDay 351 }}
+    {{ $snow := $snow | minify | fingerprint "sha512" -}}
   {{ end -}}
   {{ if .Site.Params.options.bootStrapJs -}}
     <script src="{{ $bs.RelPermalink }}" integrity="{{ $bs.Data.Integrity }}" crossorigin="anonymous" defer></script>
@@ -116,5 +132,8 @@
   {{ end -}}
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" integrity="{{ $mediumZoom.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ end -}}
+  {{ if gt now.YearDay 351 }}
+    <script src="{{ $snow.RelPermalink }}" integrity="{{ $mediumZoom.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
 {{ end -}}
