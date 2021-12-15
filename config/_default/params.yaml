@@ -32,12 +32,14 @@ themeColor: "#fff"
 quality: 85
 bgColor: "#fff"
 landscapePhotoWidths:
+  - 1920
   - 900
   - 800
   - 700
   - 600
   - 500
 portraitPhotoWidths:
+  - 1200
   - 800
   - 700
   - 600
