@@ -22,6 +22,9 @@
 
   <div class="container">
     <div class="section pt-5 pb-0">
+    {{ if eq $is_blog false }}
+    <a href="/blog/">&#8592; Back to blog</a>
+    {{ end }}
       <div class="row g-5 justify-content-center">
         <div class="col-md-12 col-lg-11 col-xl-11">
           {{ if eq $is_blog false }}
