@@ -91,21 +91,21 @@ document using a relative or absolute path.
 <!-- The "/*" and "*/" are only used to prevent them to be rendered.  -->
 <!-- They are not actually part of the shortcode!!!  -->
 
-```html
+```md
 {{</* ref "/blog/my-post.md" */>}}
 {{</* relref "contributing" */>}}
 ```
 
 You can use the shortcode in Markdown:
 
-```markdown
+```md
 [shortcodes]({{</* ref "shortcodes" */>}}) [Image
 Conventions]({{</* ref "shortcodes" */>}}#image-conventions)
 ```
 
 or HTML:
 
-```text
+```md
 <a href="{{</* ref "shortcodes" */>}}"Shortcodes</a>
 <a href="{{</* ref "shortcodes" */>}}#image-conventions">Image Conventions</a>
 ```
@@ -113,7 +113,7 @@ or HTML:
 HTML links are normally only used in HTML documents or nested shortcodes, like
 the following `warning`, where you can't use Markdown.
 
-```text
+```md
 {{</* warning */>}}
 A link inside a warning: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
 {{</* /warning */>}}
@@ -133,7 +133,7 @@ in `layouts/shortcodes/danger.html`. `note` is defined in
 
 Let's start with the warning alert from the previous section.
 
-```text
+```md
 {{</* warning */>}}
 A link inside a warning: <a href="{{</* ref "workflow" */>}}">Workflow</a>.
 {{</* /warning */>}}
@@ -148,11 +148,11 @@ point.
 
 In the following, we use a simpler example.
 
-```text
-{{</* wrning text="A \"simple\" warning." /*/>}}
+```md
+{{</* warning text="A \"simple\" warning." /*/>}}
 ```
 
-```text
+```md
 {{</* warning */>}}
 A "simple" warning.
 {{</* /warning */>}}
@@ -206,7 +206,7 @@ Defined in `layouts/shortcodes/todo.html`.
 
 ##### Example
 
-```text
+```md
 {{</* todo */>}}
 ```
 
@@ -218,7 +218,7 @@ Defined in `layouts/shortcodes/read_coc_alert.html`.
 
 ##### Example
 
-```text
+```md
 {{</* read_coc_alert */>}}
 ```
 
@@ -230,7 +230,7 @@ Defined in `layouts/shortcodes/contributing_alert.html`.
 
 ##### Example
 
-```text
+```md
 {{</* contributing_alert */>}}
 ```
 
@@ -249,7 +249,7 @@ Defined in `layouts/shortcodes/contributors.html`.
 
 #### Example
 
-```text
+```md
 {{</* contributors */>}}
 ```
 
@@ -261,7 +261,7 @@ Defined in `layouts/shortcodes/moderators.html`.
 
 #### Example
 
-```text
+```md
 {{</* moderators */>}}
 ```
 
@@ -290,7 +290,7 @@ Defined in `layouts/shortcodes/matrix.html`.
 
 #### Example
 
-```text
+```md
 {{</* matrix identifier="@michael:michaelsasser.org" */>}}
 ```
 
@@ -309,7 +309,7 @@ Defined in `layouts/shortcodes/email.html`.
 
 #### Example
 
-```text
+```md
 {{</* email address="Info@MichaelSasser.org" */>}}
 ```
 
@@ -328,7 +328,7 @@ any parameters.
 
 ### Example
 
-```text
+```md
 {{</* reporting_issues */>}}
 ```
 
@@ -353,7 +353,7 @@ use the datetime string (if needed) and some generated example.
 
 ### Example
 
-```text
+```md
 {{</* variable_structure "Foo" "title" "description" */>}}
 ```
 
@@ -367,7 +367,7 @@ top. It is used only on this site to show rendered shortcodes in a box.
 
 ### Example
 
-```text
+```md
 {{</* rendered */>}}
 Hello
 {{</* /rendered */>}}
@@ -393,7 +393,7 @@ Defined in `layouts/shortcodes/figure.html`.
 
 ### Example
 
-```text
+```md
 {{</* figure caption="The caption line" */>}}
 Hello World
 {{</* /figure */>}}
@@ -426,7 +426,7 @@ them. {{< /note >}}
 
 ### Example
 
-```text
+```md
 {{</* post title="Spaces Announcement 🎉" linked="false" container="false" */>}}
 ```
 
@@ -458,7 +458,7 @@ need two shortcodes `tabs` and `tab`.
 
 ### Example
 
-```text
+```md
 {{</* tabs name="some-name" */>}}
 {{{</* tab name="Python" codelang="python" */>}}
 print("Hello World")
