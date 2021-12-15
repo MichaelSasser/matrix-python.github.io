@@ -34,7 +34,7 @@ toc: true
 
 For an documentation page the menu structure is:
 
-```text
+```yaml
 menu:
   docs:
     parent: "<the parent>"  # e.g. "prologue", "tutorial", "contributing", ...

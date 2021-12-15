@@ -268,7 +268,7 @@ front matter might look like:
 
 <!-- Example -->
 {{/* prettier-ignore-start */}}
-<pre><button class="btn btn-copy"></button><code class="language-text">
+<pre><button class="btn btn-copy"></button><code class="language-yaml">
 ---{{ range $fields }}
     {{ if eq . "images"}}{{ . }}: ["foo.svg" "bar.svg"] {{ end }}{{ if eq . "title" }}{{ . }}: "My Title" {{ end }}{{ if eq . "description" "lead" }}{{ . }}: "A description of the page content" {{ end }}{{ if eq . "weight" }}{{ . }}: 50 {{ end }}{{ if eq . "contributors" }}{{ . }}: ["UserA" "UserB" "UserC"] {{ end }}{{ if eq . "matrix_identifier" }}{{ . }}: "@user:matrix.org" {{ end }}{{ if eq . "matrix_username" "github_username" }}{{ . }}: "UserName" {{ end }}{{ if eq . "date" "lastmod" }}{{ . }}: 2021-10-08T14:48:42+01:00 {{ end }}{{ if eq . "draft" "matrix_moderator" "website_contributor" "toc" }}{{ . }}: false {{ end }}{{ if eq . "menu" }}{{ . }}: [...]  # see below {{ end }}{{ if eq . "floating_image" }}{{ . }}: "foo.svg" {{ end }}{{ if eq . "floating_image_width" }}{{ . }}: 50{{ end }}{{ if eq . "floating_image_position" }}{{ . }}: "right" {{ end }}{{ if eq . "floating_image_caption" }}{{ . }}: "A optional caption line" {{ end }}{{ if eq . "header_image" }}{{ . }}: "foo.svg" {{ end }}{{ if eq . "blog_post" }}{{ . }}: "Hello Wrold" {{ end }}{{ end }}
 ---

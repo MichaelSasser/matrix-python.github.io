@@ -50,39 +50,39 @@ Please use the package manager, provided by your distribution or the one of your
 <h5>Arch Linux</h5>
 <pre>
 <code class="language-bash">
-$ pacman -Syu
-$ pacman -S element-desktop
+pacman -Syu
+pacman -S element-desktop
 </code>
 </pre>
 <h5>Debian / Ubuntu</h5>
 <pre>
 <code class="language-bash">
-$ sudo apt install -y wget apt-transport-https
-$ sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
-$ echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
-$ sudo apt update
-$ sudo apt install element-desktop
+sudo apt install -y wget apt-transport-https
+sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
+sudo apt update
+sudo apt install element-desktop
 </code>
 </pre>
 <h5>Fedora / Rocky Linux / CentOS</h5>
 <pre>
 <code class="language-bash">
-$ sudo dnf install -y dnf-plugins-core distribution-gpg-keys
-$ sudo dnf copr enable taw/element
-$ sudo dnf install -y element --refresh
+sudo dnf install -y dnf-plugins-core distribution-gpg-keys
+sudo dnf copr enable taw/element
+sudo dnf install -y element --refresh
 </code>
 </pre>
 <h5>Nix</h5>
 <pre>
 <code class="language-bash">
-$ # On NixOS
-$ nix-env -iA nixos.element-desktop
-$ # On non-NixOS
-$ nix-env -iA nixpkgs.element-desktop
-$ # On NixOS (Wayland)
+# On NixOS
+nix-env -iA nixos.element-desktop
+# On non-NixOS
+nix-env -iA nixpkgs.element-desktop
+# On NixOS (Wayland)
 nix-env -iA nixos.element-desktop-wayland
-$ # On non-NixOS (Wayland)
-$ nix-env -iA nixpkgs.element-desktop-wayland
+# On non-NixOS (Wayland)
+nix-env -iA nixpkgs.element-desktop-wayland
 </code>
 </pre>
 {{< /tab >}}
@@ -94,14 +94,14 @@ You can either use the package manager of your choice or download the <i>Element
 <h5>Chocolatey</h5>
 <pre>
 <code class="language-powershell">
-$ choco install element-desktop
+choco install element-desktop
 </code>
 </pre>
 <h5>Scoop</h5>
 <pre>
 <code class="language-powershell">
-$ scoop bucket add extras
-$ scoop install extras/element
+scoop bucket add extras
+scoop install extras/element
 </code>
 </pre>
 {{< /tab >}}}
@@ -114,7 +114,7 @@ You can either use Homebrew or download the <i>Element Desktop</i> as <i>Apple D
 <h5>Homebrew</h5>
 <pre>
 <code class="language-bash">
-$ brew install --cask element
+brew install --cask element
 </code>
 </pre>
 

@@ -60,14 +60,14 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    codeFences: false
+    codeFences: true
     guessSyntax: false
     hl_Lines: ""
     lineNoStart: 1
     lineNos: false
-    lineNumbersInTable: true
+    lineNumbersInTable: false
     noClasses: false
-    style: dracula
+    style: hybrid
     tabWidth: 4
 sitemap:
   changefreq: weekly
