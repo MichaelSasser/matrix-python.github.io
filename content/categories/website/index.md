@@ -5,7 +5,7 @@ lead: "News about the website and everything around it."
 date: 2021-11-08T06:37:21+02:00
 lastmod: 2021-11-08T06:37:21+02:00
 draft: false
-images: ["website-temp.png"]
+images: ["website.svg"]
 contributors: ["Michael Sasser"]
 ---
 
