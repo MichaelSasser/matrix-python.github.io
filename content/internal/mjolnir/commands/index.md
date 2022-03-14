@@ -76,6 +76,7 @@ Every command starts with a prefix Mjölnir accepts.
 
 - `!mjolnir` (default)
 - `mjolnir`
+- `bot`
 
 {{< note headline="Adding/Removing Prefixes" >}} Prefixes can only be added or
 removed during the deployment of Mjölnir. If you want to change the list of
