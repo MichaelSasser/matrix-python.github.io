@@ -21,8 +21,8 @@ images: []
 {{< moderators >}}
 
 You can click on the moderator's "Name", in the table above, if you want to
-know more about that person. The [Abuse
-Management]({{< ref "contributors/abuse-management" >}}) bot has it's own page
+know more about that person. The [Administrator
+]({{< ref "contributors/administrator" >}}) bot has it's own page
 too!
 
 In case you have any organizational questions, suggestions or proposals, feel
