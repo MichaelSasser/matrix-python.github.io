@@ -1,8 +1,8 @@
 <!-- This code needs to be changed in reporting_issues as well -->
 {{$address := .Get "address"}}
 
-<div class="pill-wrapper">
-  <a href="mailto://{{ $address }}">
+<span class="pill-wrapper">
+  <a target="_blank" href="mailto://{{ $address }}">
     <svg
       class="pill-img"
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@
     </svg>
     <span class="pill">&nbsp;{{ $address }}</span>
   </a>
-</div>
+</span>

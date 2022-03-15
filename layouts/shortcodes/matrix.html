@@ -1,8 +1,8 @@
 {{ $identifier := .Get "identifier" }}
 
 
-<div class="pill-wrapper">
-  <a href="https://app.element.io/#/user/{{ $identifier }}">
+<span class="pill-wrapper">
+  <a target="_blank" href="https://app.element.io/#/user/{{ $identifier }}">
     <svg
       class="pill-img"
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@
     </svg>
     <span class="pill">&nbsp;{{ $identifier }}</span>
   </a>
-</div>
+</span>

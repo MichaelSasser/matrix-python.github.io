@@ -158,27 +158,26 @@ You will find a complete list and how to use them inside the site in the
 
 <!-- Image Alert -->
 {{ if eq $image true }}
-  <div class="bd-callout bd-callout-info alert-warning" role="alert">
-    <h5>Images</h5>
-    <br /><br />
-    Remember to add every image you used to the <i>images</i> variable in the
-    front matter as described in the
+<div class="bd-callout bd-callout-info" role="alert">
+  <h5>Images</h5>
+  <br /><br />
+  Remember to add every image you used to the <i>images</i> variable in the
+  front matter as described in the
   </div>
 {{ end }}
 
 
 <!-- Image Alert -->
 {{ if eq $contrib true }}
-  <div class="alert alert-warning d-flex" role="alert">
-    <div class="flex-shrink-1 alert-icon">⚠</div>
-    <div class="w-100">
-      Remember to create your contributors site add your name in the
-      <i>contributory</i> variable in the front matter as described in the
-      <a href="/docs/contributing/project_structure/#the-contributors">
-        contributors section</a
-      >.
-    </div>
-  </div>
+<div class="bd-callout bd-callout-info" role="alert">
+  <h5>Contributors</h5>
+  <br /><br />
+  Remember to create your contributors site add your name in the
+  <i>contributors</i> variable in the front matter as described in the
+  <a href="/docs/contributing/project_structure/#the-contributors">
+    contributors section</a
+  >.
+</div>
 {{ end }}
 
 

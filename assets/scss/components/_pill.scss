@@ -26,8 +26,10 @@
 .pill-img {
   background-color: darken($body-color-dark, 60%);
   color: $white;
-  height: 1.7em;
-  width: 1.7em;
+  height: 1.5em;
+  width: 1.5em;
+
+  margin-bottom: 1px; 
   border-radius: 50%;
 }
 
