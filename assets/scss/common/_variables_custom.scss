@@ -82,7 +82,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1320px,
-  xxl: 1520px
+  xxl: 1420px
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -111,17 +111,18 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif;
 
 // stylelint-enable value-keyword-case
-$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-xl:                $font-size-base * 1.375;
 $font-size-lg:                $font-size-base * 1.25;
-$font-size-md:                $font-size-base * 1.125;
+$font-size-md:                $font-size-base * 1;
 $font-size-sm:                $font-size-base * 0.875;
 
 // $line-height-base:            1.5;
 
 $headings-font-family:        null;
-$headings-font-weight:        800;
-$lead-font-weight:            500;
+$headings-font-weight:        500;
+$lead-font-weight:            300;
+$lead-font-size:              $font-size-base * 1.25 !default;
 
 $font-weight-light:           370;
 
