@@ -1,13 +1,13 @@
 .blog-author {
   float: left;
-  font-weight: 200;
+  font-weight: $font-weight-light;
   font-size: 14px;
   letter-spacing: 0.05em;
 }
 
 .blog-date {
   text-align: right;
-  font-weight: 200;
+  font-weight: $font-weight-light;
   font-size: 14px;
   letter-spacing: 0.05em;
 }
@@ -17,7 +17,7 @@
 
   a {
     text-transform: capitalize;
-    font-weight: 200;
+    font-weight: $font-weight-light;
     font-size: 14px;
     letter-spacing: 0.05em;
   }
@@ -30,7 +30,7 @@
 .blog-widget-btn {
   a {
     text-transform: capitalize;
-    font-weight: 200;
+    font-weight: $font-weight-light;
     font-size: 14px;
     letter-spacing: 0.05em;
   }
@@ -54,7 +54,7 @@
       border-radius: 0;
       margin: 5px 5px 5px 0;
       padding: 5px;
-      font-weight: 200;
+      font-weight: $font-weight-light;
       font-size: 14px;
       letter-spacing: 0.05em;
       text-transform: capitalize;

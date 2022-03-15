@@ -2,7 +2,9 @@
 @import "bootstrap/scss/functions";
 
 /** Import theme variables */
-@import "common/variables";
+/* @import "common/variables"; */
+@import "common/variables_custom";
+
 
 /** Import Bootstrap */
 @import "bootstrap/scss/bootstrap";
