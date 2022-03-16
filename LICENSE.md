@@ -1,7 +1,7 @@
 # The MIT License (MIT)
 
-Copyright (c) 2021 Michael Sasser
-Copyright (c) 2021 The Matrix Community on Matrix Contributors
+Copyright (c) 2021-2022 Michael Sasser <br />
+Copyright (c) 2021-2022 The Matrix Community on Matrix Contributors
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
