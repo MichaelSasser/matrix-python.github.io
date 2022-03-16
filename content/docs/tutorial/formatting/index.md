@@ -1,7 +1,7 @@
 ---
 title: "Formatting"
 description: ""
-lead: ""
+lead: "It's all about Markdown"
 date: 2021-02-15T20:05:00+00:00
 lastmod: 2021-02-15T20:05:00+00:00
 draft: false

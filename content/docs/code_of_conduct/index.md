@@ -1,7 +1,7 @@
 ---
 title: "Code of Conduct"
-description: ""
-lead: ""
+description: "This code of conduct outlines our expectations for participants within the Matrix community, as well as steps for reporting unacceptable behaviour"
+lead: "This code of conduct outlines our expectations for participants within the Matrix community, as well as steps for reporting unacceptable behaviour"
 date: 2021-02-15T20:05:00+00:00
 lastmod: 2021-02-18T20:07:15+00:00
 draft: false
@@ -13,8 +13,7 @@ weight: 300
 toc: true
 ---
 
-This code of conduct outlines our expectations for participants within the
-Matrix community, as well as steps for reporting unacceptable behaviour. We are
+We are
 committed to providing a welcoming and inspiring community for all, and expect
 our code of conduct to be honoured. Anyone who violates this code of conduct
 may be banned from the community.

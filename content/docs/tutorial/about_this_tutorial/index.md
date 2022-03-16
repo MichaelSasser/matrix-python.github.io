@@ -3,7 +3,7 @@ title: "About this tutorial"
 description:
   "A Tutorial on how to join the Matrix Network and get to know it's features."
 lead:
-  "A Tutorial on how to join the Matrix Network and get to know it's features."
+  "A Tutorial on how to join the Matrix network and get to know it's features."
 date: 2021-02-15T20:05:00+00:00
 lastmod: 2021-02-15T20:05:00+00:00
 draft: false

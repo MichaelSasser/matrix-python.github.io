@@ -3,7 +3,7 @@ title: "Introduction"
 description:
   "This introduction helps you to get started and shows you how to join our
   community."
-lead: ""
+lead: "Get to know Matrix"
 date: 2021-10-8T20:17:00+00:00
 lastmod: 2021-10-8T20:17:00+00:00
 draft: false
