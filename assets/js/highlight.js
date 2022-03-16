@@ -7,6 +7,9 @@ import xml from 'highlight.js/lib/languages/xml';
 import ini from 'highlight.js/lib/languages/ini';
 import yaml from 'highlight.js/lib/languages/yaml';
 import markdown from 'highlight.js/lib/languages/markdown';
+import c from 'highlight.js/lib/languages/c';
+import python from 'highlight.js/lib/languages/python';
+import pythonRepl from 'highlight.js/lib/languages/python-repl';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('json', json);
@@ -16,6 +19,9 @@ hljs.registerLanguage('ini', ini);
 hljs.registerLanguage('toml', ini);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('md', markdown);
+hljs.registerLanguage('c', c);
+hljs.registerLanguage('python', python);
+hljs.registerLanguage('python-repl', pythonRepl);
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code:not(.language-mermaid)').forEach((block) => {
