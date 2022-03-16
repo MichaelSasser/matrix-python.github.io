@@ -1,8 +1,8 @@
 $primary: $blue !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
+$bd-info: $blue !default;
+$bd-warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
@@ -74,24 +74,24 @@ $dark: $gray-800 !default;
 }
 
 .bd-callout-info {
-  border-left-color: $info;
+  border-left-color: $bd-info;
 
   h2,
   h3,
   h4,
   h5 {
-    color: $info;
+    color: $bd-info;
   }
 }
 
 .bd-callout-warning {
-  border-left-color: adjust-hue($warning, -10%);
+  border-left-color: $bd-warning;
 
   h2,
   h3,
   h4,
   h5 {
-    color: adjust-hue($warning, -10%);
+    color: $bd-warning;
   }
 }
 
@@ -129,12 +129,12 @@ $dark: $gray-800 !default;
 }
 
 [data-dark-mode] body .bd-callout-warning {
-  border-left-color: $warning;
+  border-left-color: $bd-warning;
 
   h2,
   h3,
   h4,
   h5 {
-    color: $warning;
+    color: $bd-warning;
   }
 }
