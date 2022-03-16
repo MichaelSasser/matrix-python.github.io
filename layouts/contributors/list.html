@@ -19,7 +19,7 @@
             {{ $avatar = $avatar_name | printf "/%s/%s" $avatar_path | printf "%s" }}
           {{ end }}
 
-        <div class="col-md-8">
+      <div class="col-md-{{- if .Site.Params.options.fullWidth -}}6{{- else -}}8{{- end -}}">
           <div
             class="
               row
