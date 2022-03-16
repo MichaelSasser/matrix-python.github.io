@@ -1,4 +1,6 @@
-import mediumZoom from 'medium-zoom/dist/medium-zoom.js'
+// import mediumZoom from 'medium-zoom/dist/medium-zoom.js'
+import mediumZoom from 'medium-zoom'
+
 
 document.addEventListener('lazybeforeunveil', () => {
     mediumZoom('#zoom-default', {
