@@ -103,7 +103,7 @@ options:
   kaTex: true
   multilingualMode: false
   docsVersioning: false
-  fullWidth: false
+  fullWidth: true
   mediumZoom: true
 
 menu:
