@@ -1,7 +1,7 @@
 {
-  "name": "doks-child-theme",
-  "description": "Doks child theme",
-  "version": "0.3.4",
+  "name": "@hyas/doks",
+  "description": "Doks theme",
+  "version": "0.4.0",
   "browserslist": [
     "defaults"
   ],
@@ -14,7 +14,7 @@
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "prestart": "npm run clean",
-    "start": "exec-bin node_modules/.bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender",
+    "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
     "prebuild": "npm run clean",
     "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
     "build:preview": "npm run build -D -F",
@@ -23,7 +23,8 @@
     "lint": "npm run -s lint:scripts && npm run -s lint:styles && npm run -s lint:markdown",
     "lint:scripts": "eslint assets/js config functions",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
-    "lint:markdown": "markdownlint \"*.md\" \"content/**/*.md\"",
+    "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
+    "lint:markdown-fix": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
     "server": "exec-bin node_modules/.bin/hugo/hugo server",
     "test": "npm run -s lint",
     "env": "env",
@@ -39,7 +40,6 @@
     "@babel/preset-env": "^7.16",
     "@fortawesome/fontawesome-free": "^6.0.0",
     "@fullhuman/postcss-purgecss": "^4.1",
-    "@hyas/doks": "^0.4",
     "auto-changelog": "^2.4.0",
     "autoprefixer": "^10.4",
     "bootstrap": "^5.1",
@@ -53,8 +53,9 @@
     "instant.page": "^5.1",
     "katex": "^0.15",
     "lazysizes": "^5.3",
-    "markdownlint-cli": "^0.31",
+    "markdownlint-cli2": "^0.4.0",
     "mermaid": "^8.14",
+    "node-fetch": "^3.2",
     "postcss": "^8.4",
     "postcss-cli": "^9.1",
     "purgecss-whitelister": "^2.4",
@@ -66,8 +67,6 @@
     "medium-zoom": "^1.0.6"
   },
   "otherDependencies": {
-    "hugo": "0.88.1"
-  },
-  "dependencies": {
+    "hugo": "0.92.1"
   }
 }

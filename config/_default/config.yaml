@@ -1,4 +1,5 @@
 ---
+
 baseurl: "https://matrix-python.github.io/"
 canonifyURLs: false
 disableAliases: true
@@ -10,6 +11,9 @@ buildDrafts: true
 languageCode: en-US
 paginate: 7
 rssLimit: 10
+# defaultContentLanguage: "en"
+# disableLanguages: ["de", "nl"]
+# defaultContentLanguageInSubdir: true
 outputs:
   home:
     - HTML
@@ -85,32 +89,14 @@ module:
     min: 0.80.0
     max: ""
   mounts:
-    - source: node_modules/@hyas/doks/archetypes
-      target: archetypes
-    - source: node_modules/@hyas/doks/assets
+    - source: assets
       target: assets
-    - source: node_modules/@hyas/doks/data
-      target: data
-    - source: node_modules/@hyas/doks/layouts
-      target: layouts
-    - source: node_modules/@hyas/doks/static
+    - source: static
       target: static
     - source: node_modules/flexsearch
       target: assets/js/vendor/flexsearch
     - source: node_modules/katex
       target: assets/js/vendor/katex
-    - source: assets
-      target: assets
-    - source: static
-      target: static
-    - source: content
-      target: content
-    - source: layouts
-      target: layouts
-    - source: archetypes
-      target: archetypes
-    - source: data
-      target: data
     - source: node_modules/mermaid
       target: assets/mermaid
     - source: node_modules/@fortawesome/fontawesome-free/scss

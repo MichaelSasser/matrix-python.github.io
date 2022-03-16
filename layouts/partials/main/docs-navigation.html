@@ -1,59 +1,24 @@
 {{ if or .Prev .Next -}}
-  <div class="blog-navigation">
-    <!-- https://www.feliciano.tech/blog/custom-sort-hugo-single-pages/ -->
-    <div class="row">
-      <div class="col-lg">
-        {{ $pages := where site.RegularPages "Section" .Section -}}
-        {{ with $pages.Next . -}}
-          <div class="card">
-            <div class="card-body">
-              <a class="stretched-link" href="{{ .RelPermalink }}"></a>
-              <table>
-                <tr>
-                  <td class="glyph" rowspan="2">
-                    <i class="fas fa-arrow-left"></i>
-                  </td>
-                  <td class="next-prev text-muted right">
-                    {{- .Parent.Title }} &ndash; Previous
-                  </td>
-                </tr>
-                <tr>
-                  <!-- <td></td> -->
-                  <td class="title right">{{- .Title -}}</td>
-                </tr>
-
-                <tr></tr>
-              </table>
-            </div>
-          </div>
-        {{ end -}}
-      </div>
-      <div class="col-lg">
-        {{ with $pages.Prev . -}}
-          <div class="card">
-            <div class="card-body">
-              <a class="stretched-link" href="{{ .RelPermalink }}"></a>
-              <table>
-                <tr>
-                  <td class="next-prev text-muted left">
-                    Next &ndash;
-                    {{ .Parent.Title -}}
-                  </td>
-                  <td class="glyph" rowspan="2">
-                    <i class="fas fa-arrow-right"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="title left">{{- .Title -}}</td>
-                  <!-- <td></td> -->
-                </tr>
-
-                <tr></tr>
-              </table>
-            </div>
-          </div>
-        {{ end -}}
-      </div>
-    </div>
-  </div>
+	<div class="docs-navigation d-flex justify-content-between">
+	<!-- https://www.feliciano.tech/blog/custom-sort-hugo-single-pages/ -->
+	{{ $pages := where site.RegularPages "Section" .Section -}}
+	{{ with $pages.Next . -}}
+		<a href="{{ .RelPermalink }}">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; {{ .Title }}
+				</div>
+			</div>
+		</a>
+	{{ end -}}
+	{{ with $pages.Prev . -}}
+		<a class="ms-auto" href="{{ .RelPermalink }}">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					{{ .Title }} &rarr;
+				</div>
+			</div>
+		</a>
+	{{ end -}}
+	</div>
 {{ end -}}
