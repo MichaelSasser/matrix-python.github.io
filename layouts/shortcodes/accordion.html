@@ -1,0 +1,37 @@
+{{/* prettier-ignore-start */}}
+{{- .Page.Scratch.Add "accordionset-counter" 1 -}}
+{{- $accordion_set_id := .Get "name" | default (printf "accordionset-%s-%d" (.Page.RelPermalink) (.Page.Scratch.Get "accordionset-counter") ) | anchorize -}}
+{{- $accordion_items := .Scratch.Get "accordion_item" -}}
+{{- if .Inner -}}{{- /* We don't use the inner content, but Hugo will complain if we don't reference it. */ -}}{{- end -}}
+<div class="accordion accordion-flush" id="accordionFlush-{{- $accordion_set_id -}}">
+  {{- range $i, $e := $accordion_items -}}
+    {{- $id := printf "%s-%d" $accordion_set_id $i -}}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-heading-{{- $id -}}">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapse-{{- $id -}}"
+          aria-expanded="false"
+          aria-controls="flush-collapse-{{- $id -}}"
+        >
+          {{- trim .name " " -}}
+        </button>
+      </h2>
+      <div
+        id="flush-collapse-{{- $id -}}"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-heading-{{- $id -}}"
+        data-bs-parent="#accordionFlush-{{- $accordion_set_id -}}"
+      >
+        <div class="accordion-body">
+        {{- with .content -}}
+                {{- . | markdownify -}}
+        {{- end -}}
+        </div>
+      </div>
+    </div>
+  {{- end -}}
+</div>
+{{/* prettier-ignore-end */}}

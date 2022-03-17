@@ -1,0 +1,16 @@
+{{/* prettier-ignore-start */}}
+{{ if .Parent }}
+	{{ $name := trim (.Get "name") " " }}
+	{{ $include := trim (.Get "include") " "}}
+	{{ if not (.Parent.Scratch.Get "accordion_item") }}
+  	{{ .Parent.Scratch.Set "accordion_item" slice }}
+	{{ end }}
+	{{ with .Inner }}
+      {{ $.Parent.Scratch.Add "accordion_item" (dict "name" $name "content" . ) }}
+  {{ else }}
+    {{- errorf "[%s] %q: tab shortcode missing its inner content" site.Language.Lang .Page.Path -}}
+	{{ end }}
+{{ else }}
+	{{- errorf "[%s] %q: tab shortcode missing its parent" site.Language.Lang .Page.Path -}}
+{{ end}}
+{{/* prettier-ignore-end */}}
