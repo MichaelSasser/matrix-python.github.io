@@ -22,7 +22,7 @@
     active = width > 600;
 
     if (!wasActive && active)
-      requestAnimFrame(update);
+      requestAnimationFrame(update);
   }
 
   var Snowflake = function () {
@@ -77,11 +77,11 @@
       }
     }
 
-    requestAnimFrame(update);
+    requestAnimationFrame(update);
   }
 
   // shim layer with setTimeout fallback
-  window.requestAnimFrame = (function(){
+  window.requestAnimationFrame = (function(){
     return  window.requestAnimationFrame       ||
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame    ||
