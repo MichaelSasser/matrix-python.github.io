@@ -1,7 +1,6 @@
 // Snow from https://codepen.io/radum/pen/xICAB
 
-(function () {
-
+(() => {
   var COUNT = 300;
   var masthead = document.querySelector('.home');
   var canvas = document.createElement('canvas');

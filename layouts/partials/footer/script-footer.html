@@ -60,14 +60,13 @@
 <!-- medium-zoom -->
 {{ $mediumZoom:= resources.Get "js/medium-zoom.js" -}}
 {{ if .Site.Params.options.mediumZoom -}}
-  {{ $mediumZoom:= resources.Get "js/medium-zoom.js" -}}
-  {{ $mediumZoom := $mediumZoom | js.Build -}}
+  {{ $mediumZoom = $mediumZoom | js.Build -}}
   {{ $slice = $slice | append $mediumZoom -}}
 {{ end -}}
 
 <!-- Add snow to the front page for the last 14 days of the year -->
 {{ $snow:= resources.Get "js/snow.js" -}}
-{{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
+{{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
   {{ $snow:= resources.Get "js/snow.js" -}}
   {{ $snow := $snow | js.Build -}}
   {{ $slice = $slice | append $snow -}}
@@ -96,7 +95,7 @@
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" defer></script>
   {{ end -}}
-  {{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
+  {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
     <script src="{{ $snow.RelPermalink }}" defer></script>
   {{ end -}}
 {{ else -}}
@@ -111,7 +110,7 @@
     {{ $mediumZoom := $mediumZoom | minify | fingerprint "sha512" -}}
   {{ end -}}
 
-  {{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
+  {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
     {{ $snow := $snow | minify | fingerprint "sha512" -}}
   {{ end -}}
   {{ if .Site.Params.options.bootStrapJs -}}
@@ -134,7 +133,7 @@
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" integrity="{{ $mediumZoom.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
-  {{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
+  {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
     <script src="{{ $snow.RelPermalink }}" integrity="{{ $snow.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
 {{ end -}}
