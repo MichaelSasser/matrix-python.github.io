@@ -30,6 +30,11 @@
 @import "components/tables";
 @import "components/contributors";
 @import "components/accordion";
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/sidebar";
 @import "components/alerts2";
 @import "components/pill";
 @import "components/rendered";
@@ -38,10 +43,6 @@
 @import "components/timeline";
 @import "components/tabs";
 @import "components/medium_zoom";
-@import "layouts/footer";
-@import "layouts/header";
-@import "layouts/pages";
-@import "layouts/posts";
 
 /** Import fontawesome */
 $fa-font-path: "fonts/vendor/fontawesome";
