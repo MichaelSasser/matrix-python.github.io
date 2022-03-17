@@ -95,7 +95,7 @@ running this command:
 
 `$ npm run create contributors/my-username/_index.md`
 
-{{< variable_structure "Contributor" "title" "description" "date" "lastmod" "draft" "images" "matrix_identifier" "matrix_username" "matrix_moderator" "website_contributor" "github_username" >}}
+{{< variable_structure "Contributor" "title" "description" "date" "lastmod" "draft" "images" "avatar" "matrix_identifier" "matrix_username" "matrix_moderator" "website_contributor" "email" "github_username" >}}
 
 The `title` in this case would be your nickname on Matrix.
 

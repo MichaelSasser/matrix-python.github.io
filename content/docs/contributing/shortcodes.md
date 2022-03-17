@@ -474,7 +474,7 @@ This is just a description. No code gets rendered.
 print("Hello World")
 {{< /tab >}}
 {{{< tab name="C" codelang="c" >}}
-printf("Hello World");
+printf("Hello World")
 {{< /tab >}}
 {{< tab name="Description" >}}
 This is just a description. No code gets rendered.

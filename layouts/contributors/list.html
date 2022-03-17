@@ -10,9 +10,9 @@
           {{ $avatar_name := "" }}
           {{ $avatar := "" }}
 
-          {{ if ne .Params.images nil}}
+          {{ if and (ne .Params.avatar nil) (isset .Params "avatar")}}
             <!-- avatar_name e.g. "foo.svg" -->
-            {{ $avatar_name = index (.Params.images) 0 }}
+            {{ $avatar_name = .Params.avatar }}
             <!-- avatar_path e.g. "/path/to/" -->
             {{ $avatar_path := path.Dir (.Path) }}
             <!-- avatar e.g. "/path/to/foo.svg" -->

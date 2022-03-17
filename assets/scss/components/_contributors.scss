@@ -1,0 +1,15 @@
+.contributor-social {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  list-style: none;
+  justify-content: center;
+}
+
+.social-item,
+.social li {
+  margin-left: 20px;
+  margin-right: 20px;
+}

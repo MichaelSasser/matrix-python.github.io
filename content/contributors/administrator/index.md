@@ -6,11 +6,10 @@ date: 2021-04-30T01:33:00+02:00
 lastmod: 2021-02-16T01:33:00+00:00
 draft: false
 images: ["administrator_ava.svg"]
+avatar: "administrator_ava.svg"
 matrix_moderator: true
 bot: true
 ---
-
-<img src="administrator_ava.svg" alt="Administrator Bot Avatar" width="256"/>
 
 <div style = "text-align: left">
 
