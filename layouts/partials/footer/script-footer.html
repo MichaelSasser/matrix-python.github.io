@@ -45,7 +45,7 @@
   {{ $slice = $slice | append $darkMode -}}
 {{ end -}}
 
-{{ if .Site.Params.alertDismissable -}}
+{{ if and (.Site.Params.alert) (.Site.Params.alertDismissable) -}}
   {{ $alert := resources.Get "js/alert.js" -}}
   {{ $alert := $alert | js.Build -}}
   {{ $slice = $slice | append $alert -}}
@@ -67,7 +67,7 @@
 
 <!-- Add snow to the front page for the last 14 days of the year -->
 {{ $snow:= resources.Get "js/snow.js" -}}
-{{ if gt now.YearDay 351 }}
+{{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
   {{ $snow:= resources.Get "js/snow.js" -}}
   {{ $snow := $snow | js.Build -}}
   {{ $slice = $slice | append $snow -}}
@@ -96,7 +96,7 @@
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" defer></script>
   {{ end -}}
-  {{ if gt now.YearDay 351 }}
+  {{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
     <script src="{{ $snow.RelPermalink }}" defer></script>
   {{ end -}}
 {{ else -}}
@@ -110,7 +110,8 @@
   {{ if .Site.Params.options.mediumZoom -}}
     {{ $mediumZoom := $mediumZoom | minify | fingerprint "sha512" -}}
   {{ end -}}
-  {{ if gt now.YearDay 351 }}
+
+  {{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
     {{ $snow := $snow | minify | fingerprint "sha512" -}}
   {{ end -}}
   {{ if .Site.Params.options.bootStrapJs -}}
@@ -133,7 +134,7 @@
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" integrity="{{ $mediumZoom.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
-  {{ if gt now.YearDay 351 }}
-    <script src="{{ $snow.RelPermalink }}" integrity="{{ $mediumZoom.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ if and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow) }}
+    <script src="{{ $snow.RelPermalink }}" integrity="{{ $snow.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
 {{ end -}}

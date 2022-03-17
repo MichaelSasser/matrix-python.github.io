@@ -105,6 +105,8 @@ options:
   docsVersioning: false
   fullWidth: true
   mediumZoom: true
+  snow: true
+  forceSnow: false  # Force Snow immediately.
 
 menu:
   section:
