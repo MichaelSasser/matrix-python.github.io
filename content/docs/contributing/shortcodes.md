@@ -57,9 +57,6 @@ example, like
 
 Then you can use it with the shortcode in the Markdown file:
 
-<!-- The "/*" and "*/" are only used to prevent them to be rendered.  -->
-<!-- They are not actually part of the shortcode!!!  -->
-
 - Use
   `{{</* img-simple src="my_image.jpeg" alt="my image" class="border-0" */>}}`
   for images smaller than 300 px, if they don't need a figure and caption
@@ -88,8 +85,6 @@ defined by [Hugo](https://gohugo.io/functions/relref/).
 The `ref` and `relref` shortcodes can be used to create permalinks, to a
 document using a relative or absolute path.
 
-<!-- The "/*" and "*/" are only used to prevent them to be rendered.  -->
-<!-- They are not actually part of the shortcode!!!  -->
 
 ```md
 {{</* ref "/blog/my-post.md" */>}}

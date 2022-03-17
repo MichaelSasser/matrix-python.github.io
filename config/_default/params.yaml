@@ -95,7 +95,7 @@ options:
   lazySizes: true
   clipBoard: true
   instantPage: true
-  flexSearch: false
+  flexSearch: true
   darkMode: true
   bootStrapJs: true
   breadCrumb: true
