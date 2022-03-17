@@ -19,7 +19,7 @@
             {{ $avatar = $avatar_name | printf "/%s/%s" $avatar_path | printf "%s" }}
           {{ end }}
 
-      <div class="col-md-{{- if .Site.Params.options.fullWidth -}}6{{- else -}}8{{- end -}}">
+      <div class="col-md-{{- if .Site.Params.options.fullWidth -}}6{{- else -}}8{{- end }} col-lg-{{- if .Site.Params.options.fullWidth -}}5{{- else -}}8{{- end -}}">
           <div
             class="
               row
@@ -29,7 +29,6 @@
               overflow-hidden
               flex-md-row
               mb-4
-              shadow-sm
               h-md-250
               position-relative
             "
@@ -44,8 +43,8 @@
               {{ if eq .Params.website_contributor true -}}
                 <span class="badge rounded-pill bg-primary">Website</span>
               {{ end }}
-              <h3 class="mb-0">{{ .Params.title }}</h3>
-              <small class="pb-3 d-flex text-muted">
+              <h5 class="mb-0 mt-3">{{ .Params.title }}</h5>
+              <small class="pb-2 d-flex text-muted">
                 Since {{ .PublishDate.Format "Jan 2, 2006" }}
               </small>
               <p class="card-text mb-auto">
