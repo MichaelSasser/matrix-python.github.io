@@ -5,3 +5,18 @@
 [data-dark-mode] body .rendered {
   background-color: darken($body-color-dark, 60%);
 }
+
+
+[data-dark-mode] .rendered {
+  table {
+    --bs-table-bg: $gray-300;
+  }
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  td,
+  th {
+    border-color: $gray-300;
+  }
+}

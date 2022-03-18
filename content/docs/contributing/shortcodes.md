@@ -434,17 +434,18 @@ them. {{< /note >}}
 Defined in `layouts/shortcodes/tabs.html` and `layouts/shortcodes/tab.html`.
 
 `tabs` is a nested shortcode which produces a tabbed view. To use tabs, you
+accordion. To use tabs, you
 need two shortcodes `tabs` and `tab`.
 
 ### Parameters
 
-**Tabs**
+#### Tabs
 
 | Parameter | Description                                              |
 | --------- | -------------------------------------------------------- |
 | `name`    | A namespace to let Hugo distinguish them from each other |
 
-**Tab**
+#### Tab
 
 | Parameter  | Description                                            |
 | ---------- | ------------------------------------------------------ |
@@ -455,15 +456,19 @@ need two shortcodes `tabs` and `tab`.
 
 ```md
 {{</* tabs name="some-name" */>}}
+
 {{{</* tab name="Python" codelang="python" */>}}
 print("Hello World")
 {{</* /tab */>}}
+
 {{{</* tab name="C" codelang="c" */>}}
 printf("Hello World");
 {{</* /tab */>}}
+
 {{</* tab name="Description" */>}}
 This is just a description. No code gets rendered.
 {{</* /tab */>}}}
+
 {{</* /tabs */>}}
 ```
 
@@ -482,3 +487,50 @@ This is just a description. No code gets rendered.
 {{< /tabs >}}
 {{< /rendered >}}
 <!-- prettier-ignore-end -->
+
+## Accordion
+
+Defined in `layouts/shortcodes/accordion.html` and 
+`layouts/shortcodes/accordion_item.html`.
+
+`accordion_item` is a nested shortcode which produces a the elements in the
+accordion view. To use accordion, you
+need two shortcodes `accordion` and `accordion_item`.
+
+### Parameters
+
+#### accordion_item
+
+| Parameter  | Description                                            |
+| ---------- | ------------------------------------------------------ |
+| `name`     | A name/label of the tab                                |
+
+### Example
+
+```md
+{{</* accordion */>}}
+
+{{{</* accordion_item name="A test" */>}}
+This is just a test.
+{{</* /accordion_item */>}}
+
+{{{</* accordion_item name="Another Test" */>}}
+Just another Test.
+{{</* /accordion_item */>}}
+
+{{</* /accordion */>}}
+```
+
+<!-- prettier-ignore-start -->
+{{< rendered >}} 
+{{< accordion >}}
+{{{< accordion_item name="A test" >}}
+This is just a test.
+{{< /accordion_item >}}
+{{{< accordion_item name="Another Test" >}}
+Just another Test.
+{{< /accordion_item >}}
+{{< /accordion >}}
+{{< /rendered >}}
+<!-- prettier-ignore-end -->
+

@@ -45,3 +45,9 @@
 [data-dark-mode] body .pill-wrapper {
   background-color: $border-dark;
 }
+
+[data-dark-mode] .accordion-body {
+  .pill-wrapper {
+    background-color: $gray-900;
+  }
+}
