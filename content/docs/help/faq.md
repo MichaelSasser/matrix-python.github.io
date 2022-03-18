@@ -10,7 +10,7 @@ menu:
   docs:
     parent: "help"
 weight: 630
-toc: true
+toc: false
 ---
 
 {{< accordion >}}
