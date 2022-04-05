@@ -21,7 +21,7 @@ tags: ["matrix", "spaces", "announcement"]
 We are happy to announce the new _Python Space_:
 
 <center>
-{{< matrix identifier="#python-space:matrix.org" >}} 
+{{< matrix identifier="#python-space:matrix.org" >}}
 </center>
 
 This new Space includes our community Space:
@@ -43,4 +43,5 @@ recommendations, feel free to join our _Meta room_
 As with our _Python Community Space_ -- this Space is optional -- there will be
 no changes to our other rooms and you can carry on using it as you always have.
 
+<!-- markdownlint-disable-next-line MD036 -->
 _The moderation team_

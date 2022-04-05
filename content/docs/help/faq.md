@@ -17,7 +17,7 @@ toc: false
 
 <!-- How can I report issues? -->
 {{< accordion_item name="How can I report issues?" >}}
-  {{< note >}} 
+  {{< note >}}
   If the issue is website related, please follow our guide on how to
   [report an issue]({{< ref "report_issues" >}}) on GitHub.
   {{< /note >}}
@@ -90,6 +90,5 @@ Follow our guide on how to [contribute]({{< ref "contributing" >}}).
 {{< accordion_item name="Who has contributed to the website?" >}}
 You will find our contributors in the tables below or in the
 [about]({{< ref "about" >}}) page.
-
 
 {{< /accordion >}}

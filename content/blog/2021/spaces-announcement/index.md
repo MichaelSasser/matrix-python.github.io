@@ -52,4 +52,5 @@ rooms as well, except the "no-off-topic" rule for the Offtopic room, of course
 The Space is optional - there will be no changes to this room and you can carry
 on using it as you always have. But we hope you'll join us :)
 
+<!-- markdownlint-disable-next-line MD036 -->
 _The moderation team_

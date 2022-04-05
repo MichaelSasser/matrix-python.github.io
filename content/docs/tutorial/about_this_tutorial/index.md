@@ -45,7 +45,7 @@ element on your device.
 <a href="https://app.element.io/" class="btn btn-lg btn-outline-primary" tabindex="-1" role="button" aria-disabled="true" target="_blank" rel="element noopener">Launch Element Web</a>
 </div>
 {{< /tab >}}
-{{{< tab name="Linux" >}} 
+{{{< tab name="Linux" >}}
 Please use the package manager, provided by your distribution or the one of your choice or download and install the <i>Element Desktop</i> app.
 <h5>Arch Linux</h5>
 <pre>
@@ -105,7 +105,7 @@ scoop install extras/element
 </code>
 </pre>
 {{< /tab >}}}
-{{< tab name="MacOS" >}} 
+{{< tab name="MacOS" >}}
 You can either use Homebrew or download the <i>Element Desktop</i> as <i>Apple Disk Image</i> from the download page.
 <div class="d-flex justify-content-center">
 <a href="https://element.io/get-started#download" class="btn btn-lg btn-outline-primary" tabindex="-1" role="button" aria-disabled="true" target="_blank" rel="element noopener">Download Page</a>
@@ -130,7 +130,7 @@ smartphone.
 </div>
 {{< /tab >}}}
 {{< tab name="iOS" >}}
-Please use the <i>Apple&trade; App Store&trade;</i> to download and install the 
+Please use the <i>Apple&trade; App Store&trade;</i> to download and install the
 <i>Element iOS&reg;</i> app on your Apple&trade; iPhone&trade;.
 <div class="d-flex justify-content-center mb-4">
 <a href="https://apps.apple.com/app/vector/id1083446067" class="btn btn-lg btn-outline-primary" tabindex="-1" role="button" aria-disabled="true" target="_blank" rel="element noopener">App Store</a>

@@ -85,7 +85,6 @@ defined by [Hugo](https://gohugo.io/functions/relref/).
 The `ref` and `relref` shortcodes can be used to create permalinks, to a
 document using a relative or absolute path.
 
-
 ```md
 {{</* ref "/blog/my-post.md" */>}}
 {{</* relref "contributing" */>}}
@@ -473,7 +472,7 @@ This is just a description. No code gets rendered.
 ```
 
 <!-- prettier-ignore-start -->
-{{< rendered >}} 
+{{< rendered >}}
 {{< tabs name="some-name" >}}
 {{{< tab name="Python" codelang="python" >}}
 print("Hello World")
@@ -490,7 +489,7 @@ This is just a description. No code gets rendered.
 
 ## Accordion
 
-Defined in `layouts/shortcodes/accordion.html` and 
+Defined in `layouts/shortcodes/accordion.html` and
 `layouts/shortcodes/accordion_item.html`.
 
 `accordion_item` is a nested shortcode which produces a the elements in the
@@ -522,7 +521,7 @@ Just another Test.
 ```
 
 <!-- prettier-ignore-start -->
-{{< rendered >}} 
+{{< rendered >}}
 {{< accordion >}}
 {{{< accordion_item name="A test" >}}
 This is just a test.
@@ -533,4 +532,3 @@ Just another Test.
 {{< /accordion >}}
 {{< /rendered >}}
 <!-- prettier-ignore-end -->
-

@@ -14,7 +14,7 @@ bot: true
 <div style = "text-align: left">
 
 Hi, my name is [mjolnir](https://github.com/matrix-org/mjolnir). You probably
-know me better as "Administrator" (former "Abuse Management"). 
+know me better as "Administrator" (former "Abuse Management").
 As a moderation tool for Matrix, I'm
 online 24/7 and part of the moderation team. Please don't try contacting me,
 since I'm not designed to answer or forward questions. When you see me writing
@@ -37,7 +37,7 @@ In addition, we use the bot manually to globally moderate the rooms. That means
 if we add or remove a user or server to/from the "code of conduct" blacklist,
 the user/server gets banned/unbanned from all existing and future rooms.
 
-#### Bad-Word Blacklist
+### Bad-Word Blacklist
 
 When an event occurs (e.g. someone writes a message), and the user who created
 the event is in that room for less then 40 minutes, the bot checks
@@ -76,16 +76,16 @@ Currently, the following words are on the bad-word blacklist:
 - coon
 - anus
 
-#### Basic Flood Protection
+### Basic Flood Protection
 
 When a user posts ≥ 10 `m.room.message` events (messages not lines) in 60
 seconds they'll be banned for spam with the same conditions as described above.
 
-#### Message Is Voice Protection
+### Message Is Voice Protection
 
 Even though voice messages are great in personal communications, like in a
-1:1 chats or in small groups, they are not ideal in large rooms. 
-Because of that the bot deletes (redacts) those voice messages in our rooms 
+1:1 chats or in small groups, they are not ideal in large rooms.
+Because of that the bot deletes (redacts) those voice messages in our rooms
 to encourage users to write their message in text form instead.
 
 The bot will not take any action against a user which sends a voice message.
@@ -97,7 +97,7 @@ The bot will not take any action against a user which sends a voice message.
 
 ## Reporting Issues
 
-If you experience an issue with our services, or you encounter any problem, 
+If you experience an issue with our services, or you encounter any problem,
 that can be discussed in public, use our Meta Room {{< matrix identifier="#python-meta:matrix.org" >}}.
 
 {{< reporting_issues >}}
