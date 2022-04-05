@@ -1,20 +1,29 @@
 {
-  "name": "@hyas/doks",
-  "description": "Doks theme",
-  "version": "0.4.0",
+  "name": "matrix-python/website",
+  "description": "We are the Python community on Matrix, a free and open network for secure, decentralized communication.",
+  "version": "0.1.0",
+  "keywords": [
+    "python",
+    "matrix",
+    "website",
+    "community"
+  ],
+  "homepage": "https://matrix-python.github.io/",
+  "email": "info@MichaelSasser.org",
+  "bugs": {
+    "url": "https://github.com/matrix-python/matrix-python.github.io/issues",
+    "email": "info@MichaelSasser.org"
+  },
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/h-enk/doks",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "repository": "github:matrix-python/matrix-python.github.io",
+  "license": "SEE LICENSE IN README.md",
+  "private": true,
   "scripts": {
-    "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "prestart": "npm run clean",
-    "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
+    "start": "exec-bin node_modules/.bin/hugo/hugo server --panicOnWarning --bind=0.0.0.0 --disableFastRender --gc",
     "prebuild": "npm run clean",
     "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
     "build:preview": "npm run build -D -F",
@@ -54,6 +63,7 @@
     "katex": "^0.15",
     "lazysizes": "^5.3",
     "markdownlint-cli2": "^0.4.0",
+    "medium-zoom": "^1.0.6",
     "mermaid": "^8.14",
     "node-fetch": "^3.2",
     "postcss": "^8.4",
@@ -63,10 +73,9 @@
     "stylelint": "^14.5",
     "stylelint-config-standard": "^25.0",
     "stylelint-config-standard-scss": "^3.0.0",
-    "stylelint-scss": "^4.2.0",
-    "medium-zoom": "^1.0.6"
+    "stylelint-scss": "^4.2.0"
   },
   "otherDependencies": {
-    "hugo": "0.92.1"
+    "hugo": "0.96.0"
   }
 }

@@ -13,8 +13,18 @@
           {{ if and (ne .Params.avatar nil) (isset .Params "avatar")}}
             <!-- avatar_name e.g. "foo.svg" -->
             {{ $avatar_name = .Params.avatar }}
+            <!-- .Path is deprecated and reused for a canonical source path 
+                 The following constructor is used to archive an equivalent 
+                 behavior of $path as .Path was used before.
+            -->
+            {{ $path := "" }}
+            {{ with .File }}
+              {{ $path = .Path }}
+            {{ else }}
+              {{ $path = .Path }}
+            {{ end }}
             <!-- avatar_path e.g. "/path/to/" -->
-            {{ $avatar_path := path.Dir (.Path) }}
+            {{ $avatar_path := path.Dir $path }}
             <!-- avatar e.g. "/path/to/foo.svg" -->
             {{ $avatar = $avatar_name | printf "/%s/%s" $avatar_path | printf "%s" }}
           {{ end }}
