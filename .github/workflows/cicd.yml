@@ -24,8 +24,31 @@ on:
     - cron: "0 5 * * *"
 
 jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
   deploy:
     runs-on: ubuntu-20.04
+    needs: [test]
+    if: github.repository == 'matrix-python/matrix-python.github.io'
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -42,7 +65,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build production website
         run: npm run build
