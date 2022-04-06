@@ -149,4 +149,4 @@ If you installed Element on your device you will find a freshly installed
 application called `Element` on your device. If you are a fan of virtual
 terminals, you can run Element with `element-desktop`.
 
-{{< img src="element-welcome.png" alt="Element welcome screen image" caption="<center><em>Element Web Client - Welcome Screen</em></center>" class="border-0" >}}
+{{< img src="element-welcome.png" alt="Element welcome screen image" caption="<center><em>Element Web Client - Welcome Screen</em></center>" figure_class="border-0" >}}

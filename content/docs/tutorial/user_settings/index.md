@@ -20,8 +20,8 @@ toc: true
 
 ## The User Settings
 
-{{< img src="element-user-settings-window.png" alt="element user menu image" caption="<center><em>Element Web Client - User Menu</em></center>" class="border1" >}}
+{{< img src="element-user-settings-window.png" alt="element user menu image" caption="<center><em>Element Web Client - User Menu</em></center>" figure_class="border-0" >}}
 
-{{< img src="element-user-settings-window-zoomed.png" alt="element user menu zoomed image" caption="<center><em>Element Web Client - User Menu Zoomed</em></center>" class="border1" >}}
+{{< img src="element-user-settings-window-zoomed.png" alt="element user menu zoomed image" caption="<center><em>Element Web Client - User Menu Zoomed</em></center>" figure_class="border-0" >}}
 
-{{< img src="element-user-settings.png" alt="element user settings image" caption="<center><em>Element Web Client - User Settings</em></center>" class="border1" >}}
+{{< img src="element-user-settings.png" alt="element user settings image" caption="<center><em>Element Web Client - User Settings</em></center>"figure_class="border-0" >}}

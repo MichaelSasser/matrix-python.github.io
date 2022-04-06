@@ -58,12 +58,12 @@ example, like
 Then you can use it with the shortcode in the Markdown file:
 
 - Use
-  `{{</* img-simple src="my_image.jpeg" alt="my image" class="border-0" */>}}`
+  `{{</* img-simple src="my_image.jpeg" alt="my image" figure_class="border-0" */>}}`
   for images smaller than 300 px, if they don't need a figure and caption
-- Use `{{</* img src="my_image.jpeg" alt="my image" class="border-0" */>}}` for
+- Use `{{</* img src="my_image.jpeg" alt="my image" figure_class="border-0" */>}}` for
   images larger than 300 px, if they don't need a figure and caption
 - Use
-  `{{</* img src="my_image.jpeg" alt="my image" caption="<center><em>My Caption</em></center>" class="border-0" */>}}`
+  `{{</* img src="my_image.jpeg" alt="my image" caption="<center><em>My Caption</em></center>" figure_class="border-0" */>}}`
   for image larger than 300 px, or if they need a figure and caption.
 
 Remember to add every image you use to the `images` variable in the document
@@ -365,8 +365,12 @@ Defined in `layouts/shortcodes/figure.html`.
 | Parameter      | Description                          |
 | -------------- | ------------------------------------ |
 | `figure_class` | Add classes to the figure            |
+| `img_class`    | Add classes to the image             |
+| `class`        | **[DEPRECATED]** Use `figure_class`  |
+| `width`        | Change the default width             |
 | `caption`      | The caption                          |
 | `.Inner`       | Whatever will be shown in the figure |
+<!-- | `height`       | Change the default height            | -->
 
 ### Example
 

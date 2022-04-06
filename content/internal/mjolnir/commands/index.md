@@ -124,7 +124,7 @@ A `reason` is a messages e.g. for a user, explaining the reason, why the user
 that gets banned. This represents the same as the `reason` field used during
 kicking or banning.
 
-{{< img src="element_reason.jpeg" alt="element reason" caption="<center><em>Element Client: Reason for banning a user</em></center>" class="border-0" >}}
+{{< img src="element_reason.jpeg" alt="element reason" caption="<center><em>Element Client: Reason for banning a user</em></center>" width="500" figure_class="border-0" >}}
 
 For some _reasons_ Mjölnir can automatically redact (delete) the latest
 messages of a user. Mjölnir currently redacts for the following reasons:

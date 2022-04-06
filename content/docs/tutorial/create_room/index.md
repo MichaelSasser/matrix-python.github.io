@@ -23,16 +23,16 @@ toc: true
 
 ## Create a Private Room
 
-{{< img src="element-create-room-selector.png" alt="element create room selector image" caption="<center><em>Element Web Client - Create a Room</em></center>" class="border1" >}}
+{{< img src="element-create-room-selector.png" alt="element create room selector image" caption="<center><em>Element Web Client - Create a Room</em></center>" figure_class="border1" >}}
 
-{{< img src="element-create-private-room-modal.png" alt="element create room modal image" caption="<center><em>Element Web Client - Create Room Modal</em></center>" class="border-0" >}}
+{{< img src="element-create-private-room-modal.png" alt="element create room modal image" caption="<center><em>Element Web Client - Create Room Modal</em></center>" figure_class="border-0" >}}
 
-{{< img src="element-create-private-room-modal-filled.png" alt="element create room modal filled image" caption="<center><em>Element Web Client - Create Room Modal Filled</em></center>" class="border-0" >}}
+{{< img src="element-create-private-room-modal-filled.png" alt="element create room modal filled image" caption="<center><em>Element Web Client - Create Room Modal Filled</em></center>" figure_class="border-0" >}}
 
-{{< img src="element-private-room-view.png" alt="element private room view image" caption="<center><em>Element Web Client - First Room</em></center>" class="border-0" >}}
+{{< img src="element-private-room-view.png" alt="element private room view image" caption="<center><em>Element Web Client - First Room</em></center>" figure_class="border-0" >}}
 
 ## Write a message
 
-{{< img src="element-private-room-first-message-room-view.png" alt="element first message image" caption="<center><em>Element Web Client - First Message</em></center>" class="border-0" >}}
+{{< img src="element-private-room-first-message-room-view.png" alt="element first message image" caption="<center><em>Element Web Client - First Message</em></center>" figure_class="border-0" >}}
 
-{{< img src="element-private-room-first-message-zoomed.png" alt="element first message zoomed image" caption="<center><em>Element Web Client - First Message</em></center>" class="border-0" >}}
+{{< img src="element-private-room-first-message-zoomed.png" alt="element first message zoomed image" caption="<center><em>Element Web Client - First Message</em></center>" figure_class="border-0" >}}

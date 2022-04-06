@@ -1,4 +1,13 @@
 {{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
+{{ $width := .Get "width" | default $image.Width }}
+{{ $height := .Get "height" | default $image.Height }}
+{{ $deprecated_class := .Get "class" }}
+
+{{ with $deprecated_class }}
+  {{ errorf "Failed to process img shortcode: %s. The use of class in img is deprecated. To get the same behavior as before, use figure_class." $.Position }}
+{{- end -}}
+
+
 {{ $lqip := $image.Resize $.Site.Params.lqipWidth -}}
 
 {{ $imgSrc := "" -}}
@@ -16,12 +25,12 @@
 {{ end -}}
 {{ $imgSrcSet = (delimit $imgSrcSet ",") -}}
 
-<figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
+<figure{{ with .Get "figure_class" }} class="{{.}}"{{ end }}>
   {{ if eq .Site.Params.options.lazySizes true -}}
-    <img class="img-fluid lazyload blur-up" id="zoom-default" data-sizes="auto" src="{{ $lqip.RelPermalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
+  <img class="img-fluid lazyload blur-up rounded mx-auto d-block {{ with .Get "img_class" }}{{.}}{{ end }}" id="zoom-default" data-sizes="auto" src="{{ $lqip.RelPermalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $width }}" height="{{ $height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></img>
   {{ else -}}
-    <img class="img-fluid zoom-default" id="zoom-default" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
+    <img class="img-fluid zoom-default rounded mx-auto d-block {{ with .Get "img_class" }}{{.}}{{ end }}" id="zoom-default" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.RelPermalink }}" width="{{ $width }}" height="{{ $height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></img>
   {{ end -}}
-  <noscript><img class="img-fluid zoom-default" id="zoom-default" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></noscript>
+  <noscript><img class="img-fluid zoom-default rounded mx-auto d-block {{ with .Get "img_class" }}{{.}}{{ end }}" id="zoom-default" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.RelPermalink }}" width="{{ $width }}" height="{{ $height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></img></noscript>
   {{ with .Get "caption" }}<figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>{{ end }}
 </figure>

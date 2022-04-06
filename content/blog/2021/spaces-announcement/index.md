@@ -23,7 +23,7 @@ floating_image_position: "right"
 floating_image_caption: "The new Python Community Space"
 ---
 
-<!-- {{< img src="spaces.jpeg" alt="spaces image" caption="<center><em>The new Python Community Space </em></center>" class="border-0" >}} -->
+<!-- {{< img src="spaces.jpeg" alt="spaces image" caption="<center><em>The new Python Community Space </em></center>" figure_class="border-0" >}} -->
 
 <!-- As we grow, we want to provide space for more conversations. Keeping -->
 <!-- discussion on-topic in this room is the right thing to do, but off-topic -->
