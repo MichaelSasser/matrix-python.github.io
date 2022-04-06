@@ -71,7 +71,7 @@
               <a href="{{ .RelPermalink }}" class="stretched-link"></a>
             </div>
             <div class="col-auto d-none d-lg-block">
-              {{ if ne $avatar_name nil }}
+              {{ if ne $avatar_name "" }}
                 <img
                   class="img-fluid lazyload blur-up"
                   src="{{ $avatar | safeHTML }}"
@@ -79,7 +79,39 @@
                   width="256"
                   height="256"
                 />
-              {{else}}
+              <!-- 
+                If no image was set, but the matrix_identifier was set, use
+                that to display the avatar from matrix.org.
+              -->
+
+              {{- else if isset .Params "matrix_identifier" -}}
+                {{- $avatar := "" -}}
+                <!-- 
+                  Temporary store matrix identifier and title in a variable to 
+                  use them after range.
+                -->
+                {{ $matrix_user_identifier := .Params.matrix_identifier }}
+                {{ $user_title := .Params.title}}
+                {{ if isset $.Site.Data "matrix_users" }}
+                  {{- range $.Site.Data.matrix_users -}}
+                    {{- if eq .userId $matrix_user_identifier -}}
+                      {{- with .avatar -}}
+                        {{- $avatar = . -}}
+                      {{- end -}}
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+
+                {{- with $avatar -}}
+                  <img
+                    class="img-fluid lazyload blur-up"
+                    src='{{ printf "https://matrix.org/_matrix/media/r0/thumbnail/%s?width=64&height=64&method=scale" (substr  $avatar 6) }}'
+                    alt="{{ $user_title }} Avatar"
+                    width="256"
+                    height="256"
+                  />
+                {{- end -}}
+              {{ else }}
               <svg
                 class="bd-placeholder-img"
                 width="256"

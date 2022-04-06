@@ -24,6 +24,34 @@ $.Title }} {{ $posts.Add "posts" (slice $post) }} {{ end }} {{ end }} {{ end }}
             width="256"
           />
         </div>
+      {{- else -}}
+        <!-- 
+          If no avatar image was set, but the matrix_identifier was set, use
+          that to display the avatar from matrix.org.
+        -->
+        {{- if isset .Params "matrix_identifier" -}}
+          {{- $avatar := "" -}}
+          {{ if isset $.Site.Data "matrix_users" }}
+            {{- range $.Site.Data.matrix_users -}}
+              {{- if eq .userId $.Params.matrix_identifier -}}
+                {{- with .avatar -}}
+                  {{- $avatar = . -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- with $avatar -}}
+            <div class="text-center mb-4">
+              <img
+                src='{{ printf "https://matrix.org/_matrix/media/r0/thumbnail/%s?width=64&height=64&method=scale" (substr  $avatar 6) }}'
+                alt="{{- $.Title }} Avatar"
+                width="256"
+              />
+            </div>
+          {{- end -}}
+
+        {{ end }} 
       {{ end }} 
 
 

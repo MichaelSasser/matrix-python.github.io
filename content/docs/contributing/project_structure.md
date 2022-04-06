@@ -72,7 +72,7 @@ show the reader more about the person who wrote the blog entry.
 {{< post title="Spaces Announcement 🎉" linked="false" container="false" >}}
 {{< /figure >}}
 
-The above example shows an entry, which featured multiple contributors. To add
+The above example shows an entry, which features multiple contributors. To add
 the contributors to the blog entry the `contributors` variable is used. In this
 case, it was:
 `contributors: ["Michael Sasser", "BrenBarn", "ilex", "James Belchamber"]`
@@ -89,6 +89,8 @@ It contains a file `_index.md` and a file `michael_sasser_ava.svg`:
 - `michael_sasser_ava.svg` is the image used in the contributor page. Please
   remember our [image conventions]({{< ref "shortcodes" >}}#image-conventions).
   The filename convention in those images is `my_user_ava.extention`.
+  In case the avatar was not set, but the `matrix_identifier` was, the avatar
+  which was set in the Python room on Matrix will be used.
 
 You can create a template, which you can use for your contributor page by
 running this command:
