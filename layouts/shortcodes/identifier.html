@@ -30,7 +30,7 @@
 <!-- Matrix Room -->
 {{- with $matrix_room_identifier -}}
   <span class="pill-wrapper">
-    <a target="_blank" href="https://matrix.to/#/{{ $matrix_room_identifier }}">
+    <a target="_blank" rel="noopener" href="https://matrix.to/#/{{ $matrix_room_identifier }}">
       <svg
         class="pill-img"
         xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@
   {{- end -}}
 
   <span class="pill-wrapper">
-    <a target="_blank" href="https://app.element.io/#/user/{{ $matrix_user_identifier }}">
+    <a target="_blank" rel="noopener" href="https://app.element.io/#/user/{{ $matrix_user_identifier }}">
       {{- with $avatar -}}
       <img 
         class="pill-img"
@@ -140,7 +140,7 @@
 <!-- Email Address -->
 {{- with $email_address_identifier -}}
   <span class="pill-wrapper">
-    <a target="_blank" href="mailto://{{ $email_address_identifier }}">
+    <a target="_blank" rel="noopener" href="mailto://{{ $email_address_identifier }}">
       <svg
         class="pill-img"
         xmlns="http://www.w3.org/2000/svg"
