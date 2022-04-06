@@ -272,16 +272,16 @@ Defined in `layouts/shortcodes/identifier.html`.
 
 The `identifier` shortcode renders an representation of an matrix
 identifier (user or room) or email-address pill. The shortcode is able
-to differentiate between the different identifiers and renders them 
+to differentiate between the different identifiers and renders them
 accordingly.
 
-#### Parameters
+### Parameters
 
 | Parameter | Description                                                      |
 | --------- | ---------------------------------------------------------------- |
 | `[0]`     | The public Matrix room/space/user identifier or an email address |
 
-#### Example
+### Example
 
 ```md
 {{</* identifier "#python:matrix.org" */>}}
@@ -289,7 +289,7 @@ accordingly.
 {{</* identifier "user@domain.tld" */>}}
 ```
 
-{{< rendered >}} 
+{{< rendered >}}
 {{< identifier "#python:matrix.org" >}}
 {{< identifier "@michael:michaelsasser.org" >}}
 {{< identifier "user@domain.tld" >}}
