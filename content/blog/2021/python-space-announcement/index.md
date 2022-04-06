@@ -21,24 +21,24 @@ tags: ["matrix", "spaces", "announcement"]
 We are happy to announce the new _Python Space_:
 
 <center>
-{{< matrix identifier="#python-space:matrix.org" >}}
+{{< identifier "#python-space:matrix.org" >}}
 </center>
 
 This new Space includes our community Space:
 
 <center>
-{{< matrix identifier="#python-community:matrix.org" >}}
+{{< identifier "#python-community:matrix.org" >}}
 </center>
 And rooms recommended by the communities:
 
-| Room                                                 | Description                                                 |
-| ---------------------------------------------------- | ----------------------------------------------------------- |
-| {{< matrix identifier="#python_typing:gitter.im" >}} | PEP 484, mypy, typeshed, pytype, pyre and typing in PyCharm |
-| {{< matrix identifier="#python:nixos.org " >}}       | Anything regarding using Python with Nix.                   |
+| Room                                          | Description                                                 |
+| --------------------------------------------- | ----------------------------------------------------------- |
+| {{< identifier "#python_typing:gitter.im" >}} | PEP 484, mypy, typeshed, pytype, pyre and typing in PyCharm |
+| {{< identifier "#python:nixos.org " >}}       | Anything regarding using Python with Nix.                   |
 
 We are happy to add your favorite Python rooms to this Space, too. If you have
 recommendations, feel free to join our _Meta room_
-{{< matrix identifier="#python-meta:matrix.org" >}} and let us know about it.
+{{< identifier "#python-meta:matrix.org" >}} and let us know about it.
 
 As with our _Python Community Space_ -- this Space is optional -- there will be
 no changes to our other rooms and you can carry on using it as you always have.

@@ -9,8 +9,8 @@ blog_post: "Spaces Announcement 🎉"
 We announced our community Space and two new rooms:
 
 - **Community Space** -- contains our rooms:
-  {{< matrix identifier="#python-community:matrix.org" >}}
+  {{< identifier "#python-community:matrix.org" >}}
 - **Meta** room -- for organizational questions, suggestions & proposals:
-  {{< matrix identifier="#python-meta:matrix.org" >}}
+  {{< identifier "#python-meta:matrix.org" >}}
 - **Offtopic** room -- for everything off-topic:
-  {{< matrix identifier="#python-off-topic:matrix.org" >}}
+  {{< identifier "#python-off-topic:matrix.org" >}}

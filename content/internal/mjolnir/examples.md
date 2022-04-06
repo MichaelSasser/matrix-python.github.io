@@ -33,7 +33,7 @@ mjolnir ban coc @user:example.tld spam
 ```
 
 1. Add the user to the Code of Conduct ban list
-   {{< matrix identifier="#code-of-conduct-bans:michaelsasser.org" >}}, which
+   {{< identifier "#python-coc:matrix.org" >}}, which
    is a public room.<br /> For more information, see [List Shortcodes
    →]({{< relref "commands" >}}#list-shortcodes)
 2. Ban the user with the user identifier `@user:example.tld` in all community

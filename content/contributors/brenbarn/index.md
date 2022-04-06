@@ -12,4 +12,4 @@ matrix_moderator: true
 ---
 
 If you have any questions, feel free to contact me on Matrix
-{{<matrix identifier="@brenbarn:matrix.org">}}.
+{{< identifier "@brenbarn:matrix.org">}}.

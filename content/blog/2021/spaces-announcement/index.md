@@ -34,16 +34,16 @@ feeling, we decided to give it a go -- so **we are excited to announce our new
 Python community Space:** <br /><br />
 
 <center>
-{{< matrix identifier="#python-community:matrix.org" >}}
+{{< identifier "#python-community:matrix.org" >}}
 </center>
 <br /><br />
 In the Space you will find two new rooms in addition to our Python room:
 
 | Name              | Room                                                     | Description                   |
 | ----------------- | -------------------------------------------------------- | ----------------------------- |
-| **Python** room   | {{< matrix identifier="#python:matrix.org" >}}           | For everything Python         |
-| **Meta** room     | {{< matrix identifier="#python-meta:matrix.org" >}}      | For suggestions and proposals |
-| **Offtopic** room | {{< matrix identifier="#python-off-topic:matrix.org" >}} | For everything off-topic      |
+| **Python** room   | {{< identifier "#python:matrix.org" >}}           | For everything Python         |
+| **Meta** room     | {{< identifier "#python-meta:matrix.org" >}}      | For suggestions and proposals |
+| **Offtopic** room | {{< identifier "#python-off-topic:matrix.org" >}} | For everything off-topic      |
 
 The [rules of the Python room]({{< ref "code_of_conduct" >}}) apply to this
 rooms as well, except the "no-off-topic" rule for the Offtopic room, of course

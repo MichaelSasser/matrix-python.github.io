@@ -26,6 +26,6 @@ know more about that person. The [Administrator
 too!
 
 In case you have any organizational questions, suggestions or proposals, feel
-free to contact us on Matix in the "Meta" room
-{{< matrix identifier="#python-meta:matrix.org" >}} or personal by clicking on
+free to contact us on Matrix in the "Meta" room
+{{< identifier "#python-meta:matrix.org" >}} or personal by clicking on
 the moderators "Matrix Username", you want to chat with.

@@ -7,5 +7,5 @@ blog_post: "Python Space Announcement 🎉"
 ---
 
 Upon request of our community we created and announced the new **Python Space**
-{{< matrix identifier="#python-space:matrix.org" >}}. This new Space includes
+{{< identifier "#python-space:matrix.org" >}}. This new Space includes
 Python rooms recommend by the community.

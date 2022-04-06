@@ -1,0 +1,104 @@
+{{- $identifier := .Get 0 -}}
+
+<!-- 
+
+  This shortcode uses a simple regex pattern to differentiate between the
+  following identifiers.
+
+  Matrix:
+    Room: #room:matrix.org
+    User: @user:matrix.org
+
+  Email:
+    Address: user@matrix.org
+-->
+
+{{- $matrix_room_identifier := (findRE "^#\\S+:\\S+\\.\\S+$" $identifier) -}}
+{{- $matrix_user_identifier := (findRE "^@\\S+:\\S+\\.\\S+$" $identifier) -}}
+{{- $email_address_identifier := (findRE "^\\S+@\\S+\\.\\S+$" $identifier) -}}
+
+<!-- Error, if using more than one identifier -->
+{{- if gt (add (add (len $matrix_room_identifier) (len $matrix_user_identifier)) (len $email_address_identifier)) 1 -}}
+  {{- errorf "Only use one identifier at the same time." -}}
+{{- end -}}
+
+
+{{- $matrix_room_identifier = (index $matrix_room_identifier 0) -}}
+{{- $matrix_user_identifier = (index $matrix_user_identifier 0) -}}
+{{- $email_address_identifier = (index $email_address_identifier 0) -}}
+
+<!-- Matrix Room -->
+{{- with $matrix_room_identifier -}}
+  <span class="pill-wrapper">
+    <a target="_blank" href="https://matrix.to/#/{{ $matrix_room_identifier }}">
+      <svg
+        class="pill-img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="-64 -54.4 128 108.6"
+        width="25"
+        height="25"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M-30.6-25.9v51.8h3.7v1.2H-32v-54.3h5.2v1.2L-30.6-25.9z M-9.8-9.5v2.6h0.1c0.7-1,1.5-1.8,2.5-2.3S-5.1-10-3.8-10c1.2,0,2.3,0.2,3.4,0.7S1.4-8,1.9-6.8C2.5-7.6,3.2-8.4,4.2-9s2.2-1,3.5-1c1,0,2,0.1,2.8,0.4s1.6,0.6,2.2,1.2s1.1,1.3,1.5,2.2s0.5,2,0.5,3.2v13H9.5v-11L9.4-2.9C9.4-3.5,9.2-4,9-4.4s-0.6-0.8-1-1S7-5.8,6.2-5.8S4.9-5.7,4.4-5.4C4-5.1,3.6-4.7,3.3-4.3c-0.3,0.5-0.4,1-0.5,1.6S2.7-1.5,2.7-0.9V9.9h-5.3V-1l0-1.7c0-0.6-0.1-1.1-0.3-1.6s-0.5-0.9-0.9-1.1S-5-5.8-5.9-5.8c-0.2,0-0.6,0.1-1,0.2C-7.3-5.5-7.7-5.3-8.1-5c-0.4,0.3-0.7,0.8-1,1.4s-0.4,1.4-0.4,2.3V9.9h-5.3V-9.5L-9.8-9.5zM30.6,25.9v-51.8h-3.7v-1.2H32v54.3h-5.2v-1.2H30.6z"
+        ></path>
+      </svg>
+      <span class="pill">&nbsp;{{ $matrix_room_identifier }}</span>
+    </a>
+  </span>
+{{- end -}}
+
+<!-- Matrix User -->
+{{- with $matrix_user_identifier -}}
+  <span class="pill-wrapper">
+    <a target="_blank" href="https://app.element.io/#/user/{{ $matrix_user_identifier }}">
+      <svg
+        class="pill-img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="-64 -54.4 128 108.6"
+        width="25"
+        height="25"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M-30.6-25.9v51.8h3.7v1.2H-32v-54.3h5.2v1.2L-30.6-25.9z M-9.8-9.5v2.6h0.1c0.7-1,1.5-1.8,2.5-2.3S-5.1-10-3.8-10c1.2,0,2.3,0.2,3.4,0.7S1.4-8,1.9-6.8C2.5-7.6,3.2-8.4,4.2-9s2.2-1,3.5-1c1,0,2,0.1,2.8,0.4s1.6,0.6,2.2,1.2s1.1,1.3,1.5,2.2s0.5,2,0.5,3.2v13H9.5v-11L9.4-2.9C9.4-3.5,9.2-4,9-4.4s-0.6-0.8-1-1S7-5.8,6.2-5.8S4.9-5.7,4.4-5.4C4-5.1,3.6-4.7,3.3-4.3c-0.3,0.5-0.4,1-0.5,1.6S2.7-1.5,2.7-0.9V9.9h-5.3V-1l0-1.7c0-0.6-0.1-1.1-0.3-1.6s-0.5-0.9-0.9-1.1S-5-5.8-5.9-5.8c-0.2,0-0.6,0.1-1,0.2C-7.3-5.5-7.7-5.3-8.1-5c-0.4,0.3-0.7,0.8-1,1.4s-0.4,1.4-0.4,2.3V9.9h-5.3V-9.5L-9.8-9.5zM30.6,25.9v-51.8h-3.7v-1.2H32v54.3h-5.2v-1.2H30.6z"
+        ></path>
+      </svg>
+      <span class="pill">&nbsp;{{ $matrix_user_identifier }}</span>
+    </a>
+  </span>
+{{- end -}}
+
+
+<!-- Email Address -->
+{{- with $email_address_identifier -}}
+  <span class="pill-wrapper">
+    <a target="_blank" href="mailto://{{ $email_address_identifier }}">
+      <svg
+        class="pill-img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="-256 -256 1024 1024"
+        width="25"
+        height="25"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"
+        ></path>
+      </svg>
+      <span class="pill">&nbsp;{{ $email_address_identifier }}</span>
+    </a>
+  </span>
+{{- end -}}

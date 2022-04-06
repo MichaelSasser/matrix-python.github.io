@@ -16,5 +16,5 @@ github_username: "MichaelSasser"
 ---
 
 If you have any questions, feel free to contact me on matrix
-{{< matrix identifier="michael:michaelsasser.org" >}} or via E-Mail
-{{< email address="Info@MichaelSasser.org" >}}.
+{{< identifier "michael:michaelsasser.org" >}} or via E-Mail
+{{< identifier "Info@MichaelSasser.org" >}}.

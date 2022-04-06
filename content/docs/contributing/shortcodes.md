@@ -266,51 +266,34 @@ Because this can get quite long, a rendered version can be found in the
 [About]({{< ref "about" >}}) page.
 -->
 
-## Matrix & Email
+## Identifier (for Matrix & Email pill)
 
-The Matrix and email shortcodes are render an representation of an matrix
-identifier (user or room) and email address.<br /> They are used to have the
-option to change the representation globally for all of them at the same time.
+Defined in `layouts/shortcodes/identifier.html`.
 
-### Matrix
-
-Defined in `layouts/shortcodes/matrix.html`.
+The `identifier` shortcode renders an representation of an matrix
+identifier (user or room) or email-address pill. The shortcode is able
+to differentiate between the different identifiers and renders them 
+accordingly.
 
 #### Parameters
 
-| Parameter    | Description                                  |
-| ------------ | -------------------------------------------- |
-| `identifier` | The public Matrix room/space/user identifier |
+| Parameter | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
+| `[0]`     | The public Matrix room/space/user identifier or an email address |
 
 #### Example
 
 ```md
-{{</* matrix identifier="@michael:michaelsasser.org" */>}}
+{{</* identifier "#python:matrix.org" */>}}
+{{</* identifier "@michael:michaelsasser.org" */>}}
+{{</* identifier "user@domain.tld" */>}}
 ```
 
-{{< rendered >}} {{< matrix identifier="@michael:michaelsasser.org" >}}
+{{< rendered >}} 
+{{< identifier "#python:matrix.org" >}}
+{{< identifier "@michael:michaelsasser.org" >}}
+{{< identifier "user@domain.tld" >}}
 {{< /rendered >}}
-
-### Email
-
-Defined in `layouts/shortcodes/email.html`.
-
-#### Parameters
-
-| Parameter | Description       |
-| --------- | ----------------- |
-| `address` | The email address |
-
-#### Example
-
-```md
-{{</* email address="Info@MichaelSasser.org" */>}}
-```
-
-{{< rendered >}} {{< email address="Info@MichaelSasser.org" >}}
-{{< /rendered >}}
-
-Both can used inside a text.
 
 ## Reporting issues
 

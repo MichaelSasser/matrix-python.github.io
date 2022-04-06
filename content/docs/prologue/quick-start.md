@@ -18,14 +18,14 @@ href="{{< ref "docs/tutorial/about_this_tutorial" >}}">Tutorial →</a>
 {{< /note >}}
 
 If you join our (optional) community Space
-{{< matrix identifier="#python-community:matrix.org" >}}, you will find the
+{{< identifier "#python-community:matrix.org" >}}, you will find the
 following rooms:
 
 In the Space you will find two new rooms:
 
 - **Python** room -- for everything python :
-  {{< matrix identifier="#python:matrix.org" >}}
+  {{< identifier "#python:matrix.org" >}}
 - **Meta** room -- for organizational questions, suggestions & proposals :
-  {{< matrix identifier="#python-meta:matrix.org" >}}
+  {{< identifier "#python-meta:matrix.org" >}}
 - **Offtopic** room -- for everything off-topic:
-  {{< matrix identifier="#python-off-topic:matrix.org" >}}
+  {{< identifier "#python-off-topic:matrix.org" >}}

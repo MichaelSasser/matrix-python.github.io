@@ -98,6 +98,6 @@ The bot will not take any action against a user which sends a voice message.
 ## Reporting Issues
 
 If you experience an issue with our services, or you encounter any problem,
-that can be discussed in public, use our Meta Room {{< matrix identifier="#python-meta:matrix.org" >}}.
+that can be discussed in public, use our Meta Room {{< identifier "#python-meta:matrix.org" >}}.
 
 {{< reporting_issues >}}

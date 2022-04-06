@@ -114,9 +114,9 @@ For more information about the power level, see [Power Level →](#power-level)
 
 The table below describes which list shortcode describes which room.
 
-| List Shortcode | Room                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| `coc`          | {{< matrix identifier="#code-of-conduct-bans:michaelsasser.org" >}} |
+| List Shortcode | Room                                        |
+| -------------- | ------------------------------------------- |
+| `coc`          | {{< identifier "#python-coc:matrix.org" >}} |
 
 ### Reason
 
