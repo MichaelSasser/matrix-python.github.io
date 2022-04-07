@@ -1,9 +1,24 @@
 {{ define "main" }}
 <div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <h1 class="text-center">Page not found :(</h1>
-      <p class="text-center">The page you are looking for doesn't exist or has been moved.</p>
+  <div class="col-md-12 col-lg-12 col-xl-11">
+    <article class="mt-5 mb-5 pt-5 pb-4">
+      <h1 class="text-center font-monospace mb-5">
+        <span class="hljs-keyword">raise</span> Http404Error(<span
+          class="hljs-string"
+          >"Page not found"</span
+        >)
+      </h1>
+      <div class="font-monospace text-center" style="">
+        <div style="display: inline-block; text-align: left">
+          <ul style="list-style-type: none; padding: 0px; margin: 0px">
+            <li>Traceback (most recent call last):</li>
+            <li>File "404.html", line 1, in &lt;module&gt;</li>
+            <li>
+              Http404Error: The page you are looking for doesn't exist.
+            </li>
+          </ul>
+        </div>
+      </div>
     </article>
   </div>
 </div>
