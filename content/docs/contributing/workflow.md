@@ -25,7 +25,8 @@ Describe, what you like to change/add and why. {{< /warning >}}
 
 1. Make sure you have Node.js, NPM and `git-lfs` installed.
 2. Create a fork of this repository.
-3. Clone the fork (as `origin`) to your local machine.
+3. Clone the fork (as `origin`) to your local machine and pull the
+   LFS content.
 4. Add this repository as a remote named `upstream`.
 5. Create a new branch from the
    [master](https://github.com/matrix-python/matrix-python.github.io/tree/master)
@@ -33,14 +34,20 @@ Describe, what you like to change/add and why. {{< /warning >}}
    feature. Your branch name would be `feature/#42-my-feature`.
 6. Install the required tools with `npm install` serve the website on your
    machine `npm run start -gc`.
-7. Open the URL `[http://localhost:1313](http://localhost:1313)` in your web
+7. (Optional) Use `./utils/get_matrix_rooms <homeserver>`, e.g.
+   `./utils/get_matrix_rooms matrix.org` to render the user counter and
+   activate some features.
+8. (Optional) Use `./utils/get_matrix_users <homeserver> <session token>`, e.g.
+   `./utils/get_matrix_users matrix.org "asdfoobarbaz"` to render the matrix
+   user pills with avatars and activate some features.
+9. Open the URL `[http://localhost:1313](http://localhost:1313)` in your web
    browser. You should now see the website.
-8. Implement the feature (or bugfix) you described in your issue. The website
-   in your browser will update as soon as you save the file you are editing.
-9. Commit and publish your branch to your fork (`origin`).
-10. Create a `Pull Request` from the branch, which contains your changes to
+10. Implement the feature (or bugfix) you described in your issue. The website
+    in your browser will update as soon as you save the file you are editing.
+11. Commit and publish your branch to your fork (`origin`).
+12. Create a `Pull Request` from the branch, which contains your changes to
     this repository's `master` branch.
-11. Once the pull request is reviewed and merged, you can pull the changes from
+13. Once the pull request is reviewed and merged, you can pull the changes from
     `upstream` (this repository) to your local repository and start over again
     from step 5. **Don't forget to create an issue first.**
 
