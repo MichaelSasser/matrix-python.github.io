@@ -66,6 +66,7 @@ jobs:
 
   test:
     runs-on: ubuntu-20.04
+    needs: [build]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -106,7 +107,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-20.04
-    needs: [test]
+    needs: [build, test]
     if: github.repository == 'matrix-python/matrix-python.github.io'
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
