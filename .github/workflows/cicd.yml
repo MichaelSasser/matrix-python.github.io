@@ -221,7 +221,7 @@ jobs:
       - name: Upload data artifact
         uses: actions/upload-artifact@v3
         with:
-          name: webiste-data
+          name: website-data
           path: data/
           if-no-files-found: error
           retention-days: 1
