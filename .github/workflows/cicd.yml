@@ -195,6 +195,7 @@ jobs:
 
       - id: data-check
         name: Check if data artifact exists
+        continue-on-error: true
         uses: actions/download-artifact@v3
         with:
           name: website-data
