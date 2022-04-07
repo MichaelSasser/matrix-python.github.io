@@ -206,7 +206,7 @@ jobs:
     if: |
       github.repository == 'matrix-python/matrix-python.github.io' &&
       github.ref == 'refs/heads/master'
-      steps.check-data-artifact-exists.outputs.status == 'failure'
+      jobs.check-data-artifact-exists.outputs.status == 'failure'
 
     steps:
       - name: Ensure data directory exists
