@@ -38,14 +38,14 @@ env:
 jobs:
 
   # Install the dependencies and cache them for the other jobs
-  install_dependencies:
-    runs-on: "${{ USE_OS }}"
+  install-dependencies:
+    runs-on: "${{ env.USE_OS }}"
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "${{ NODE_VERSION }}"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: "npm"
 
       - name: Install dependencies
@@ -66,14 +66,14 @@ jobs:
 
   # Lint scripts (js)
   lint-scripts:
-    runs-on: "${{ USE_OS }}"
-    needs: [install_dependencies]
+    runs-on: "${{ env.USE_OS }}"
+    needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "${{ NODE_VERSION }}"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: "npm"
 
       - name: Cache node_modules
@@ -94,14 +94,14 @@ jobs:
 
   # Lint Styles (Sass/CSS)
   lint-styles:
-    runs-on: "${{ USE_OS }}"
-    needs: [install_dependencies]
+    runs-on: "${{ env.USE_OS }}"
+    needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "${{ NODE_VERSION }}"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: "npm"
 
       - name: Cache node_modules
@@ -122,14 +122,14 @@ jobs:
 
   # Lint markdown
   lint-markdown:
-    runs-on: "${{ USE_OS }}"
-    needs: [install_dependencies]
+    runs-on: "${{ env.USE_OS }}"
+    needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "${{ NODE_VERSION }}"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: "npm"
 
       - name: Cache node_modules
@@ -150,8 +150,8 @@ jobs:
 
   # Run Test build (development environment)
   test:
-    runs-on: "${{ USE_OS }}"
-    needs: [install_dependencies]
+    runs-on: "${{ env.USE_OS }}"
+    needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -162,7 +162,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "${{ NODE_VERSION }}"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: "npm"
 
       - name: Cache node_modules
@@ -183,10 +183,10 @@ jobs:
 
   # Build and Deploy the website to gh-pages (production environment)
   deploy:
-    runs-on: "${{ USE_OS }}"
+    runs-on: "${{ env.USE_OS }}"
     if: github.repository == 'matrix-python/matrix-python.github.io'
     needs:
-      - install_dependencies
+      - install-dependencies
       - test
       - lint-scripts
       - lint-styles
@@ -203,7 +203,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "${{ NODE_VERSION }}"
+          node-version: "${{ env.NODE_VERSION }}"
           cache: "npm"
 
       - name: Cache node_modules
