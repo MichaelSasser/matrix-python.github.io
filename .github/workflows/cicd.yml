@@ -89,7 +89,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Lint Scripts
-        run: npm lint:scripts
+        run: npm run lint:scripts
 
   # Lint Styles (Sass/CSS)
   lint-styles:
@@ -117,7 +117,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Lint Styles
-        run: npm lint:styles
+        run: npm run lint:styles
 
   # Lint markdown
   lint-markdown:
@@ -145,7 +145,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Lint Markdown
-        run: npm lint:markdown
+        run: npm run lint:markdown
 
   # Run Test build (development environment)
   test:
