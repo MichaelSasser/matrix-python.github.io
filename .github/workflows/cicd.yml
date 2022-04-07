@@ -33,13 +33,13 @@ on:
 
 env:
   NODE_VERSION: "16"  # Must be of type str
-  OS: "ubuntu-20.04"
+  USE_OS: "ubuntu-20.04"
 
 jobs:
 
   # Install the dependencies and cache them for the other jobs
   install_dependencies:
-    runs-on: "${{ OS }}"
+    runs-on: "${{ USE_OS }}"
     steps:
       - uses: actions/checkout@v3
 
@@ -66,7 +66,7 @@ jobs:
 
   # Lint scripts (js)
   lint-scripts:
-    runs-on: "${{ OS }}"
+    runs-on: "${{ USE_OS }}"
     needs: [install_dependencies]
     steps:
       - uses: actions/checkout@v3
@@ -94,7 +94,7 @@ jobs:
 
   # Lint Styles (Sass/CSS)
   lint-styles:
-    runs-on: "${{ OS }}"
+    runs-on: "${{ USE_OS }}"
     needs: [install_dependencies]
     steps:
       - uses: actions/checkout@v3
@@ -122,7 +122,7 @@ jobs:
 
   # Lint markdown
   lint-markdown:
-    runs-on: "${{ OS }}"
+    runs-on: "${{ USE_OS }}"
     needs: [install_dependencies]
     steps:
       - uses: actions/checkout@v3
@@ -150,7 +150,7 @@ jobs:
 
   # Run Test build (development environment)
   test:
-    runs-on: "${{ OS }}"
+    runs-on: "${{ USE_OS }}"
     needs: [install_dependencies]
     steps:
       - uses: actions/checkout@v3
@@ -183,7 +183,7 @@ jobs:
 
   # Build and Deploy the website to gh-pages (production environment)
   deploy:
-    runs-on: "${{ OS }}"
+    runs-on: "${{ USE_OS }}"
     if: github.repository == 'matrix-python/matrix-python.github.io'
     needs:
       - install_dependencies
