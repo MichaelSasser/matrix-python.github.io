@@ -207,7 +207,6 @@ jobs:
     if: |
       github.repository == 'matrix-python/matrix-python.github.io' &&
       github.ref == 'refs/heads/master' &&
-      needs.check-artifact.outputs.status != 'success'
 
     steps:
       - uses: actions/checkout@v3
@@ -216,9 +215,11 @@ jobs:
         run: mkdir -p data
 
       - name: GET user list from Matrix API
+        if: needs.check-artifact.outputs.status != 'success'
         run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
 
       - name: Upload data artifact
+        if: needs.check-artifact.outputs.status != 'success'
         uses: actions/upload-artifact@v3
         with:
           name: website-data
