@@ -1,4 +1,17 @@
 {{ define "main" }}
+
+  <!-- Get members of the main room from data -->
+  {{- $members := "0000" -}}
+  {{ if isset $.Site.Data "matrix_rooms" }}
+    {{- range $.Site.Data.matrix_rooms -}}
+      {{- if eq .alias $.Site.Params.users_room -}}
+        {{- with .members -}}
+          {{- $members = . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
   <section class="section container-fluid mt-n3 pb-3">
     <div class="row justify-content-center">
       <div class="col-lg-12 text-center">
@@ -17,14 +30,7 @@
         >
         <p class="meta">
           and chat with
-          {{ if hugo.IsProduction }}
-            {{ $rooms := getJSON .Site.Params.matrix_room_data_url "/_matrix/client/r0/publicRooms" }}
-            {{ range where $rooms.chunk "canonical_alias" "==" .Site.Params.users_room }}
-              {{ .num_joined_members }}
-            {{ end }}
-          {{ else }}
-            0000
-          {{ end }}
+          {{ $members }}
           Pythoneers.
         </p>
       </div>

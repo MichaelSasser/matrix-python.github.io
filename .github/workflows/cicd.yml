@@ -183,27 +183,31 @@ jobs:
       - name: Run a build test
         run: npm run test-build
 
-  # Check if the data artifact already exists
-  check-artifact:
-    outputs:
-      status: ${{ steps.data-check.outcome }}
-    runs-on: "ubuntu-20.04"
-    if: |
-      github.repository == 'matrix-python/matrix-python.github.io' &&
-      github.ref == 'refs/heads/master'
-    steps:
+  # # This behavior seems currently not possible, as download-artifact
+  # # can only download from the **currently running** workflow.
+  # # See: https://github.com/actions/download-artifact/issues/148
+  #
+  # # Check if the data artifact already exists
+  # check-artifact:
+  #   outputs:
+  #     status: ${{ steps.data-check.outcome }}
+  #   runs-on: "ubuntu-20.04"
+  #   if: |
+  #     github.repository == 'matrix-python/matrix-python.github.io' &&
+  #     github.ref == 'refs/heads/master'
+  #   steps:
 
-      - id: data-check
-        name: Check if data artifact exists
-        continue-on-error: true
-        uses: actions/download-artifact@v3
-        with:
-          name: website-data
+  #     - id: data-check
+  #       name: Check if data artifact exists
+  #       continue-on-error: true
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: website-data
 
   # Get data from Matrix API, if the data artifact does not exist
   get-data:
     runs-on: "ubuntu-20.04"
-    needs: [check-artifact]
+    # needs: [check-artifact]
     if: |
       github.repository == 'matrix-python/matrix-python.github.io' &&
       github.ref == 'refs/heads/master'
@@ -214,12 +218,16 @@ jobs:
       - name: Ensure data directory exists
         run: mkdir -p data
 
-      - name: GET user list from Matrix API
-        if: needs.check-artifact.outputs.status != 'success'
+      - name: GET user list from Matrix API (data/matrix_users.json)
+        # if: needs.check-artifact.outputs.status != 'success'
         run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
 
+      - name: GET room list from Matrix API (data/matrix_rooms.json)
+        # if: needs.check-artifact.outputs.status != 'success'
+        run: ./utils/get_matrix_rooms 'matrix.org'
+
       - name: Upload data artifact
-        if: needs.check-artifact.outputs.status != 'success'
+        # if: needs.check-artifact.outputs.status != 'success'
         uses: actions/upload-artifact@v3
         with:
           name: website-data
