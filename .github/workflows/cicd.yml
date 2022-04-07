@@ -186,7 +186,7 @@ jobs:
   # Check if the data artifact already exists
   check-artifact:
     outputs:
-      status: ${{ steps.data-check.conclusion }}
+      status: ${{ steps.data-check.outcome }}
     runs-on: "ubuntu-20.04"
     if: |
       github.repository == 'matrix-python/matrix-python.github.io' &&
@@ -207,7 +207,7 @@ jobs:
     if: |
       github.repository == 'matrix-python/matrix-python.github.io' &&
       github.ref == 'refs/heads/master' &&
-      needs.check-artifact.outputs.status == 'failure'
+      needs.check-artifact.outputs.status != 'success'
 
     steps:
       - name: Ensure data directory exists
@@ -217,7 +217,6 @@ jobs:
         run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
 
       - name: Upload data artifact
-        if: steps.data-check.conclusion == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: webiste-data
