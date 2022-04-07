@@ -1,53 +1,61 @@
-# Copyright (c) 2021  Michael Sasser <Michael@MichaelSasser.org>
+# MIT License
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Copyright (c) 2022 Michael Sasser <Info@MichaelSasser.org>
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 #
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 ---
-name: GitHub Pages
+name: CICD
 
 on:
   push:
     branches:
       - master
-  schedule: # update number of user in the room every day
+  # Update the number of users, and the user list, using Matrix API, every day
+  schedule:
     - cron: "0 5 * * *"
 
+env:
+  NODE_VERSION: "16"  # Must be of type str
+  OS: "ubuntu-20.04"
+
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+
+  # Install the dependencies and cache them for the other jobs
+  install_dependencies:
+    runs-on: "${{ OS }}"
     steps:
       - uses: actions/checkout@v3
-        # with:
-        #   lfs: true
-
-      # - name: Checkout LFS objects
-      #   run: git lfs checkout
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "${{ NODE_VERSION }}"
           cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Cache node modules
+      - name: Cache node_modules
         uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
           path: |
             ./node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -56,17 +64,94 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      # - name: Archive production artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: node-modules-${{ hashFiles('./package-lock.json') }}
-      #     path: |
-      #       node_modules
+  # Lint scripts (js)
+  lint-scripts:
+    runs-on: "${{ OS }}"
+    needs: [install_dependencies]
+    steps:
+      - uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "${{ NODE_VERSION }}"
+          cache: "npm"
 
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Lint Scripts
+        run: npm lint:scripts
+
+  # Lint Styles (Sass/CSS)
+  lint-styles:
+    runs-on: "${{ OS }}"
+    needs: [install_dependencies]
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "${{ NODE_VERSION }}"
+          cache: "npm"
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Lint Styles
+        run: npm lint:styles
+
+  # Lint markdown
+  lint-markdown:
+    runs-on: "${{ OS }}"
+    needs: [install_dependencies]
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "${{ NODE_VERSION }}"
+          cache: "npm"
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Lint Markdown
+        run: npm lint:markdown
+
+  # Run Test build (development environment)
   test:
-    runs-on: ubuntu-20.04
-    needs: [build]
+    runs-on: "${{ OS }}"
+    needs: [install_dependencies]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -77,15 +162,14 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "${{ NODE_VERSION }}"
           cache: "npm"
 
-      - name: Cache node modules
+      - name: Cache node_modules
         uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
           path: |
             ./node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -94,21 +178,19 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      # - name: Download production artifacts
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: node-modules-${{ hashFiles('./package-lock.json') }}
-
-      - name: Run tests
-        run: npm test
-
       - name: Run a build test
         run: npm run test-build
 
+  # Build and Deploy the website to gh-pages (production environment)
   deploy:
-    runs-on: ubuntu-20.04
-    needs: [build, test]
+    runs-on: "${{ OS }}"
     if: github.repository == 'matrix-python/matrix-python.github.io'
+    needs:
+      - install_dependencies
+      - test
+      - lint-scripts
+      - lint-styles
+      - lint-markdown
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -121,15 +203,14 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "${{ NODE_VERSION }}"
           cache: "npm"
 
-      - name: Cache node modules
+      - name: Cache node_modules
         uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
           path: |
             ./node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -137,14 +218,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
-      # - name: Download production artifacts
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: node-modules-${{ hashFiles('./package-lock.json') }}
-
-      # - name: Install dependencies
-      #   run: npm ci
 
       - name: GET user list from Matrix API
         run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
