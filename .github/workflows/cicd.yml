@@ -184,7 +184,7 @@ jobs:
         run: npm run test-build
 
   # Check if the data artifact already exists
-  check-data-aritfact-exists:
+  check-artifact:
     outputs:
       status: ${{ steps.data-check.conclusion }}
     runs-on: "ubuntu-20.04"
@@ -202,11 +202,11 @@ jobs:
   # Get data from Matrix API, if the data artifact does not exist
   get-data:
     runs-on: "ubuntu-20.04"
-    needs: [check-data-artifact-exists]
+    needs: [check-artifact]
     if: |
       github.repository == 'matrix-python/matrix-python.github.io' &&
       github.ref == 'refs/heads/master' &&
-      needs.check-data-aritfact-exists.outputs.status == 'failure'
+      needs.check-artifact.outputs.status == 'failure'
 
     steps:
       - name: Ensure data directory exists
