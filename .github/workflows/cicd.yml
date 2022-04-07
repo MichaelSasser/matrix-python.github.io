@@ -150,7 +150,7 @@ jobs:
       - name: Lint Markdown
         run: npm run lint:markdown
 
-  # Run Test build (development environment)
+  # Run a test build (development environment)
   test:
     runs-on: "ubuntu-20.04"
     needs: [install-dependencies]
@@ -183,6 +183,48 @@ jobs:
       - name: Run a build test
         run: npm run test-build
 
+  # Check if the data artifact already exists
+  check-data-aritfact-exists:
+    runs-on: "ubuntu-20.04"
+    if: |
+      github.repository == 'matrix-python/matrix-python.github.io' &&
+      github.ref == 'refs/heads/master'
+    outputs:
+      status: ${{ steps.data-check.conclusion }}
+    steps:
+
+      - id: data-check
+        name: Check if data artifact exists
+        uses: actions/download-artifact@v3
+        with:
+          name: website-data
+
+  # Get data from Matrix API, if the data artifact does not exist
+  get-data:
+    runs-on: "ubuntu-20.04"
+    needs: check-data-artifact-exists
+    if: |
+      github.repository == 'matrix-python/matrix-python.github.io' &&
+      github.ref == 'refs/heads/master'
+      needs.check-data-artifact-exists.outputs.status == 'failure'
+
+    steps:
+      - name: Ensure data directory exists
+        run: mkdir -p data
+
+      - name: GET user list from Matrix API
+        run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
+
+      - name: Upload data artifact
+        if: steps.data-check.conclusion == 'failure'
+        uses: actions/upload-artifact@v3
+        with:
+          name: webiste-data
+          path: data/
+          if-no-files-found: error
+          retention-days: 1
+
+
   # Build and Deploy the website to gh-pages (production environment)
   deploy:
     runs-on: "ubuntu-20.04"
@@ -195,6 +237,7 @@ jobs:
       - lint-scripts
       - lint-styles
       - lint-markdown
+      - get-data
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -223,8 +266,10 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: GET user list from Matrix API
-        run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
+      - name: Download data artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: website-data
 
       - name: Build production website
         run: npm run build
