@@ -24,6 +24,46 @@ on:
     - cron: "0 5 * * *"
 
 jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        # with:
+        #   lfs: true
+
+      # - name: Checkout LFS objects
+      #   run: git lfs checkout
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: |
+            ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      # - name: Archive production artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: node-modules-${{ hashFiles('./package-lock.json') }}
+      #     path: |
+      #       node_modules
+
+
   test:
     runs-on: ubuntu-20.04
     steps:
@@ -39,8 +79,24 @@ jobs:
           node-version: "16"
           cache: "npm"
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: |
+            ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      # - name: Download production artifacts
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: node-modules-${{ hashFiles('./package-lock.json') }}
 
       - name: Run tests
         run: npm test
@@ -67,8 +123,27 @@ jobs:
           node-version: "16"
           cache: "npm"
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: |
+            ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      # - name: Download production artifacts
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: node-modules-${{ hashFiles('./package-lock.json') }}
+
+      # - name: Install dependencies
+      #   run: npm ci
 
       - name: GET user list from Matrix API
         run: ./utils/get_matrix_users 'matrix.org' "${{ secrets.MATRIX_SESSION_TOKEN }}"
