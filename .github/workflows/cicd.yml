@@ -27,6 +27,9 @@ on:
   push:
     branches:
       - master
+
+  pull_request:
+
   # Update the number of users, and the user list, using Matrix API, every day
   schedule:
     - cron: "0 5 * * *"
@@ -183,7 +186,9 @@ jobs:
   # Build and Deploy the website to gh-pages (production environment)
   deploy:
     runs-on: "ubuntu-20.04"
-    if: github.repository == 'matrix-python/matrix-python.github.io'
+    if: |
+      github.repository == 'matrix-python/matrix-python.github.io' &&
+      github.ref == 'refs/heads/master'
     needs:
       - install-dependencies
       - test
@@ -226,7 +231,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
