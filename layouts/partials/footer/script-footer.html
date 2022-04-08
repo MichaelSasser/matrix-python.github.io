@@ -64,6 +64,12 @@
   {{ $slice = $slice | append $mediumZoom -}}
 {{ end -}}
 
+{{ $fontAwesome := resources.Get "js/vendor/fontawesome/fontawesome.js" -}}
+{{ if .Site.Params.options.fontAwesome -}}
+  {{ $fontAwesome = $fontAwesome | js.Build -}}
+  {{ $slice = $slice | append $fontAwesome -}}
+{{ end -}}
+
 <!-- Add snow to the front page for the last 14 days of the year -->
 {{ $snow:= resources.Get "js/snow.js" -}}
 {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
@@ -107,7 +113,10 @@
   {{ $katexAutoRender := $katexAutoRender | minify | fingerprint "sha512" -}}
   {{ $mermaid := $mermaid | minify | fingerprint "sha512" -}}
   {{ if .Site.Params.options.mediumZoom -}}
-    {{ $mediumZoom := $mediumZoom | minify | fingerprint "sha512" -}}
+    {{ $mediumZoom = $mediumZoom | minify | fingerprint "sha512" -}}
+  {{ end -}}
+  {{ if .Site.Params.options.fontAwesome -}}
+    {{ $fontAwesome = $fontAwesome | minify | fingerprint "sha512" -}}
   {{ end -}}
 
   {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
@@ -132,6 +141,9 @@
   {{ end -}}
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" integrity="{{ $mediumZoom.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ end -}}
+  {{ if .Site.Params.options.fontAwesome -}}
+    <script src="{{ $fontAwesome.RelPermalink }}" integrity="{{ $fontAwesome.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
   {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
     <script src="{{ $snow.RelPermalink }}" integrity="{{ $snow.Data.Integrity }}" crossorigin="anonymous" defer></script>

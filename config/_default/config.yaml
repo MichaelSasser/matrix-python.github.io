@@ -99,9 +99,13 @@ module:
       target: assets/js/vendor/katex
     - source: node_modules/mermaid
       target: assets/mermaid
-    - source: node_modules/@fortawesome/fontawesome-free/scss
-      target: assets/scss/fontawesome
-    - source: node_modules/@fortawesome/fontawesome-free/webfonts
-      target: static/fonts/vendor/fontawesome
+    # - source: node_modules/@fortawesome/fontawesome-free/scss
+    #   target: assets/scss/fontawesome
+    # - source: node_modules/@fortawesome/fontawesome-free/webfonts
+    #   target: static/fonts/vendor/fontawesome
+    - source: node_modules/@fortawesome/fontawesome-free/js/all.js
+      target: assets/js/vendor/fontawesome/fontawesome.js
+    # - source: node_modules/@fortawesome/fontawesome-free/webfonts
+    #   target: static/fonts/vendor/fontawesome
     - source: node_modules/medium-zoom
       target: assets/js/vendor/medium-zoom

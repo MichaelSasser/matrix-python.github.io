@@ -105,6 +105,7 @@ options:
   docsVersioning: false
   fullWidth: true
   mediumZoom: true
+  fontAwesome: true
   snow: true
   forceSnow: false  # Force Snow immediately.
 
