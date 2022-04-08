@@ -64,7 +64,7 @@
   {{ $slice = $slice | append $mediumZoom -}}
 {{ end -}}
 
-{{ $fontAwesome := resources.Get "js/vendor/fontawesome/all.js" -}}
+{{ $fontAwesome := resources.Get "js/vendor/fontawesome/all.min.js" -}}
 {{ if .Site.Params.options.fontAwesome -}}
   {{ $fontAwesome = $fontAwesome | js.Build -}}
   {{ $slice = $slice | append $fontAwesome -}}
@@ -119,7 +119,7 @@
     {{ $mediumZoom = $mediumZoom | minify | fingerprint "sha512" -}}
   {{ end -}}
   {{ if .Site.Params.options.fontAwesome -}}
-    {{ $fontAwesome = $fontAwesome | minify | fingerprint "sha512" -}}
+    {{ $fontAwesome = $fontAwesome | fingerprint "sha512" -}}
   {{ end -}}
 
   {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
