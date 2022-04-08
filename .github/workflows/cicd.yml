@@ -281,6 +281,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: website-data
+          path: ./data/
 
       - name: Build production website
         run: npm run build
