@@ -1,0 +1,33 @@
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 0.75rem;
+  background-color: $blue;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-link > .bi {
+  margin-top: 0.125rem;
+  margin-left: 0.125rem;
+  transition: transform 0.25s ease-in-out;
+  fill: currentcolor;
+}
+
+.icon-link:hover > .bi {
+  transform: translate(0.25rem);
+}
+
+[data-dark-mode] .feature-icon {
+  background-color: $blue-300;
+  color: $body-bg-dark;
+}

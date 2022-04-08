@@ -42,138 +42,63 @@
     <div class="bg-dots"></div>
   </div>
 
+  <!-- START - Feature -->
   <section class="section section-sm">
     <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-5">
-          <h2 class="h4">Formatting</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div class="feature-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h2>Formatting</h2>
           <p>
-            Many clients support the Markdown markup language, including syntax
-            highlighting and
-            <!-- START: rendered LATEX message using katex -->
-            <span
-              ><span class="katex"
-                ><span class="katex-mathml"
-                  ><math xmlns="http://www.w3.org/1998/Math/MathML"
-                    ><semantics
-                      ><mrow><mtext mathvariant="bold">LaTeX</mtext></mrow
-                      ><annotation encoding="application/x-tex">
-                        \textbf{\LaTeX}
-                      </annotation></semantics
-                    ></math
-                  ></span
-                ><span class="katex-html" aria-hidden="true"
-                  ><span class="base"
-                    ><span
-                      class="strut"
-                      style="height: 0.90161em; vertical-align: -0.2155em;"
-                    ></span
-                    ><span class="mord text"
-                      ><span class="mord text"
-                        ><span class="mord textrm textbf">L</span
-                        ><span
-                          class="mspace"
-                          style="margin-right: -0.36em;"
-                        ></span
-                        ><span class="vlist-t"
-                          ><span class="vlist-r"
-                            ><span class="vlist" style="height: 0.685276em;"
-                              ><span class="" style="top: -2.905em;"
-                                ><span
-                                  class="pstrut"
-                                  style="height: 2.7em;"
-                                ></span
-                                ><span class="mord"
-                                  ><span
-                                    class="mord textrm textbf mtight sizing reset-size6 size3"
-                                    >A</span
-                                  ></span
-                                ></span
-                              ></span
-                            ></span
-                          ></span
-                        ><span
-                          class="mspace"
-                          style="margin-right: -0.15em;"
-                        ></span
-                        ><span class="mord text"
-                          ><span class="mord textrm textbf">T</span
-                          ><span
-                            class="mspace"
-                            style="margin-right: -0.1667em;"
-                          ></span
-                          ><span class="vlist-t vlist-t2"
-                            ><span class="vlist-r"
-                              ><span class="vlist" style="height: 0.47061em;"
-                                ><span class="" style="top: -2.7845em;"
-                                  ><span
-                                    class="pstrut"
-                                    style="height: 3em;"
-                                  ></span
-                                  ><span class="mord"
-                                    ><span class="mord textrm textbf"
-                                      >E</span
-                                    ></span
-                                  ></span
-                                ></span
-                              ><span class="vlist-s">​</span></span
-                            ><span class="vlist-r"
-                              ><span class="vlist" style="height: 0.2155em;"
-                                ><span class=""></span></span></span></span
-                          ><span
-                            class="mspace"
-                            style="margin-right: -0.125em;"
-                          ></span
-                          ><span class="mord textrm textbf">X</span></span
-                        ></span
-                      ></span
-                    ></span
-                  ></span
-                ></span
-              ></span
-            >
-            <!-- END: rendered LATEX message using katex -->
-            math in messages.
+            Most clients support the Markdown markup language, including syntax
+            highlighting for code and {{ partial "main/fast-latex-icon.html" }}
+            math to format beautiful messages.
           </p>
-          <p>
-            <a href="docs/tutorial/formatting/" target="_blank" rel="noopener"
-              >Tutorial →</a
-            >
-          </p>
+          <a href="docs/tutorial/formatting/" class="icon-link">
+            Tutorial
+            <svg class="bi" width="1em" height="1em" id="chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </a>
         </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Code of Conduct</h2>
+        <div class="feature col">
+          <div class="feature-icon">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h2>Code of Conduct</h2>
           <p>
             We are committed to provide a welcoming and inspiring community for
             all, and expect our Code of Conduct to be honored.
           </p>
-          <p>
-            <a href="docs/code_of_conduct/" target="_blank" rel="noopener"
-              >Our Code of Conduct →</a
-            >
-          </p>
+          <a href="docs/code_of_conduct/" class="icon-link">
+            Our Code of Conduct
+            <svg class="bi" width="1em" height="1em" id="chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </a>
         </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Decentralized</h2>
+        <div class="feature col">
+          <div class="feature-icon">
+            <i class="fa-solid fa-circle-nodes"></i>
+          </div>
+          <h2>Decentralized</h2>
           <p>
             When you send a message in Matrix, it is replicated over all the
             servers whose users are participating in a given conversation.
           </p>
-          <p><a href="#" target="_blank" rel="noopener">About Servers →</a></p>
+          <a href="#" class="icon-link" target="_blank" rel="noopener">
+            About Servers
+            <svg class="bi" width="1em" height="1em" id="chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </a>
         </div>
       </div>
-      <!-- <div class="row justify-content-center text-center"> -->
-      <!--   <div class="col-lg-5"> -->
-      <!--     <h2 class="h4">Opern Source Server</h2> -->
-      <!--     <p><a href="https://github.com/matrix-org/synapse">Synapse</a> is an open source homeserver built on the open Matrix standard for secure, decentralised, real-time communication.</p> -->
-      <!--   </div> -->
-      <!--   <div class="col-lg-5"> -->
-      <!--     <h2 class="h4">Open Source Client</h2> -->
-      <!--     <p><a href="https://element.io/">Element</a> is an all-in-one secure chat app for teams, friends and organisations. It keeps conversations in your control, safe from data-mining and ads.</p> -->
-      <!--   </div> -->
-      <!-- </div> -->
     </div>
   </section>
+  <!-- END - Feature -->
 
   <!-- Matrix Clients -->
   <section class="section section-sm my-3 py-5 bg-light">
