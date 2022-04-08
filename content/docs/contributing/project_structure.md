@@ -30,7 +30,7 @@ toc: true
 | [`./content/docs/contributing`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/contributing)       | The "Contributing" section of the docs    |
 | [`./content/docs/help`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/docs/help)                       | The "Help" section of the docs            |
 
-{{< variable_structure "Documentation" "title" "description" "lead" "date" "lastmod" "draft" "images" "menu" "weight" "toc" >}}
+{{< variable_structure "Documentation" "title" "description" "lead" "date" "lastmod" "contributors" "draft" "images" "menu" "weight" "toc" >}}
 
 For an documentation page the menu structure is:
 
@@ -111,6 +111,19 @@ The `title` in this case would be your nickname on Matrix.
 
 Notice, the `weight` in blog posts is always `50`.
 
+## The Blog Categories
+
+| Directory                                                                                                          | Description                               |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| [`./content/categories/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/categories) | The base directory of the blog categories |
+
+The blog categories are a way to group blog content in a way, users are able to
+filter for. When a category was used that does not exist, a dummy category is 
+shown in the categories. Because of that, make sure to create a category for 
+your blog post, if it doesn't already exist.
+
+{{< variable_structure "Categories" "title" "description" "lead" "date" "lastmod" "contributors" "draft" "images" >}}
+
 ## The About Page
 
 | Directory                                                                                                                   | Description                               |
@@ -122,7 +135,7 @@ The about page is a list view of about page entries, which are shown as a
 linear timeline on the bottom of the page. Everything above is part of
 `_index.md`.
 
-{{< variable_structure "About" "title" "description" "lead" "date" "lastmod" "draft" "images" "menu" "toc" "blog_post" >}}
+{{< variable_structure "About" "title" "description" "lead" "date" "lastmod" "contributors" "draft" "images" "menu" "toc" "blog_post" >}}
 
 ## The Privacy-Policy
 
