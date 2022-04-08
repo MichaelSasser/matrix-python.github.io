@@ -1,4 +1,5 @@
 <!-- This code needs to be changed in reporting_issues as well -->
+
 <table>
   <thead>
     <tr>
@@ -12,9 +13,32 @@
     "Params.matrix_username" "!=" nil) "Params.matrix_identifier" "!=" nil)
     "Params.matrix_moderator" "==" true -}}
 
+      {{- $matrix_user_identifier := .Params.matrix_identifier }}
+
+      {{- $avatar := "" -}}
+      {{ if isset $.Site.Data "matrix_users" }}
+        {{- range $.Site.Data.matrix_users -}}
+          {{- if eq .userId $matrix_user_identifier  -}}
+            {{- with .avatar -}}
+              {{- $avatar = (printf "https://matrix.org/_matrix/media/r0/thumbnail/%s?width=64&height=64&method=scale" (substr  . 6)) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
     <tr>
       <td>
-        <a href="{{ .RelPermalink }}">{{ .Params.title }}</a>
+        <a href="{{ .RelPermalink }}">
+
+          {{- with $avatar -}}
+          <img 
+            width="25"
+            height="25"
+            src="{{- . -}}">
+          </img>
+          {{- end -}} 
+          &ThickSpace; {{ .Params.title }}
+        </a>
       </td>
       <td>
         <a target="_blank" rel="noopener" href="https://app.element.io/#/user/{{ .Params.matrix_identitier }}">

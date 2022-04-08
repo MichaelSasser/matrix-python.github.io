@@ -13,9 +13,32 @@
     "Params.matrix_identifier" "!=" nil) "Params.website_contributor" "==" true)
     "Params.github_username" "!=" nil -}}
 
+      {{- $matrix_user_identifier := .Params.matrix_identifier }}
+
+      {{- $avatar := "" -}}
+      {{ if isset $.Site.Data "matrix_users" }}
+        {{- range $.Site.Data.matrix_users -}}
+          {{- if eq .userId $matrix_user_identifier  -}}
+            {{- with .avatar -}}
+              {{- $avatar = (printf "https://matrix.org/_matrix/media/r0/thumbnail/%s?width=64&height=64&method=scale" (substr  . 6)) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
     <tr>
       <td>
-        <a href="{{ .RelPermalink }}">{{ .Params.title }}</a>
+        <a href="{{ .RelPermalink }}">
+
+          {{- with $avatar -}}
+          <img 
+            width="25"
+            height="25"
+            src="{{- . -}}">
+          </img>
+          {{- end -}} 
+          &ThickSpace; {{ .Params.title }}
+        </a>
       </td>
       <td>
         <a href="https://github.com/{{ .Params.github_username }}">
