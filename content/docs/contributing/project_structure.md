@@ -118,8 +118,8 @@ Notice, the `weight` in blog posts is always `50`.
 | [`./content/categories/`](https://github.com/matrix-python/matrix-python.github.io/tree/master/content/categories) | The base directory of the blog categories |
 
 The blog categories are a way to group blog content in a way, users are able to
-filter for. When a category was used that does not exist, a dummy category is 
-shown in the categories. Because of that, make sure to create a category for 
+filter for. When a category was used that does not exist, a dummy category is
+shown in the categories. Because of that, make sure to create a category for
 your blog post, if it doesn't already exist.
 
 {{< variable_structure "Categories" "title" "description" "lead" "date" "lastmod" "contributors" "draft" "images" >}}
