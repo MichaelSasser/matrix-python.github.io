@@ -30,9 +30,10 @@ on:
 
   pull_request:
 
-  # Update the number of users, and the user list, using Matrix API, every day
+  # Update the number of users, and the user list, using Matrix API,
+  # every Sunday
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 6 * * 0"
 
 env:
   NODE_VERSION: "16"  # Must be of type str
@@ -44,6 +45,8 @@ jobs:
     runs-on: "ubuntu-20.04"
     steps:
       - uses: actions/checkout@v3
+        with:
+          lfs: false
 
       - uses: actions/setup-node@v3
         with:
@@ -72,6 +75,8 @@ jobs:
     needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
+        with:
+          lfs: false
 
       - uses: actions/setup-node@v3
         with:
@@ -100,6 +105,8 @@ jobs:
     needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
+        with:
+          lfs: false
 
       - uses: actions/setup-node@v3
         with:
@@ -128,6 +135,8 @@ jobs:
     needs: [install-dependencies]
     steps:
       - uses: actions/checkout@v3
+        with:
+          lfs: false
 
       - uses: actions/setup-node@v3
         with:
@@ -155,9 +164,7 @@ jobs:
     runs-on: "ubuntu-20.04"
     needs: [install-dependencies]
     steps:
-      - uses: actions/checkout@v3
-        with:
-          lfs: true
+      - uses: nschloe/action-cached-lfs-checkout@v1
 
       - name: Checkout LFS objects
         run: git lfs checkout
@@ -214,6 +221,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          lfs: false
 
       - name: Ensure data directory exists
         run: mkdir -p data
@@ -252,9 +261,7 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          lfs: true
+      - uses: nschloe/action-cached-lfs-checkout@v1
 
       - name: Checkout LFS objects
         run: git lfs checkout
