@@ -17,23 +17,23 @@
 
     <div class="container col-xxl-16 px-4 py-5">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5 pt-2">
-        <div class="col-10 col-sm-8 col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mt-0 mb-0">
+          <span>Python Community on&nbsp;</span
+          >{{- partial "main/embedded_image.html" "matrix-logo" -}}
+        </h1>
+        <div class="col-12 col-sm-10 col-lg-8">
           <img src="/matrix-screenshot.png" 
                class="d-block mx-lg-auto img-fluid lazyload blur-up rounded" 
                alt="Matix Client" 
                width="700" 
                height="500">
         </div>
-        <div class="col-lg-10 mt-0">
-          <h1 class="display-5 fw-bold lh-1 mt-0 mb-3">
-            <span>Python Community on&nbsp;</span
-            >{{- partial "main/embedded_image.html" "matrix-logo" -}}
-          </h1>
-          <p class="lead mb-4">
+        <div class="col-lg-8 mt-0">
+          <p class="lead mb-3 mt-5">
             {{- .Params.lead | safeHTML -}}
           </p>
-          <p class="lead mb-4">
-            Explore Python with over 
+          <p class="lead mb-5">
+            Learn and explore Python with over 
             {{ $members }} 
             Members.
           </p>
