@@ -6,12 +6,11 @@
     {{- range $.Site.Data.matrix_rooms -}}
       {{- if eq .alias $.Site.Params.users_room -}}
         {{- with .members -}}
-          {{- $members = . -}}
+          {{- $members = math.Mul (math.Floor (math.Div . 100)) 100 -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
-
 
   <section class="section container-fluid mt-n3 pb-3 pt-5">
 
@@ -35,7 +34,7 @@
           </p>
           <p class="lead mb-4">
             Explore Python with over 
-            {{ math.Mul (math.Floor (math.Div $members 100)) 100 }} 
+            {{ $members }} 
             Members.
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
