@@ -64,7 +64,7 @@
   {{ $slice = $slice | append $mediumZoom -}}
 {{ end -}}
 
-{{ $fontAwesome := resources.Get "js/vendor/fontawesome/fontawesome.js" -}}
+{{ $fontAwesome := resources.Get "js/vendor/fontawesome/all.js" -}}
 {{ if .Site.Params.options.fontAwesome -}}
   {{ $fontAwesome = $fontAwesome | js.Build -}}
   {{ $slice = $slice | append $fontAwesome -}}
