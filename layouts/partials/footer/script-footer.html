@@ -101,6 +101,9 @@
   {{ if .Site.Params.options.mediumZoom -}}
     <script src="{{ $mediumZoom.RelPermalink }}" defer></script>
   {{ end -}}
+  {{ if .Site.Params.options.fontAwesome -}}
+    <script src="{{ $fontAwesome.RelPermalink }}" defer></script>
+  {{ end -}}
   {{ if and (.IsHome) (and (or (gt now.YearDay 351) .Site.Params.options.forceSnow) (.Site.Params.options.snow)) }}
     <script src="{{ $snow.RelPermalink }}" defer></script>
   {{ end -}}
